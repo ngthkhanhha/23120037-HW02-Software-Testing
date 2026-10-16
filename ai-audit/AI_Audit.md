@@ -225,3 +225,10 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - Output: Marked TC-FR14-DT-02 Passed because the new category appeared as ID #4 and remained present after the instructed refresh. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1358).png` to `screenshots/TC-FR14-DT-02.png`; updated the CSV, FR14 Domain, Main Report, README, checklist and aggregate counts.
 - Review: The screenshot shows the new uniquely named category alongside all three seeded categories. The disposable category is retained for TC-FR14-DT-03.
 - Files affected: `screenshots/TC-FR14-DT-02.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-028 - Record execution of TC-FR14-DT-03
+- Tool: ChatGPT (Codex).
+- Date/time: 2026-10-16 (Asia/Saigon).
+- User prompt: The user supplied a screenshot showing the EShop Admin category list after deleting `FR14-Test-NTHH-01`.
+- Output: Marked TC-FR14-DT-03 Passed because the disposable test category was absent and seeded categories #1 Điện thoại, #2 Laptop, and #3 Phụ kiện remained. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1359).png` to `screenshots/TC-FR14-DT-03.png`; updated the CSV, FR14 Domain, Main Report, README, checklist and aggregate counts.
+- Review: The screenshot confirms only the intended test category was removed. Five of eight FR-14 cases remain Not Executed.
+- Files affected: `screenshots/TC-FR14-DT-03.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.

@@ -85,7 +85,7 @@ The per-feature analysis files are linked below. Test case details and execution
 - Boundary Value Analysis: [FR14_BVA.md](FR14_BVA.md)
 - Test case design: 8 cases prepared (5 Domain and 3 BVA), all Not Executed: TC-FR14-DT-01 through DT-05 and TC-FR14-BVA-01 through BVA-03.
 - Scope clarification: SRS FR-14 specifies add/view/delete; API specification also documents PUT, while the admin UI has no edit control. DT-04 therefore checks the documented API contract and tracks the scope discrepancy, not a UI requirement. Whitespace-only rejection is an assumption, not a confirmed requirement.
-- Execution summary: 2 of 8 cases executed; DT-01 Passed with the three seeded categories shown once each, and DT-02 Passed with the new `FR14-Test-NTHH-01` category retained as ID #4 after refresh. Evidence: [`../screenshots/TC-FR14-DT-01.png`](../screenshots/TC-FR14-DT-01.png), [`../screenshots/TC-FR14-DT-02.png`](../screenshots/TC-FR14-DT-02.png). Six cases remain Not Executed. No FR-14 bugs have been confirmed.
+- Execution summary: 3 of 8 cases executed; DT-01 and DT-02 Passed, and DT-03 Passed after deleting the disposable `FR14-Test-NTHH-01` category while preserving the three seeded categories. Evidence: [`../screenshots/TC-FR14-DT-01.png`](../screenshots/TC-FR14-DT-01.png), [`../screenshots/TC-FR14-DT-02.png`](../screenshots/TC-FR14-DT-02.png), [`../screenshots/TC-FR14-DT-03.png`](../screenshots/TC-FR14-DT-03.png). Five cases remain Not Executed. No FR-14 bugs have been confirmed.
 - AI gap analysis: The prepared design covers SRS operations, the related SEC-03 role boundary, the documented PUT API, and specified name boundary. Duplicate-name and referenced-category deletion behavior are unspecified and remain exploratory.
 - Confirmed bugs: None from FR-14 execution to date.
 - Evidence: To be added after each manual case is run; keep JWT/token values out of screenshots.
@@ -110,13 +110,13 @@ Summary from the recorded test cases; each case has one status and the totals re
 |---|---:|
 | Features in scope | 4 |
 | Test cases designed | 36 |
-| Test cases executed | 28 |
-| Passed | 12 |
+| Test cases executed | 29 |
+| Passed | 13 |
 | Failed | 16 |
-| Not Executed | 8 |
+| Not Executed | 7 |
 | Confirmed bugs | 9 |
 
-**Reconciliation:** 36 designed = 12 Passed + 16 Failed + 8 Not Executed. The totals reconcile. FR-08 contributes 8 designed cases; all eight are executed (three Passed, five Failed). FR-14 contributes 8 designed cases; two are Passed and six remain Not Executed.
+**Reconciliation:** 36 designed = 13 Passed + 16 Failed + 7 Not Executed. The totals reconcile. FR-08 contributes 8 designed cases; all eight are executed (three Passed, five Failed). FR-14 contributes 8 designed cases; three are Passed and five remain Not Executed.
 
 ## 10. AI Use and Supporting Deliverables
 

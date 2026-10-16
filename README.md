@@ -40,10 +40,10 @@
 |---|---:|
 | Tính năng trong phạm vi | 4 |
 | Test case đã thiết kế | 36 |
-| Test case đã thực thi | 28 |
-| Passed | 12 |
+| Test case đã thực thi | 29 |
+| Passed | 13 |
 | Failed | 16 |
-| Not Executed | 8 |
+| Not Executed | 7 |
 | Bug đã xác nhận | 9 |
 | Video demo | [Sinh viên bổ sung liên kết hoặc ghi rõ không có] |
 
@@ -58,7 +58,7 @@
 | 5 | Agent Skills | 11 | [ ] |
 | | **Tổng** | **100** | **[ ]** |
 
-> Counts reconcile with the CSV: 20 FR-02/FR-06 cases designed; 8 FR-08 cases designed, with all 8 executed (3 Passed, 5 Failed); 8 FR-14 cases designed, with DT-01 and DT-02 Passed and 6 awaiting execution. Overall: 36 designed, 28 executed, 12 Passed, 16 Failed, 8 Not Executed. Evidence for FR-08 DT-01 through DT-05, BVA-01 through BVA-03, and FR14-DT-01/02 is saved under `screenshots/`. FR-08 DT-01 Network/order-history confirmation remains unavailable; DT-04 and BVA-01 screenshots show HTTP 200 and orders #1 and #3 saved with the submitted E-1 amount; request payload details are not legible. BVA-02 order #4 stored the expected 58,000,000 VND; BVA-03 order #5 was stored at 58,000,001 VND (E+1), reproducing BUG-FR08-02. Before packaging, complete remaining FR-14 cases, confirm pool allocation, fill in group details and self-assessment, add video if required, export the main report/AI Audit/AI Critique as PDFs, and create the required ZIP.
+> Counts reconcile with the CSV: 20 FR-02/FR-06 cases designed; 8 FR-08 cases designed, with all 8 executed (3 Passed, 5 Failed); 8 FR-14 cases designed, with DT-01 through DT-03 Passed and 5 awaiting execution. Overall: 36 designed, 29 executed, 13 Passed, 16 Failed, 7 Not Executed. Evidence for FR-08 DT-01 through DT-05, BVA-01 through BVA-03, and FR14-DT-01 through DT-03 is saved under `screenshots/`. FR-08 DT-01 Network/order-history confirmation remains unavailable; DT-04 and BVA-01 screenshots show HTTP 200 and orders #1 and #3 saved with the submitted E-1 amount; request payload details are not legible. BVA-02 order #4 stored the expected 58,000,000 VND; BVA-03 order #5 was stored at 58,000,001 VND (E+1), reproducing BUG-FR08-02. Before packaging, complete remaining FR-14 cases, confirm pool allocation, fill in group details and self-assessment, add video if required, export the main report/AI Audit/AI Critique as PDFs, and create the required ZIP.
 
 
 
