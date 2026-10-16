@@ -218,3 +218,10 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - Output: Marked TC-FR14-DT-01 Passed because the page displayed category IDs #1 Điện thoại, #2 Laptop, and #3 Phụ kiện once each. Updated CSV, FR14 Domain, Main Report, README, checklist, and aggregate counts. The image was visible in chat and was later matched to `C:\Users\Admin\Pictures\Screenshots\Screenshot (1357).png`, then copied to `screenshots/TC-FR14-DT-01.png` at the user's request.
 - Review: The screenshot supports the expected result that the category list loads and displays each listed category once. No application data was modified. One of eight FR-14 cases is now Passed; seven remain Not Executed.
 - Files affected: `screenshots/TC-FR14-DT-01.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-027 - Record execution of TC-FR14-DT-02
+- Tool: ChatGPT (Codex).
+- Date/time: 2026-10-16 (Asia/Saigon).
+- User prompt: The user supplied a screenshot showing the EShop Admin category list after adding `FR14-Test-NTHH-01`.
+- Output: Marked TC-FR14-DT-02 Passed because the new category appeared as ID #4 and remained present after the instructed refresh. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1358).png` to `screenshots/TC-FR14-DT-02.png`; updated the CSV, FR14 Domain, Main Report, README, checklist and aggregate counts.
+- Review: The screenshot shows the new uniquely named category alongside all three seeded categories. The disposable category is retained for TC-FR14-DT-03.
+- Files affected: `screenshots/TC-FR14-DT-02.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
