@@ -211,3 +211,10 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - Output: Reviewed the SUT FR-14/SEC-03 requirements, category API specification, and admin UI source; prepared 5 Domain and 3 BVA cases in the CSV, all Not Executed. Updated FR14 analysis and aggregate report counts. The source review identified the SRS/API/UI update-operation discrepancy and led to no execution-based bug claims.
 - Review: Student must execute the cases manually and provide screenshots/results. Whitespace-only rejection remains an assumption; the API PUT case is labeled as API-contract coverage because the UI and SRS operation list omit update.
 - Files affected: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/FR14_BVA.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-026 - Record execution of TC-FR14-DT-01
+- Tool: ChatGPT (Codex).
+- Date/time: 2026-10-16 (Asia/Saigon).
+- User prompt: The user supplied a screenshot of the EShop Admin category page.
+- Output: Marked TC-FR14-DT-01 Passed because the page displayed category IDs #1 Điện thoại, #2 Laptop, and #3 Phụ kiện once each. Updated CSV, FR14 Domain, Main Report, README, checklist, and aggregate counts. The image was visible in chat and was later matched to `C:\Users\Admin\Pictures\Screenshots\Screenshot (1357).png`, then copied to `screenshots/TC-FR14-DT-01.png` at the user's request.
+- Review: The screenshot supports the expected result that the category list loads and displays each listed category once. No application data was modified. One of eight FR-14 cases is now Passed; seven remain Not Executed.
+- Files affected: `screenshots/TC-FR14-DT-01.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
