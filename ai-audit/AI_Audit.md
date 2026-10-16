@@ -232,3 +232,10 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - Output: Marked TC-FR14-DT-03 Passed because the disposable test category was absent and seeded categories #1 Điện thoại, #2 Laptop, and #3 Phụ kiện remained. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1359).png` to `screenshots/TC-FR14-DT-03.png`; updated the CSV, FR14 Domain, Main Report, README, checklist and aggregate counts.
 - Review: The screenshot confirms only the intended test category was removed. Five of eight FR-14 cases remain Not Executed.
 - Files affected: `screenshots/TC-FR14-DT-03.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-029 - Record skip decision for TC-FR14-DT-04
+- Tool: ChatGPT (Codex).
+- Date/time: 2026-10-16 (Asia/Saigon).
+- User prompt: “skip TC này”.
+- Output: Recorded TC-FR14-DT-04 as skipped by user request and kept its status Not Executed. No API request was sent, no evidence was fabricated, and aggregate execution counts did not change. Updated the test case CSV, FR14 Domain, Main Report, checklist, and this audit.
+- Review: This case covers the documented category PUT API; the user elected to skip it. This is not a Pass, Fail, or bug finding.
+- Files affected: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
