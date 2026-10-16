@@ -1,0 +1,6 @@
+﻿Git commit log chưa được xuất.
+
+Sau khi tạo các commit thật cho từng bước kiểm thử của từng tính năng, xuất log bằng:
+git log --oneline --decorate > git-log.txt
+
+Không tự điền commit giả. Lệnh này cần chạy trong repository Git chứa lịch sử bài làm.
