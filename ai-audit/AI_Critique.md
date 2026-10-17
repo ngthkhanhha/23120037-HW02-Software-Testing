@@ -1,7 +1,9 @@
-# AI Critique — FR-02 và FR-06
+# AI Critique — HW02
 
-Trong FR-02, AI giúp phân hoạch dữ liệu đăng nhập và gợi ý các mốc 2/3 lần sai, 29/30/31 giây. Tuy nhiên, một lần đăng nhập sai làm bộ đếm tăng từ 0 lên 2; hệ thống sau đó khóa trước lần sai thứ ba. Nếu chỉ suy luận từ yêu cầu hoặc giao diện, AI có thể bỏ sót tương tác này. Ảnh Network xác nhận mã HTTP nhưng không chứng minh chính xác thời điểm gửi, nên phép đo quanh 29/30 giây chỉ là xấp xỉ.
+Ở FR-02, AI giúp phân hoạch dữ liệu đăng nhập và gợi ý kiểm tra quanh ngưỡng khóa. Chỉ xem thông báo giao diện không đủ phát hiện một lần đăng nhập sai làm bộ đếm tăng hai lần; cần đối chiếu trạng thái lưu và mã nguồn. Thời gian khóa 180 giây cũng cần được xác nhận bằng cấu hình backend.
 
-Ở FR-06, thông báo “Thành công” không chứng minh sản phẩm được thêm đúng số lượng: với `-1`, giỏ hiển thị dòng hàng số lượng 1. Ảnh thiếu trạng thái trước không cho biết chính xác số lượng thay đổi bao nhiêu. Kiểm tra hai sản phẩm thuộc danh mục khác nhau giúp tái hiện lỗi thiếu danh mục.
+Ở FR-06, thông báo “Thành công” không chứng minh số lượng được thêm đúng: với đầu vào `-1`, giỏ hiển thị mặt hàng số lượng 1. Ảnh thiếu trạng thái trước nên không thể suy ra chính xác lượng thay đổi.
 
-AI bỏ sót vì không thấy đầy đủ trạng thái tài khoản/giỏ, ảnh thiếu baseline và dữ liệu thay đổi giữa các ca. Tôi học được cách đặt tiền điều kiện, cô lập dữ liệu, lưu ảnh trước/sau và kiểm tra response thật. AI giúp tổ chức miền, nhưng người kiểm thử phải xác minh kết quả, nêu giới hạn bằng chứng và không biến giả thuyết thành bug hay kết luận Pass/Fail.
+FR-08 cần được kiểm tra xuyên suốt giao diện, request và lịch sử đơn hàng. Tổng tiền sửa được ở trình duyệt chưa chứng minh backend lưu sai; phải đối chiếu giá trị quanh `E` với đơn đã tạo. Ở FR-14, tên rỗng được lưu và người dùng thường tạo được danh mục, trái với yêu cầu. Ba dấu cách là Inconclusive vì đặc tả chưa quy định cách xử lý.
+
+AI hữu ích để tổ chức miền và tạo khung ca, nhưng có thể bỏ sót trạng thái nền, ranh giới client/server hoặc giả định chưa có trong yêu cầu. Tôi học được phải đối chiếu kỳ vọng với SRS, cô lập dữ liệu, lưu bằng chứng trước/sau và chỉ kết luận khi có căn cứ. Người kiểm thử chịu trách nhiệm cuối cùng về trạng thái và báo cáo bug.
