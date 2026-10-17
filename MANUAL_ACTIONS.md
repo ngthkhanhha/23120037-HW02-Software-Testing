@@ -33,5 +33,6 @@ Tệp này chỉ liệt kê việc cần tài khoản, xác nhận cá nhân/nh�
 ## Trước khi nộp
 
 - [ ] Điền bảng tự đánh giá và tổng điểm trong `README.md` theo đánh giá của bạn.
-- [ ] Thêm link video demo hoặc ghi rõ không có; kiểm tra rubric xem Agent Skill/video áp dụng ra sao.
+- [x] Agent Skill created at `agent-skills/domain-bva-testing/SKILL.md`.
+- [ ] Record the demo video link if the rubric requires it; the Skill is included in this repository.
 - [ ] Xuất PDF cho báo cáo chính, AI Audit và AI Critique sau khi nội dung được chốt.

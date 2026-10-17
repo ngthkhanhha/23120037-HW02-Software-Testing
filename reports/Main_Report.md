@@ -125,7 +125,7 @@ Summary from the recorded test cases; each case has one status and the totals re
 - **AI Critique:** [`../ai-audit/AI_Critique.md`](../ai-audit/AI_Critique.md) — final critique must be 200–300 words and grounded in this testing work.
 - **Bug report and issue evidence:** [`../bug-reports/bugs.md`](../bug-reports/bugs.md); screenshots in [`../screenshots/`](../screenshots/).
 - **Git commit log:** [`../git-log.txt`](../git-log.txt) — export from actual commits in the personal assignment repository; do not fabricate history.
-- **Agent Skill and demonstration video:** [add files/links if created/submitted].
+- **Agent Skill:** [`domain-bva-testing/SKILL.md`](../agent-skills/domain-bva-testing/SKILL.md). YouTube demonstration video link: pending recording.
 
 ## 11. References
 

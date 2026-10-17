@@ -32,7 +32,7 @@
 - **AI Critique:** [`ai-audit/AI_Critique.md`](ai-audit/AI_Critique.md). Bài cuối phải dài 200–300 từ.
 - **Git commit log:** [`git-log.txt`](git-log.txt), exported from real commits in the personal assignment repository.
 - **Việc cần sinh viên hoàn tất:** [`MANUAL_ACTIONS.md`](MANUAL_ACTIONS.md) — xác nhận phân pool, tạo GitHub Issues, xác nhận nhật ký AI, hoàn thiện các phần cá nhân và đóng gói.
-- Agent Skill/video demo: [sinh viên bổ sung liên kết nếu có; kiểm tra rubric để xác nhận phần này áp dụng cho bài nộp].
+- Agent Skill: [`agent-skills/domain-bva-testing/SKILL.md`](agent-skills/domain-bva-testing/SKILL.md). The YouTube demo video link is still pending recording.
 
 ## Tổng kết kiểm thử
 
