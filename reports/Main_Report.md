@@ -29,8 +29,8 @@
 | Hạng mục | Giá trị |
 |---|---|
 | Hệ điều hành | Windows 11; phiên bản/build không ghi nhận |
-| Trình duyệt và phiên bản | Google Chrome; phiên bản không ghi nhận |
-| Thiết bị/giả lập di động và hệ điều hành | iPhone, Expo Go SDK 57; phiên bản iOS không ghi nhận |
+| Trình duyệt và phiên bản | Google Chrome 155.0.8059.84 |
+| Thiết bị/giả lập di động và hệ điều hành | iPhone 12 Pro Max, iOS 27.0.1, Expo Go SDK 57 |
 | Backend/API | `http://localhost:3000`; phiên bản/commit không ghi nhận |
 | Frontend Web | Vite — `http://localhost:5173/` |
 | Frontend Admin | `http://localhost:5174/`; phiên bản không ghi nhận |
