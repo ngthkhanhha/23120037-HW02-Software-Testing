@@ -1,4 +1,4 @@
-# Mobile — FR-06 Xem chi tiết sản phẩm — Domain Testing
+# Mobile — FR-06 Xem chi tiết sản phẩm — Phân tích miền
 
 ## Thông tin
 
@@ -37,7 +37,7 @@
 3. Với số lượng, phân miền theo đặc tả: số nguyên dương hợp lệ và các lớp không hợp lệ (0, âm, thập phân, chữ, rỗng). Chọn ca đại diện ở Domain/BVA, không tự đặt cận trên vì yêu cầu không quy định.
 4. Với thao tác thêm giỏ, kiểm tra phản hồi trên màn hình và xác nhận sản phẩm/số lượng trong giỏ. So sánh baseline khi có; nếu thiếu baseline thì chỉ ghi trạng thái nhìn thấy, không suy luận lượng thay đổi.
 
-## AI gap analysis (rà soát bổ sung)
+## Phân tích khoảng trống (rà soát bổ sung)
 
 Giới hạn: không tìm thấy một bộ ứng viên kiểm thử ban đầu do AI tạo riêng trong hồ sơ để so sánh từng mục. Đây là rà soát khoảng trống bao phủ hiện tại; không khẳng định các mục dưới đây chắc chắn đã bị AI bỏ sót.
 

@@ -1,4 +1,4 @@
-# Mobile — FR-06 Xem chi tiết sản phẩm — Boundary Value Analysis
+# Mobile — FR-06 Xem chi tiết sản phẩm — Phân tích giá trị biên
 
 ## Biên được đặc tả
 
@@ -27,8 +27,8 @@ Cả 7 ca BVA đã được chạy trên iPhone: **2 Passed** (BVA-02, BVA-03), 
 
 ## Ghi chú thực thi
 
-Cả 7 ca BVA được chạy trên iPhone với Expo Go SDK 57; kết nối backend qua LAN hoạt động. Chi tiết actual result, status và evidence của từng ca nằm trong [`../test-cases/test-cases.csv`](../test-cases/test-cases.csv).
+Cả 7 ca BVA được chạy trên iPhone với Expo Go SDK 57; kết nối backend qua LAN hoạt động. Chi tiết kết quả thực tế, trạng thái và bằng chứng của từng ca nằm trong [`../test-cases/test-cases.csv`](../test-cases/test-cases.csv).
 
 Trong lần thử ban đầu của BVA-04, bàn phím iPhone không có phím dấu trừ; sau đó ca đã được chạy lại và ảnh hiển thị `-1`. Cách nhập dấu trừ trong lần chạy thành công không được ghi lại; ảnh bàn phím ban đầu được giữ làm ghi chú thao tác: [`../screenshots/TC-FR06-MOB-BVA-04-keyboard.jpg`](../screenshots/TC-FR06-MOB-BVA-04-keyboard.jpg).
 
-FR-06 không quy định cận trên cho số lượng nên không tạo test case max. Với BVA-05/06 và các trường hợp không có baseline, báo cáo chỉ ghi nhận feedback và trạng thái giỏ nhìn thấy, không kết luận quantity delta.
+FR-06 không quy định cận trên cho số lượng nên không tạo test case cho giá trị tối đa. Với BVA-05/06 và các trường hợp không có baseline, báo cáo chỉ ghi nhận phản hồi và trạng thái giỏ nhìn thấy, không kết luận mức thay đổi số lượng.\n

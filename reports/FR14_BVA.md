@@ -1,13 +1,13 @@
-# FR-14 - Boundary Value Analysis
+# FR-14 — Phân tích giá trị biên
 
-## Boundaries supported by the requirement
+## Các biên có căn cứ trong yêu cầu
 
-FR-14 says a category name is required and cannot be empty. It provides no maximum length and no explicit whitespace-trimming rule. The zero-character boundary and shortest non-empty value are testable. Whitespace-only input is an interpretation check and should not be declared a bug without confirmation.
+FR-14 quy định tên danh mục là bắt buộc và không được để trống. Yêu cầu không nêu độ dài tối đa hoặc quy tắc cắt khoảng trắng cụ thể. Có thể kiểm tra biên chuỗi rỗng (0 ký tự) và giá trị không rỗng ngắn nhất. Đầu vào chỉ có khoảng trắng là trường hợp cần xác nhận cách diễn giải; không kết luận đó là bug nếu chưa có xác nhận.
 
-| ID | Boundary/input | Expected result | Status
+| ID | Biên/đầu vào | Kết quả mong đợi | Trạng thái và kết quả |
 |---|---|---|---|
-| TC-FR14-BVA-01 | Empty string (0 characters) | Reject; no category is created. | **Failed** - submitting the blank form created empty category #4; it was removed after evidence capture. Evidence: [`TC-FR14-BVA-01.png`](../screenshots/TC-FR14-BVA-01.png). |
-| TC-FR14-BVA-02 | Three spaces, no visible characters | Assumption: reject as blank; confirm requirement interpretation. | **Inconclusive** - accepted and stored exactly three spaces; no bug claimed because FR-14 does not define whitespace trimming. Evidence: [`TC-FR14-BVA-02.png`](../screenshots/TC-FR14-BVA-02.png). |
-| TC-FR14-BVA-03 | One non-whitespace character (`A`) | Accept; clean up the disposable category after capture. | **Passed** - `A` was accepted and stored as category #6; the test category was removed after evidence capture. Evidence: [`TC-FR14-BVA-03.png`](../screenshots/TC-FR14-BVA-03.png). |
+| TC-FR14-BVA-01 | Chuỗi rỗng (0 ký tự) | Từ chối; không tạo danh mục. | **Failed** — gửi biểu mẫu rỗng đã tạo danh mục #4 không có tên; mục này đã được xóa sau khi chụp bằng chứng. Bằng chứng: [`TC-FR14-BVA-01.png`](../screenshots/TC-FR14-BVA-01.png). |
+| TC-FR14-BVA-02 | Ba dấu cách, không có ký tự nhìn thấy | Giả định: từ chối như chuỗi rỗng; cần xác nhận cách hiểu yêu cầu. | **Inconclusive** — ứng dụng chấp nhận và lưu đúng ba dấu cách; không kết luận bug vì FR-14 không quy định việc cắt khoảng trắng. Bằng chứng: [`TC-FR14-BVA-02.png`](../screenshots/TC-FR14-BVA-02.png). |
+| TC-FR14-BVA-03 | Một ký tự không phải khoảng trắng (`A`) | Chấp nhận; xóa danh mục thử nghiệm sau khi chụp bằng chứng. | **Passed** — `A` được chấp nhận và lưu thành danh mục #6; mục thử nghiệm được xóa sau khi lưu bằng chứng. Bằng chứng: [`TC-FR14-BVA-03.png`](../screenshots/TC-FR14-BVA-03.png). |
 
-There is no source-defined maximum-length boundary, so max-1/max/max+1 values are not designed. Do not infer a limit from an HTML input or database behavior. Detailed steps are in the master CSV.
+Không có giới hạn độ dài tối đa trong nguồn yêu cầu, nên không thiết kế giá trị max-1/max/max+1. Không suy ra giới hạn từ input HTML hoặc hành vi cơ sở dữ liệu. Các bước chi tiết nằm trong CSV tổng.

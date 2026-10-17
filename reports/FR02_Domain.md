@@ -1,12 +1,12 @@
-﻿# FR-02 — Domain Testing
+# FR-02 — Domain Testing
 
 ## Thông tin
 
 - Nền tảng: Web
-- Yêu cầu nguồn: EShop System Requirements Specification, mục FR-02 trong `README.md` của repo
+- Yêu cầu nguồn: Đặc tả yêu cầu hệ thống EShop, mục FR-02 trong `README.md` của repo
 - Trạng thái: Đã hoàn tất phân tích và thực thi 8/10 test case; 4 Passed, 4 Failed, 2 Not Executed. Chi tiết và lý do các TC chưa chạy được ghi trong bảng kết quả bên dưới và `../test-cases/test-cases.csv`.
 
-## Requirements Under Test
+## Yêu cầu được kiểm thử
 
 - Người dùng đăng nhập bằng email và mật khẩu.
 - Sau mỗi lần đăng nhập thất bại, bộ đếm số lần thất bại tăng đúng 1.
@@ -56,7 +56,7 @@ Các test case chi tiết được ghi trong [`../test-cases/test-cases.csv`](..
 3. Kết hợp các miền thành ca kiểm thử đại diện, đồng thời giữ riêng các chuyển trạng thái cần quan sát (nhập sai, khóa, đăng nhập đúng, nhận JWT và gửi Bearer token).
 4. Đối chiếu kết quả với giao diện, Network, cơ sở dữ liệu chỉ đọc và mã nguồn khi cần phân biệt lỗi hiển thị với lỗi xử lý phía server. Ghi Failed chỉ khi có sai khác xác định được với yêu cầu.
 
-## AI gap analysis (rà soát bổ sung)
+## Phân tích khoảng trống do AI đề xuất (rà soát bổ sung)
 
 Giới hạn: nhật ký và hồ sơ hiện có không lưu một bộ ứng viên ban đầu do AI tạo riêng để đối chiếu từng mục. Vì vậy, phần dưới đây là rà soát khoảng trống bao phủ của bộ kiểm thử hiện tại; không khẳng định những điểm này chắc chắn đã bị AI bỏ sót.
 
@@ -64,9 +64,9 @@ Giới hạn: nhật ký và hồ sơ hiện có không lưu một bộ ứng vi
 
 Các điểm còn thiếu hoặc cần hoàn tất:
 
-- **Ưu tiên cao — chạy lại BVA-01 và BVA-06 bằng trạng thái tài khoản sạch, cô lập.** BVA-01 bị bỏ qua do bộ đếm seeded đã ở mức 2; BVA-06 tại khoảng 31 giây chưa chạy. Hiện chưa có bằng chứng thực nghiệm đầy đủ cho đúng hai điểm biên này. Không dùng tài khoản dùng chung nếu việc chạy có thể khóa tài khoản ngoài dự kiến.
-- **Ưu tiên vừa — kiểm tra trường email/mật khẩu để trống và biến thể email lỗi khác** (ví dụ thiếu phần tên miền hoặc có khoảng trắng). Bộ hiện tại chỉ chạy một mẫu `ha@`; chưa có căn cứ để khẳng định toàn bộ miền lỗi định dạng được xử lý nhất quán. Đây là kiểm tra bổ sung; đặc tả chưa nêu rõ thông báo/validation riêng cho trường rỗng.
-- **Ưu tiên vừa — xác minh độc lập việc reset bộ đếm sau đăng nhập thành công qua thực thi.** Báo cáo hiện nói quy tắc đã xác minh từ mã nguồn; chưa thấy ca chạy riêng trong CSV chứng minh chuỗi sai → đúng → sai và giá trị counter sau từng bước. Giữ đây là khoảng trống bằng chứng thực thi, không phải khẳng định tính năng sai.
+- **Ưu tiên cao — chạy lại BVA-01 và BVA-06 với trạng thái tài khoản sạch, cô lập.** BVA-01 bị bỏ qua do bộ đếm seeded đã ở mức 2; BVA-06 tại khoảng 31 giây chưa chạy. Hiện chưa có bằng chứng thực nghiệm đầy đủ cho đúng hai điểm biên này. Không dùng tài khoản dùng chung nếu việc chạy có thể khóa tài khoản ngoài dự kiến.
+- **Ưu tiên vừa — kiểm tra trường email/mật khẩu để trống và các dạng email sai khác** (ví dụ thiếu phần tên miền hoặc có khoảng trắng). Bộ hiện tại chỉ chạy một mẫu `ha@`; chưa có căn cứ để khẳng định toàn bộ miền lỗi định dạng được xử lý nhất quán. Đây là kiểm tra bổ sung; đặc tả chưa nêu rõ thông báo/validation riêng cho trường rỗng.
+- **Ưu tiên vừa — xác minh độc lập việc đặt lại bộ đếm sau khi đăng nhập thành công.** Báo cáo hiện nói quy tắc đã xác minh từ mã nguồn; chưa thấy ca chạy riêng trong CSV chứng minh chuỗi sai → đúng → sai và giá trị counter sau từng bước. Giữ đây là khoảng trống bằng chứng thực thi, không phải khẳng định tính năng sai.
 - **Đã phát hiện trong bộ hiện tại:** response đăng nhập để lộ password dạng rõ (DT-06/BUG-FR02-03). Đây là phát hiện kiểm tra phản hồi bảo mật bên cạnh mục tiêu JWT/Bearer, không phải test bị bỏ sót hiện tại.
 
 Các đề xuất chưa chạy ở trên không được tính vào tổng 10 ca FR-02 hoặc các bug đã xác nhận. Cần sinh viên bổ sung/chạy và ghi kết quả nếu muốn đưa chúng vào phạm vi thực thi.
@@ -74,4 +74,3 @@ Các đề xuất chưa chạy ở trên không được tính vào tổng 10 ca
 ## Giả định và giới hạn
 
 Quy tắc reset bộ đếm đã được xác minh bằng mã nguồn; email không tồn tại và mật khẩu sai cho cùng thông báo chung đã được quan sát khi chạy test. Thời điểm chính xác bắt đầu/kết thúc khóa chưa được xác minh đầy đủ; các phép thử 29/30 giây là xấp xỉ và BVA-06 tại 31 giây chưa chạy.
-

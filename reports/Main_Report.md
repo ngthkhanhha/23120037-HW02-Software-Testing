@@ -1,143 +1,135 @@
-# HW02 — Domain Testing and Boundary Value Analysis
+# HW02 — Kiểm thử miền và phân tích giá trị biên
 
-## 1. General Information
+## 1. Thông tin chung
 
-- **Course:** Software Testing
-- **Assignment:** HW02 — Domain Testing on EShop
-- **Student ID:** 23120037
-- **Student Name:** Nguyễn Thanh Khánh Hà
-- **System Under Test (SUT):** EShop
-- **SUT source repository:** [ttbhanh/eshop-sut](https://github.com/ttbhanh/eshop-sut)
-- **Personal assignment repository:** [https://github.com/ngthkhanhha/23120037-HW02-Software-Testing](https://github.com/ngthkhanhha/23120037-HW02-Software-Testing)
-- **Shared group repository (GitHub Issues only):** [Add the group repo URL here]
-- **Local SUT copy used:** `C:\KTPM\HW02-EShop` (copied to avoid the `#` character in the original path)
-- **Testing period:** 2026-10-14 (date shown in the supplied execution screenshots)
+- **Môn học:** Kiểm thử phần mềm
+- **Bài tập:** HW02 — Kiểm thử miền trên EShop
+- **MSSV:** 23120037
+- **Sinh viên:** Nguyễn Thanh Khánh Hà
+- **Hệ thống được kiểm thử (SUT):** EShop
+- **Repo mã nguồn SUT:** [ttbhanh/eshop-sut](https://github.com/ttbhanh/eshop-sut)
+- **Repo cá nhân nộp bài:** [23120037-HW02-Software-Testing](https://github.com/ngthkhanhha/23120037-HW02-Software-Testing)
+- **Repo nhóm (chỉ dùng tạo GitHub Issues):** [Bổ sung liên kết repo nhóm]
+- **Bản SUT cục bộ đã dùng:** `C:\KTPM\HW02-EShop` (sao chép để tránh ký tự `#` trong đường dẫn ban đầu)
+- **Thời gian kiểm thử:** 2026-10-14 (ngày hiển thị trên ảnh thực thi được cung cấp)
 
-## 2. Feature Selection
+## 2. Lựa chọn tính năng
 
-| Pool | Feature ID | Feature under test | Platform | Allocation status |
+| Pool | Mã tính năng | Tính năng được kiểm thử | Nền tảng | Trạng thái phân công |
 |---|---|---|---|---|
-| A | FR-02 | Login and Account Lockout | Web | Selected |
-| B | FR-08 | Checkout | Web | Selected |
-| C | FR-14 | Category Management | Web Admin | Selected |
-| D (proposed mapping) | FR-06 | Product Detail View | Mobile (React Native / Expo) | **Needs manual confirmation:** assignment lists FR-06 under Pool A and describes Pool D as Mobile App; confirm this mapping with instructor/group before claiming one feature per pool |
+| A | FR-02 | Đăng nhập và khóa tài khoản | Web | Đã chọn |
+| B | FR-08 | Thanh toán | Web | Đã chọn |
+| C | FR-14 | Quản lý danh mục | Web Admin | Đã chọn |
+| D (dự kiến ghép) | FR-06 | Xem chi tiết sản phẩm | Mobile (React Native / Expo) | **Cần xác nhận thủ công:** đề liệt kê FR-06 trong Pool A và mô tả Pool D là Mobile App; cần xác nhận với giảng viên/nhóm trước khi khẳng định mỗi pool có một tính năng |
 
-> **FR-14 scope note:** The SRS currently states that an admin can add, view, and delete categories, and that the category name is required and cannot be empty. It does not clearly specify an update operation. Verify the UI/API and report only the operations supported by the requirement and observed application. Do not assume full CRUD behavior from the feature title alone.
+> **Ghi chú phạm vi FR-14:** SRS hiện nêu admin có thể thêm, xem và xóa danh mục; tên danh mục là bắt buộc và không được để trống. Yêu cầu chưa mô tả rõ thao tác cập nhật. Đối chiếu giao diện/API và chỉ báo cáo thao tác có căn cứ trong yêu cầu hoặc hành vi ứng dụng đã quan sát. Không mặc định tính năng có đầy đủ CRUD chỉ dựa vào tên gọi.
 
-## 3. Testing Environment and Data
+## 3. Môi trường kiểm thử và dữ liệu
 
-| Item | Value |
+| Hạng mục | Giá trị |
 |---|---|
-| Operating system | Windows 11 (verify edition/build if required) |
-| Web browser and version | Google Chrome — [record version] |
-| Mobile device/emulator and OS | iPhone, Expo Go SDK 57; iOS version not recorded in the supplied evidence |
-| Backend/API | [version/commit; URL and port] |
-| Web frontend | Vite — `http://localhost:5173/` |
-| Admin frontend | [URL/version, if used] |
-| Mobile app | Expo Go SDK 57 on iPhone; development server/API used over LAN |
-| Database and seed data | [record reset/seed procedure and test accounts used; do not include real passwords in the submitted report] |
-| Test date(s) | 2026-10-14 for the supplied FR-06 execution evidence |
+| Hệ điều hành | Windows 11 (xác minh phiên bản/build nếu đề yêu cầu) |
+| Trình duyệt và phiên bản | Google Chrome — [ghi phiên bản] |
+| Thiết bị/giả lập di động và hệ điều hành | iPhone, Expo Go SDK 57; ảnh hiện có không ghi phiên bản iOS |
+| Backend/API | [phiên bản/commit; URL và cổng] |
+| Frontend Web | Vite — `http://localhost:5173/` |
+| Frontend Admin | [URL/phiên bản nếu có dùng] |
+| Ứng dụng di động | Expo Go SDK 57 trên iPhone; máy chủ phát triển/API được truy cập qua LAN |
+| Cơ sở dữ liệu và dữ liệu seed | [ghi cách reset/seed và tài khoản thử; không ghi mật khẩu thật vào báo cáo nộp] |
+| Ngày kiểm thử | 2026-10-14 đối với bằng chứng thực thi FR-06 được cung cấp |
 
-Record environment details before execution. If the setup changes, note the change and which tests it affects.
+Ghi thông tin môi trường trước khi chạy test. Nếu thiết lập thay đổi, ghi lại thay đổi đó và các test bị ảnh hưởng.
 
-## 4. Test Design and Reporting Method
+## 4. Phương pháp thiết kế và báo cáo kiểm thử
 
-For each feature, document the analysis before execution:
+Với mỗi tính năng, ghi phân tích trước khi thực thi:
 
-1. Cite the relevant SRS requirements and any related API/UI requirements.
-2. List inputs, preconditions, and observable outcomes.
-3. Partition inputs/states into valid and invalid equivalence classes. Explain the basis for each partition and identify untested or uncertain behavior.
-4. Identify numeric, length, time, or state-transition boundaries that are explicitly specified. Select values at, immediately below, and immediately above each boundary where applicable.
-5. Do not invent limits. Mark unspecified behavior as an open question or assumption and verify it against the SRS, schema/API, or instructor clarification.
-6. Define test cases with unique IDs, preconditions, input data, steps, expected result, and requirement source in [`../test-cases/test-cases.csv`](../test-cases/test-cases.csv).
-7. Execute tests and record actual results, status, and evidence. Never label a case Passed or Failed before execution.
-8. Compare AI-suggested tests with the reviewed test set. Report actual omissions, corrections, and the reason; do not invent AI gaps.
-9. Report only reproducible deviations from a requirement as bugs. Link each bug to a GitHub Issue and screenshot evidence.
+1. Dẫn các yêu cầu SRS liên quan và yêu cầu API/giao diện đi kèm nếu có.
+2. Liệt kê đầu vào, tiền điều kiện và kết quả có thể quan sát.
+3. Phân hoạch đầu vào/trạng thái thành các lớp tương đương hợp lệ và không hợp lệ. Giải thích cơ sở phân lớp và nêu hành vi chưa kiểm tra hoặc chưa rõ.
+4. Xác định các biên số, độ dài, thời gian hoặc chuyển trạng thái được nêu rõ. Khi phù hợp, chọn giá trị tại biên, ngay dưới và ngay trên biên.
+5. Không tự đặt giới hạn. Ghi hành vi chưa quy định thành câu hỏi hoặc giả định và đối chiếu SRS, lược đồ/API hoặc xác nhận từ giảng viên.
+6. Khai báo test case có ID duy nhất, tiền điều kiện, dữ liệu, bước chạy, kết quả mong đợi và nguồn yêu cầu trong [`../test-cases/test-cases.csv`](../test-cases/test-cases.csv).
+7. Chạy test và ghi kết quả thực tế, trạng thái, bằng chứng. Không gán Passed/Failed trước khi thực thi.
+8. So sánh test do AI đề xuất với bộ test đã rà soát. Chỉ ghi thiếu sót/sửa đổi thực tế cùng lý do; không tự tạo nhận định AI bỏ sót.
+9. Chỉ báo cáo sai lệch tái hiện được so với yêu cầu là bug. Liên kết từng bug tới GitHub Issue và ảnh bằng chứng.
 
-The per-feature analysis files are linked below. Test case details and execution results are maintained in the CSV to avoid conflicting duplicate records.
+Các báo cáo phân tích từng tính năng được liên kết bên dưới. Chi tiết test case và kết quả thực thi được lưu trong CSV để tránh tạo các bản ghi trùng lặp, mâu thuẫn.
 
-## 5. Feature A — FR-02: Login and Account Lockout (Web)
+## 5. Tính năng A — FR-02: Đăng nhập và khóa tài khoản (Web)
 
-- Requirement source: SRS, FR-02; related security/authentication requirements as applicable.
-- Domain analysis: [FR02_Domain.md](FR02_Domain.md)
-- Boundary Value Analysis: [FR02_BVA.md](FR02_BVA.md)
-- Test case IDs: TC-FR02-DT-01, TC-FR02-DT-02, TC-FR02-DT-03, TC-FR02-DT-04, TC-FR02-DT-06, TC-FR02-BVA-01, TC-FR02-BVA-02, TC-FR02-BVA-04, TC-FR02-BVA-05, TC-FR02-BVA-06.
-- Execution summary to date: 8 executed; 4 passed and 4 failed. Two are not executed: TC-FR02-BVA-01 was skipped because the seeded account counter was already 2, and TC-FR02-BVA-06 has not yet been run.
-- Confirmed bugs: BUG-FR02-01 (malformed email not HTML5-blocked); BUG-FR02-02 (failed-login counter adds 2); BUG-FR02-03 (login response exposes plaintext password); BUG-FR02-04 (lock duration is 180 seconds instead of 30). GitHub Issues: pending.
-- Evidence: [`../screenshots/TC-FR02-DT-01.png`](../screenshots/TC-FR02-DT-01.png); TC-FR02-DT-02 evidence: [`../screenshots/TC-FR02-DT-02.png`](../screenshots/TC-FR02-DT-02.png); TC-FR02-DT-03 evidence: [`../screenshots/TC-FR02-DT-03.png`](../screenshots/TC-FR02-DT-03.png); TC-FR02-DT-04 evidence: [`../screenshots/TC-FR02-DT-04.png`](../screenshots/TC-FR02-DT-04.png). TC-FR02-DT-06 evidence: [`../screenshots/TC-FR02-DT-06-login-response.png`](../screenshots/TC-FR02-DT-06-login-response.png), [`../screenshots/TC-FR02-DT-06-bearer-header.png`](../screenshots/TC-FR02-DT-06-bearer-header.png). TC-FR02-BVA-02 evidence: [`../screenshots/TC-FR02-BVA-02.png`](../screenshots/TC-FR02-BVA-02.png). TC-FR02-BVA-04 evidence: [`../screenshots/TC-FR02-BVA-04.png`](../screenshots/TC-FR02-BVA-04.png). TC-FR02-BVA-05 evidence: [`../screenshots/TC-FR02-BVA-05.png`](../screenshots/TC-FR02-BVA-05.png) 
-- AI gap analysis: Coverage gaps and candidate checks are recorded in [FR02_Domain.md](FR02_Domain.md). The archived material does not contain a separate initial AI candidate set, so this is a review of current coverage rather than a claim about a specific omission by AI. BVA-01/BVA-06 remain unexecuted; candidates are not added to totals.
-## 6. Feature B — FR-08: Checkout (Web)
+- **Nguồn yêu cầu:** SRS FR-02; các yêu cầu bảo mật/xác thực liên quan nếu áp dụng.
+- **Phân tích miền:** [FR02_Domain.md](FR02_Domain.md)
+- **Phân tích giá trị biên:** [FR02_BVA.md](FR02_BVA.md)
+- **ID test case:** TC-FR02-DT-01, TC-FR02-DT-02, TC-FR02-DT-03, TC-FR02-DT-04, TC-FR02-DT-06, TC-FR02-BVA-01, TC-FR02-BVA-02, TC-FR02-BVA-04, TC-FR02-BVA-05, TC-FR02-BVA-06.
+- **Tóm tắt thực thi hiện tại:** 8 ca đã chạy; 4 Passed, 4 Failed. Hai ca chưa chạy: TC-FR02-BVA-01 được bỏ qua vì bộ đếm tài khoản seed đã là 2; TC-FR02-BVA-06 chưa được thực thi.
+- **Bug đã xác nhận:** BUG-FR02-01 (email sai định dạng không bị HTML5 chặn); BUG-FR02-02 (bộ đếm đăng nhập sai tăng 2); BUG-FR02-03 (API đăng nhập trả password dạng rõ); BUG-FR02-04 (thời gian khóa là 180 giây thay vì 30). GitHub Issues: chưa tạo.
+- **Bằng chứng:** [`../screenshots/TC-FR02-DT-01.png`](../screenshots/TC-FR02-DT-01.png); DT-02: [`../screenshots/TC-FR02-DT-02.png`](../screenshots/TC-FR02-DT-02.png); DT-03: [`../screenshots/TC-FR02-DT-03.png`](../screenshots/TC-FR02-DT-03.png); DT-04: [`../screenshots/TC-FR02-DT-04.png`](../screenshots/TC-FR02-DT-04.png). DT-06: [`../screenshots/TC-FR02-DT-06-login-response.png`](../screenshots/TC-FR02-DT-06-login-response.png), [`../screenshots/TC-FR02-DT-06-bearer-header.png`](../screenshots/TC-FR02-DT-06-bearer-header.png). BVA-02: [`../screenshots/TC-FR02-BVA-02.png`](../screenshots/TC-FR02-BVA-02.png); BVA-04: [`../screenshots/TC-FR02-BVA-04.png`](../screenshots/TC-FR02-BVA-04.png); BVA-05: [`../screenshots/TC-FR02-BVA-05.png`](../screenshots/TC-FR02-BVA-05.png).
+- **Phân tích khoảng trống do AI đề xuất:** Các khoảng trống và ca ứng viên được ghi trong [FR02_Domain.md](FR02_Domain.md). Hồ sơ lưu trữ không có bộ test ứng viên ban đầu riêng do AI tạo, nên đây là rà soát độ bao phủ hiện tại chứ không khẳng định AI đã bỏ sót một ca cụ thể. BVA-01/BVA-06 chưa chạy và không được tính vào tổng.
 
-- Requirement source: SRS, FR-08; related authentication, coupon, cart, and order requirements only where they affect checkout.
-- Domain analysis: [FR08_Domain.md](FR08_Domain.md)
-- Boundary Value Analysis: [FR08_BVA.md](FR08_BVA.md)
-- Test case IDs: TC-FR08-DT-01 through TC-FR08-DT-05; TC-FR08-BVA-01 through TC-FR08-BVA-03.
-- Execution summary: 8 designed; all 8 executed (3 Passed, 5 Failed); none Not Executed. TC-FR08-DT-01 showed the login-required alert and routed to `/login` after dismissal. Both TC-FR08-DT-01 user-provided screenshots are saved in `screenshots/`. TC-FR08-DT-02 and DT-03 checkout evidence are also saved there. DT-03 failed because the total field accepted editing; DT-04 failed because order history stored client E-1 (57,999,999 VND) instead of E (58,000,000 VND). DT-04 evidence shows HTTP 200 and order #1; payload/orderId details are not legible. After the success page, DT-05 showed that both cart items remained. BVA-01 independently reproduced the E-1 amount issue: order #3 was stored at 57,999,999 VND; BVA-02 Passed: order #4 stored E=58,000,000 VND; BVA-03 Failed: order #5 stored E+1 (58,000,001 VND), also reproducing the client-total trust issue.
-- AI gap analysis: Design review is recorded in [FR08_Domain.md](FR08_Domain.md). Coupons are excluded as FR-09; empty-cart and request-failure behavior remain open because FR-08 does not define their expected result.
-- Confirmed bug: BUG-FR08-01 (Checkout total is directly editable); BUG-FR08-02 (backend persisted client-supplied E-1 total); BUG-FR08-03 (cart remained populated after successful checkout).
-- Evidence: DT-01 through DT-05 and BVA-01 through BVA-03 evidence is saved under `../screenshots/`; all evidence paths are listed in the test case CSV and linked from the per-feature reports.
-- Source review note (not a test result): TC-FR08-DT-03 confirmed that the total input is editable and the displayed total changes when edited (BUG-FR08-01). DT-04 confirmed that the backend persisted the edited E-1 value; DT-05 confirmed the cart remained populated after checkout success.
+## 6. Tính năng B — FR-08: Thanh toán (Web)
 
-## 7. Feature C — FR-14: Category Management (Web Admin)
+- **Nguồn yêu cầu:** SRS FR-08; các yêu cầu xác thực, mã giảm giá, giỏ hàng và đơn hàng chỉ được xét khi ảnh hưởng đến thanh toán.
+- **Phân tích miền:** [FR08_Domain.md](FR08_Domain.md)
+- **Phân tích giá trị biên:** [FR08_BVA.md](FR08_BVA.md)
+- **ID test case:** TC-FR08-DT-01 đến TC-FR08-DT-05; TC-FR08-BVA-01 đến TC-FR08-BVA-03.
+- **Tóm tắt thực thi:** Đã thiết kế và chạy đủ 8 ca (3 Passed, 5 Failed; không có Not Executed). DT-01 hiển thị cảnh báo yêu cầu đăng nhập và chuyển tới `/login` sau khi đóng cảnh báo. Đã lưu cả hai ảnh người dùng cung cấp cho DT-01 trong `screenshots/`. Ảnh thanh toán của DT-02/DT-03 cũng được lưu tại đó. DT-03 Failed vì sửa được trường tổng tiền; DT-04 Failed vì lịch sử đơn lưu `E-1` từ client (57.999.999 VND) thay vì `E` (58.000.000 VND). Bằng chứng DT-04 cho thấy HTTP 200 và đơn #1; payload/orderId không đọc rõ. Sau trang báo thành công, DT-05 cho thấy cả hai mặt hàng vẫn còn trong giỏ. BVA-01 tái hiện độc lập lỗi giá trị `E-1`: đơn #3 lưu 57.999.999 VND; BVA-02 Passed: đơn #4 lưu `E=58.000.000` VND; BVA-03 Failed: đơn #5 lưu `E+1=58.000.001` VND, cũng tái hiện việc tin tổng tiền client gửi.
+- **Phân tích khoảng trống do AI đề xuất:** Rà soát thiết kế được ghi trong [FR08_Domain.md](FR08_Domain.md). Mã giảm giá thuộc FR-09 nên không đưa vào. Hành vi giỏ rỗng và lỗi request còn bỏ ngỏ vì FR-08 chưa quy định kết quả mong đợi.
+- **Bug đã xác nhận:** BUG-FR08-01 (có thể sửa trực tiếp tổng thanh toán); BUG-FR08-02 (backend lưu tổng E-1 do client gửi); BUG-FR08-03 (giỏ vẫn còn sản phẩm sau thanh toán thành công).
+- **Bằng chứng:** Ảnh DT-01 đến DT-05 và BVA-01 đến BVA-03 nằm trong [`../screenshots/`](../screenshots/); đường dẫn từng ảnh được liệt kê trong CSV và báo cáo từng tính năng.
+- **Ghi chú rà soát mã nguồn (không phải kết quả test):** TC-FR08-DT-03 xác nhận trường tổng tiền cho phép chỉnh sửa và giao diện cập nhật theo giá trị mới (BUG-FR08-01). DT-04 xác nhận backend lưu giá trị `E-1` đã sửa; DT-05 xác nhận giỏ vẫn còn mặt hàng sau khi thanh toán thành công.
 
-- Requirement source: SRS, FR-14; FR-12 for admin access control where relevant.
-- Domain analysis: [FR14_Domain.md](FR14_Domain.md)
-- Boundary Value Analysis: [FR14_BVA.md](FR14_BVA.md)
-- Test case design: 8 cases prepared (5 Domain and 3 BVA). Execution is in progress; see status below.
-- Scope clarification: SRS FR-14 specifies add/view/delete; API specification also documents PUT, while the admin UI has no edit control. DT-04 therefore checks the documented API contract and tracks the scope discrepancy, not a UI requirement. Whitespace-only rejection is an assumption, not a confirmed requirement.
-- Execution summary: 7 of 8 cases executed: DT-01, DT-02, DT-03, and BVA-03 Passed; DT-05 and BVA-01 Failed; BVA-02 is Inconclusive because FR-14 does not define whitespace-only input. DT-04 was skipped at the user's request and remains Not Executed. All planned FR-14 BVA cases are now executed. Evidence is saved under `../screenshots/` and linked in the CSV and feature reports. BUG-FR14-01 and BUG-FR14-02 are confirmed.
-- AI gap analysis: The prepared design covers SRS operations, the related SEC-03 role boundary, the documented PUT API, and specified name boundary. Duplicate-name and referenced-category deletion behavior are unspecified and remain exploratory.
-- Confirmed bugs: BUG-FR14-01 (standard user can create categories because SEC-03 is not enforced on POST /api/categories) and BUG-FR14-02 (blank category submission creates a persisted empty-name category).
-- Evidence: DT-01 through DT-03, DT-05, and BVA-01 through BVA-03 evidence is saved under `../screenshots/`; paths are listed in the test case CSV.
+## 7. Tính năng C — FR-14: Quản lý danh mục (Web Admin)
 
-## 8. Feature D — Mobile FR-06: Product Detail View
+- **Nguồn yêu cầu:** SRS FR-14; FR-12 cho kiểm soát truy cập admin nếu liên quan.
+- **Phân tích miền:** [FR14_Domain.md](FR14_Domain.md)
+- **Phân tích giá trị biên:** [FR14_BVA.md](FR14_BVA.md)
+- **Thiết kế test case:** 8 ca (5 Domain và 3 BVA). Kết quả thực thi được tóm tắt dưới đây.
+- **Làm rõ phạm vi:** SRS FR-14 nêu Thêm/Xem/Xóa; đặc tả API cũng ghi PUT trong khi giao diện admin không có điều khiển sửa. Vì vậy DT-04 kiểm tra hợp đồng API đã công bố và ghi nhận chỗ chưa thống nhất về phạm vi, không xem đó là yêu cầu giao diện. Giả định từ chối tên chỉ có khoảng trắng chưa phải yêu cầu đã xác nhận.
+- **Tóm tắt thực thi:** Đã chạy 7/8 ca: DT-01, DT-02, DT-03 và BVA-03 Passed; DT-05 và BVA-01 Failed; BVA-02 Inconclusive vì FR-14 không quy định đầu vào chỉ có khoảng trắng. DT-04 được người dùng yêu cầu bỏ qua và vẫn ở trạng thái Not Executed. Tất cả ca BVA FR-14 theo kế hoạch đã chạy. Bằng chứng ở [`../screenshots/`](../screenshots/) và được liên kết trong CSV cùng các báo cáo tính năng. Đã xác nhận BUG-FR14-01 và BUG-FR14-02.
+- **Phân tích khoảng trống do AI đề xuất:** Thiết kế bao phủ thao tác trong SRS, ranh giới vai trò SEC-03 liên quan, API PUT đã công bố và biên tên được chỉ định. Hành vi tên trùng và xóa danh mục đang được sản phẩm tham chiếu chưa được quy định; giữ ở dạng thăm dò.
+- **Bug đã xác nhận:** BUG-FR14-01 (người dùng thường có thể tạo danh mục do SEC-03 không được áp dụng ở POST `/api/categories`) và BUG-FR14-02 (gửi tên rỗng tạo danh mục không tên được lưu).
+- **Bằng chứng:** Ảnh DT-01 đến DT-03, DT-05, BVA-01 đến BVA-03 nằm trong [`../screenshots/`](../screenshots/); CSV liệt kê từng đường dẫn.
 
-- Requirement source: SRS, FR-06 and FR-20; any mobile-specific clarification from the instructor.
-- Domain analysis: [FR06_Mobile_Domain.md](FR06_Mobile_Domain.md)
-- Boundary Value Analysis: [FR06_Mobile_BVA.md](FR06_Mobile_BVA.md)
-- Test case IDs: TC-FR06-MOB-DT-01 through TC-FR06-MOB-DT-03, TC-FR06-MOB-BVA-01 through TC-FR06-MOB-BVA-07.
-- Mobile execution setup: iPhone with Expo Go SDK 57, running `C:\KTPM\HW02-EShop\frontend-mobile-sdk57`; API configured for the laptop LAN address. Successful add-to-cart and cart views confirm the backend was reachable. The iOS version was not captured in the available evidence.
-- Execution summary: TC-FR06-MOB-DT-01 and TC-FR06-MOB-DT-02 executed; both Failed because the product category was not displayed. TC-FR06-MOB-DT-03 Passed; TC-FR06-MOB-BVA-01 Failed because quantity 0 triggered a success alert; TC-FR06-MOB-BVA-04 Failed because quantity -1 triggered success feedback and appeared in the cart as quantity 1; TC-FR06-MOB-BVA-02 Passed at quantity 1; TC-FR06-MOB-BVA-03 Passed at quantity 2; TC-FR06-MOB-BVA-05 Failed because decimal input `1,5` produced success feedback; TC-FR06-MOB-BVA-06 Failed because `abc` produced success feedback; TC-FR06-MOB-BVA-07 Failed because an empty quantity produced success feedback and an AirPods Pro 2 cart line with quantity 1. All 10 FR-06 cases are executed: 3 Passed and 7 Failed; none are Not Executed.
-- AI gap analysis: Coverage gaps and candidate checks are recorded in [FR06_Mobile_Domain.md](FR06_Mobile_Domain.md). No separate initial AI candidate set is archived, so this does not claim a specific AI omission. Duplicate-add and decimal-dot behavior remain unexecuted candidates; unspecified missing-product behavior is exploratory. None is added to current totals.
-- Confirmed bugs: BUG-FR06-01 (category omitted) and BUG-FR06-02 (invalid quantities empty, -1, 0, `1,5`, and `abc` accepted as successful adds).
-- Evidence: [`../screenshots/TC-FR06-MOB-DT-01.jpg`](../screenshots/TC-FR06-MOB-DT-01.jpg), [`../screenshots/TC-FR06-MOB-DT-02.jpg`](../screenshots/TC-FR06-MOB-DT-02.jpg), [`../screenshots/TC-FR06-MOB-DT-03.jpg`](../screenshots/TC-FR06-MOB-DT-03.jpg), [`../screenshots/TC-FR06-MOB-BVA-01.jpg`](../screenshots/TC-FR06-MOB-BVA-01.jpg), [`../screenshots/TC-FR06-MOB-BVA-02-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-02-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-02-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-02-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-03-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-03-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-03-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-03-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-04-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-04-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-04-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-04-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-05-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-05-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-05-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-05-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-06-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-06-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-06-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-06-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-07-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-07-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-07-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-07-cart.jpg)
+## 8. Tính năng D — FR-06 Mobile: Xem chi tiết sản phẩm
 
-## 9. Test Summary Report
+- **Nguồn yêu cầu:** SRS FR-06 và FR-20; làm rõ đặc thù di động từ giảng viên nếu có.
+- **Phân tích miền:** [FR06_Mobile_Domain.md](FR06_Mobile_Domain.md)
+- **Phân tích giá trị biên:** [FR06_Mobile_BVA.md](FR06_Mobile_BVA.md)
+- **ID test case:** TC-FR06-MOB-DT-01 đến TC-FR06-MOB-DT-03, TC-FR06-MOB-BVA-01 đến TC-FR06-MOB-BVA-07.
+- **Thiết lập thực thi di động:** iPhone dùng Expo Go SDK 57, chạy `C:\KTPM\HW02-EShop\frontend-mobile-sdk57`; API cấu hình theo địa chỉ LAN của laptop. Thêm sản phẩm vào giỏ thành công và xem được giỏ xác nhận backend có thể truy cập. Bằng chứng hiện có không ghi phiên bản iOS.
+- **Tóm tắt thực thi:** TC-FR06-MOB-DT-01 và DT-02 đã chạy, cả hai Failed vì không hiển thị danh mục sản phẩm. DT-03 Passed. BVA-01 Failed vì số lượng 0 vẫn hiện thông báo thành công; BVA-04 Failed vì số lượng -1 vẫn được báo thành công và xuất hiện trong giỏ với số lượng 1; BVA-02 Passed tại số lượng 1; BVA-03 Passed tại số lượng 2; BVA-05 Failed vì đầu vào thập phân `1,5` vẫn được báo thành công; BVA-06 Failed vì `abc` vẫn được báo thành công; BVA-07 Failed vì để trống số lượng vẫn có phản hồi thành công và giỏ xuất hiện dòng AirPods Pro 2 số lượng 1. Đã chạy cả 10 ca FR-06: 3 Passed, 7 Failed, không có Not Executed.
+- **Phân tích khoảng trống do AI đề xuất:** Các khoảng trống và ca ứng viên nằm trong [FR06_Mobile_Domain.md](FR06_Mobile_Domain.md). Không lưu riêng bộ ứng viên AI ban đầu, vì vậy không khẳng định có thiếu sót cụ thể của AI. Kiểm tra thêm trường hợp thêm trùng sản phẩm và dấu thập phân dạng chấm chưa chạy; sản phẩm không tồn tại chưa được quy định nên chỉ là thăm dò. Không tính các đề xuất vào tổng hiện tại.
+- **Bug đã xác nhận:** BUG-FR06-01 (thiếu danh mục) và BUG-FR06-02 (chấp nhận số lượng không hợp lệ gồm rỗng, -1, 0, `1,5`, `abc` rồi phản hồi thêm thành công).
+- **Bằng chứng:** [`../screenshots/TC-FR06-MOB-DT-01.jpg`](../screenshots/TC-FR06-MOB-DT-01.jpg), [`../screenshots/TC-FR06-MOB-DT-02.jpg`](../screenshots/TC-FR06-MOB-DT-02.jpg), [`../screenshots/TC-FR06-MOB-DT-03.jpg`](../screenshots/TC-FR06-MOB-DT-03.jpg), [`../screenshots/TC-FR06-MOB-BVA-01.jpg`](../screenshots/TC-FR06-MOB-BVA-01.jpg), [`../screenshots/TC-FR06-MOB-BVA-02-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-02-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-02-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-02-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-03-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-03-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-03-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-03-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-04-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-04-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-04-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-04-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-05-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-05-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-05-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-05-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-06-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-06-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-06-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-06-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-07-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-07-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-07-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-07-cart.jpg).
 
-Summary from the recorded test cases; each case has one status and the totals reconcile.
+## 9. Báo cáo tổng hợp kiểm thử
 
-| Measure | Count |
+Tổng hợp từ kết quả đã ghi; mỗi ca có một trạng thái và tổng số liệu đã được đối soát.
+
+| Chỉ số | Số lượng |
 |---|---:|
-| Features in scope | 4 |
-| Test cases designed | 36 |
-| Test cases executed | 33 |
+| Tính năng trong phạm vi | 4 |
+| Test case đã thiết kế | 36 |
+| Test case đã thực thi | 33 |
 | Passed | 14 |
 | Failed | 18 |
 | Not Executed | 3 |
 | Inconclusive | 1 |
-| Confirmed bugs | 11 |
+| Bug đã xác nhận | 11 |
 
-**Reconciliation:** 36 designed = 14 Passed + 18 Failed + 3 Not Executed + 1 Inconclusive. The totals reconcile. FR-14 contributes 8 designed cases; four are Passed, two Failed (DT-05 and BVA-01), BVA-02 is Inconclusive because whitespace-only behavior is unspecified, and DT-04 remains Not Executed by user skip.
+**Đối soát:** 36 ca thiết kế = 14 Passed + 18 Failed + 3 Not Executed + 1 Inconclusive. Tổng khớp. FR-14 có 8 ca: 4 Passed, 2 Failed (DT-05 và BVA-01), BVA-02 Inconclusive vì hành vi chỉ có khoảng trắng chưa được quy định, DT-04 Not Executed do người dùng yêu cầu bỏ qua.
 
-## 10. AI Use and Supporting Deliverables
+## 10. Việc sử dụng AI và tài liệu hỗ trợ
 
-- **AI Audit Report:** [`../ai-audit/AI_Audit.md`](../ai-audit/AI_Audit.md) — record each AI interaction with tool, date/time, full prompt, output, and student review.
-- **AI Critique:** [`../ai-audit/AI_Critique.md`](../ai-audit/AI_Critique.md) — final critique must be 200–300 words and grounded in this testing work.
-- **Bug report and issue evidence:** [`../bug-reports/bugs.md`](../bug-reports/bugs.md); screenshots in [`../screenshots/`](../screenshots/).
-- **Git commit log:** [`../git-log.txt`](../git-log.txt) — export from actual commits in the personal assignment repository; do not fabricate history.
-- **Agent Skill:** [`domain-bva-testing/SKILL.md`](../agent-skills/domain-bva-testing/SKILL.md). YouTube demonstration video link: pending recording.
+- **Báo cáo kiểm tra AI:** [`../ai-audit/AI_Audit.md`](../ai-audit/AI_Audit.md) — ghi công cụ, ngày/giờ, prompt đầy đủ, phản hồi và phần rà soát của sinh viên cho mỗi lần tương tác.
+- **Nhận xét AI:** [`../ai-audit/AI_Critique.md`](../ai-audit/AI_Critique.md) — bản cuối cần 200–300 từ và gắn với quá trình kiểm thử này.
+- **Báo cáo lỗi và bằng chứng:** [`../bug-reports/bugs.md`](../bug-reports/bugs.md); ảnh nằm trong [`../screenshots/`](../screenshots/).
+- **Nhật ký commit Git:** [`../git-log.txt`](../git-log.txt) — xuất từ commit thật của repo cá nhân; không tạo lịch sử giả.
+- **Agent Skill:** [`domain-bva-testing/SKILL.md`](../agent-skills/domain-bva-testing/SKILL.md). Liên kết video demo YouTube: cần quay và bổ sung nếu rubric yêu cầu.
 
-## 11. References
+## 11. Tài liệu tham khảo
 
-- [EShop SUT repository](https://github.com/ttbhanh/eshop-sut), especially the System Requirements Specification and setup guide.
-- Course lectures on Domain Testing and Boundary Value Analysis: [identify lecture/material and date/version].
-- Other sources actually used: [list source and access date].
-
-
-
-
-
-
-
-
-
+- [Repo EShop SUT](https://github.com/ttbhanh/eshop-sut), đặc biệt là Đặc tả yêu cầu hệ thống và hướng dẫn cài đặt.
+- Bài giảng môn Kiểm thử miền và Phân tích giá trị biên: [ghi tên/tài liệu và ngày/phiên bản].
+- Nguồn khác đã thực sự sử dụng: [ghi nguồn và ngày truy cập].

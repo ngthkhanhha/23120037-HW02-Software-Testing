@@ -1,86 +1,85 @@
 ---
 name: domain-bva-testing
 description: >-
-  Design and review software test cases using equivalence partitioning and
-  Boundary Value Analysis. Use when analyzing a feature requirement, selecting
-  representative inputs, documenting expected results, or reviewing execution
-  evidence and test outcomes.
+  Thiết kế và rà soát ca kiểm thử phần mềm bằng phân hoạch tương đương và
+  phân tích giá trị biên. Dùng khi phân tích yêu cầu tính năng, chọn dữ liệu
+  đại diện, ghi kết quả mong đợi hoặc rà soát bằng chứng và kết quả kiểm thử.
 ---
 
-# Domain Testing and Boundary Value Analysis
+# Kiểm thử miền và phân tích giá trị biên
 
-Use this workflow to create traceable, defensible test cases from a feature requirement. Treat the requirement, source code, UI/API behavior, and the tester assumptions as separate evidence sources.
+Dùng quy trình này để tạo ca kiểm thử có thể truy vết và có căn cứ từ yêu cầu tính năng. Phân biệt rõ yêu cầu, mã nguồn, hành vi giao diện/API và giả định của người kiểm thử.
 
-## 1. Establish the oracle
+## 1. Xác lập cơ sở đánh giá
 
-1. Read the applicable requirement and its referenced security, API, UI, or data rules. Identify the exact requirement IDs and quote or paraphrase only the relevant clauses.
-2. Record each explicit constraint: data type, allowed values, requiredness, minimum/maximum, length, role, state, and expected observable result.
-3. Mark information that is missing or conflicting as **unspecified**. Inspect the implementation or schema for context, but do not silently turn implementation behavior into a requirement. Ask for clarification when the expected behavior cannot be established.
-4. For an unspecified behavior, either label the test exploratory or leave its expected result unresolved. Do not mark it Passed/Failed or report a bug without a justified oracle.
+1. Đọc yêu cầu áp dụng và các quy tắc bảo mật, API, giao diện hoặc dữ liệu liên quan. Ghi chính xác mã yêu cầu và chỉ trích dẫn/diễn giải những điều khoản cần thiết.
+2. Ghi lại từng ràng buộc tường minh: kiểu dữ liệu, giá trị được phép, tính bắt buộc, min/max, độ dài, vai trò, trạng thái và kết quả quan sát mong đợi.
+3. Đánh dấu thông tin thiếu hoặc mâu thuẫn là **chưa được quy định**. Có thể kiểm tra mã nguồn hoặc lược đồ để hiểu bối cảnh, nhưng không âm thầm biến hành vi đang có thành yêu cầu. Hỏi để làm rõ khi chưa xác định được kết quả mong đợi.
+4. Với hành vi chưa được quy định, gắn nhãn kiểm thử thăm dò hoặc để ngỏ kết quả mong đợi. Không đánh Passed/Failed hay báo bug nếu chưa có cơ sở đánh giá hợp lệ.
 
-## 2. Partition the domain
+## 2. Phân hoạch miền
 
-For every input or relevant state:
+Với từng đầu vào hoặc trạng thái liên quan:
 
-1. Identify equivalence classes that should produce the same behavior.
-2. Separate valid and invalid classes only when the requirement supports that distinction.
-3. Select a representative value for each class and explain why it represents that class.
-4. Consider interactions between fields, roles, authentication, persisted state, and prior actions when they can change the outcome.
-5. Avoid redundant cases unless they check a distinct requirement or risk.
+1. Xác định các lớp tương đương dự kiến tạo ra cùng hành vi.
+2. Chỉ chia lớp hợp lệ và không hợp lệ khi yêu cầu có căn cứ cho sự phân biệt đó.
+3. Chọn một giá trị đại diện cho mỗi lớp và giải thích vì sao giá trị đó đại diện cho lớp.
+4. Xem xét tương tác giữa các trường, vai trò, xác thực, trạng thái đã lưu và thao tác trước đó nếu chúng có thể làm thay đổi kết quả.
+5. Tránh ca trùng lặp, trừ khi chúng kiểm tra một yêu cầu hoặc rủi ro khác biệt.
 
-For a category name, possible input partitions include ordinary non-empty names, empty input, whitespace-only input, and any explicitly constrained length or character set. If the requirement only says the name is required and cannot be empty, do not assume whitespace is empty after trimming unless the specification says so.
+Với tên danh mục, các lớp đầu vào có thể gồm tên thông thường không rỗng, đầu vào rỗng, chỉ có khoảng trắng, và độ dài/tập ký tự bị giới hạn rõ ràng. Nếu yêu cầu chỉ nói tên là bắt buộc và không được để trống, không mặc định rằng khoảng trắng cũng là rỗng sau khi cắt bỏ nếu đặc tả không nói vậy.
 
-## 3. Apply Boundary Value Analysis
+## 3. Áp dụng phân tích giá trị biên
 
-1. Derive boundaries from explicit requirements or verified contracts (for example, a minimum, maximum, length limit, or allowed quantity range).
-2. For a numeric boundary `b`, consider `b-1`, `b`, and `b+1` when meaningful and safe. For a range `[min,max]`, inspect values just below, at, just above each endpoint.
-3. For string length `n`, consider lengths `n-1`, `n`, and `n+1`, and empty input only when relevant.
-4. For state transitions, test immediately before and after the specified transition condition.
-5. If no limit is specified, do not invent a boundary. Record the gap and use exploratory values only with an appropriately qualified expected result.
+1. Suy ra biên từ yêu cầu tường minh hoặc hợp đồng đã xác minh (ví dụ min, max, giới hạn độ dài hoặc khoảng số lượng hợp lệ).
+2. Với biên số `b`, cân nhắc `b-1`, `b` và `b+1` khi có ý nghĩa và an toàn. Với khoảng `[min,max]`, xem xét giá trị ngay dưới, tại và ngay trên mỗi đầu mút.
+3. Với độ dài chuỗi `n`, cân nhắc độ dài `n-1`, `n`, `n+1`; chỉ kiểm tra đầu vào rỗng khi phù hợp.
+4. Với chuyển trạng thái, kiểm tra ngay trước và sau điều kiện chuyển trạng thái được quy định.
+5. Nếu không có giới hạn được nêu, không tự đặt biên. Ghi nhận khoảng trống và chỉ dùng giá trị thăm dò với kết quả mong đợi được diễn đạt thận trọng.
 
-## 4. Write executable cases
+## 4. Viết ca kiểm thử có thể thực hiện
 
-Each case should contain:
+Mỗi ca cần có:
 
-- a stable, unique ID;
-- requirement or contract source;
-- preconditions and role;
-- exact input data;
-- numbered actions that another tester can repeat;
-- an observable expected result;
-- the rationale for the partition or boundary;
-- an evidence location and, after execution, actual result and status.
+- ID duy nhất, ổn định;
+- nguồn yêu cầu hoặc hợp đồng;
+- tiền điều kiện và vai trò;
+- dữ liệu đầu vào chính xác;
+- các bước được đánh số để người khác có thể lặp lại;
+- kết quả quan sát được;
+- lý do chọn lớp tương đương hoặc giá trị biên;
+- vị trí lưu bằng chứng và, sau khi chạy, kết quả thực tế cùng trạng thái.
 
-Keep expected results testable: state the message, route, response code/body, persisted record, or state change to inspect. Do not mix expected and actual results.
+Kết quả mong đợi phải kiểm chứng được: nêu thông báo, đường dẫn, mã/trường phản hồi, bản ghi đã lưu hoặc thay đổi trạng thái cần kiểm tra. Không trộn kết quả mong đợi với kết quả thực tế.
 
-## 5. Execute safely and classify evidence
+## 5. Thực thi an toàn và phân loại bằng chứng
 
-1. Confirm the correct test environment, role, and starting state. Use isolated, disposable test data when writes are involved.
-2. Capture evidence that shows the relevant input/action and outcome. Redact credentials, cookies, bearer tokens, and personal data.
-3. Clean up only records created by the test, then verify seeded or unrelated data remains intact.
-4. Assign statuses from observed evidence:
-   - **Passed:** actual result matches a requirement-based expected result;
-   - **Failed:** actual result reproducibly violates that expected result;
-   - **Inconclusive:** the oracle or evidence is insufficient to decide;
-   - **Not Executed:** no execution occurred (including a deliberately skipped case).
-5. A UI success toast alone does not prove a backend state change. Inspect the relevant API or persisted state when required by the case.
-6. Stop if the environment or baseline is unexpected, or if continuing could affect unrelated data.
+1. Xác nhận đúng môi trường kiểm thử, vai trò và trạng thái ban đầu. Khi có thao tác ghi dữ liệu, dùng dữ liệu thử nghiệm riêng, có thể xóa.
+2. Lưu bằng chứng thể hiện đầu vào/thao tác và kết quả liên quan. Che thông tin đăng nhập, cookie, bearer token và dữ liệu cá nhân.
+3. Chỉ dọn bản ghi do chính ca kiểm thử tạo ra, sau đó xác minh dữ liệu seed hoặc dữ liệu không liên quan vẫn nguyên vẹn.
+4. Gán trạng thái dựa trên bằng chứng quan sát:
+   - **Passed:** kết quả thực tế khớp kết quả mong đợi có căn cứ từ yêu cầu;
+   - **Failed:** kết quả thực tế tái hiện được và vi phạm kết quả mong đợi đó;
+   - **Inconclusive:** chưa đủ cơ sở đánh giá hoặc bằng chứng để kết luận;
+   - **Not Executed:** chưa thực thi (kể cả ca được chủ động bỏ qua).
+5. Thông báo thành công trên giao diện không tự chứng minh trạng thái backend đã thay đổi. Kiểm tra API hoặc dữ liệu đã lưu khi ca kiểm thử yêu cầu.
+6. Dừng lại nếu môi trường hoặc baseline không như dự kiến, hoặc nếu tiếp tục có thể ảnh hưởng dữ liệu khác.
 
-## 6. Report and reconcile
+## 6. Báo cáo và đối soát
 
-1. Record each case once in the project source-of-truth test-case file, preserving its ID and evidence path.
-2. Report a bug only for a reproducible, requirement-backed failure. Include steps, expected/actual results, environment, and evidence. Keep observations and unspecified behavior separate from confirmed bugs.
-3. Update the feature analysis, bug register, AI review, and summary counts when a result changes. Reconcile totals so each designed case has exactly one current status.
-4. Distinguish cases designed from cases executed. Do not count exploratory suggestions as designed/executed cases unless they are formally added and run.
+1. Ghi mỗi ca đúng một lần trong tệp test case nguồn của dự án; giữ nguyên ID và đường dẫn bằng chứng.
+2. Chỉ báo bug khi có lỗi tái hiện được và vi phạm yêu cầu. Nêu các bước, kết quả mong đợi/thực tế, môi trường và bằng chứng. Phân biệt quan sát hoặc hành vi chưa quy định với bug đã xác nhận.
+3. Khi kết quả thay đổi, cập nhật phân tích tính năng, danh sách bug, rà soát AI và số liệu tổng hợp. Đối soát để mỗi ca đã thiết kế có đúng một trạng thái hiện tại.
+4. Phân biệt số ca được thiết kế với số ca đã chạy. Không tính đề xuất thăm dò vào tổng ca thiết kế/thực thi trừ khi đã chính thức bổ sung và chạy.
 
-## Worked example: category name required
+## Ví dụ: yêu cầu tên danh mục là bắt buộc
 
-Assume the requirement says a category name is required and cannot be empty, but says nothing about trimming whitespace:
+Giả sử yêu cầu nêu tên danh mục là bắt buộc và không được để trống nhưng không đề cập việc cắt khoảng trắng:
 
-| Input | Expected basis | If the app accepts it |
+| Đầu vào | Cơ sở kỳ vọng | Nếu ứng dụng chấp nhận |
 |---|---|---|
-| `A` | Non-empty; valid representative | Pass if the category is created as expected |
-| empty string | Explicitly disallowed | Fail; record the reproducible violation |
-| three spaces | Whitespace treatment is unspecified | Inconclusive/exploratory; do not claim a bug |
+| `A` | Không rỗng; giá trị đại diện hợp lệ | Passed nếu danh mục được tạo đúng như dự kiến |
+| chuỗi rỗng | Bị cấm rõ ràng | Failed; ghi nhận vi phạm có thể tái hiện |
+| ba dấu cách | Cách xử lý khoảng trắng chưa được quy định | Inconclusive/thăm dò; không kết luận bug |
 
-This example illustrates how to keep an observed result separate from the requirement oracle. Replace its assumptions with the actual feature specification before using it for another system.
+Ví dụ này cho thấy cần tách kết quả quan sát khỏi cơ sở đánh giá theo yêu cầu. Trước khi dùng cho hệ thống khác, hãy thay các giả định bằng đặc tả tính năng thực tế.

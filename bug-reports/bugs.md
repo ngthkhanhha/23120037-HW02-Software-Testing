@@ -1,34 +1,34 @@
-﻿# Báo cáo lỗi
+# Báo cáo lỗi
 
-Confirmed bugs: BUG-FR02-01, BUG-FR02-02, BUG-FR02-03, BUG-FR02-04, BUG-FR06-01, BUG-FR06-02, BUG-FR08-01, BUG-FR08-02 and BUG-FR08-03. GitHub Issues have not been created.
+Bug đã xác nhận: BUG-FR02-01, BUG-FR02-02, BUG-FR02-03, BUG-FR02-04, BUG-FR06-01, BUG-FR06-02, BUG-FR08-01, BUG-FR08-02 và BUG-FR08-03. Chưa tạo GitHub Issues.
 
-## BUG-FR06-01 — Mobile product detail omits the category
+## BUG-FR06-01 — Chi tiết sản phẩm trên Mobile không hiển thị danh mục
 
-- **Feature/version:** FR-06 — product detail in the iPhone Expo app.
-- **Environment:** iPhone, Expo Go SDK 57; app served from the local SDK 57 copy; backend reachable over LAN.
-- **Severity:** Low (a required product detail field is missing).
-- **Preconditions:** Open the detail page for the seeded product iPhone 15 Pro Max.
-- **Steps:** Open the mobile app, select iPhone 15 Pro Max or MacBook Pro M3, and inspect its detail page.
-- **Expected (SRS FR-06):** Detail page displays the large image, name, price, description, and category.
-- **Actual:** Both details show image, name, price, description, quantity, and add-to-cart control; neither shows its category.
-- **Reproduction:** Observed in TC-FR06-MOB-DT-01 (iPhone 15 Pro Max, seeded `category_id=1`) and reproduced in TC-FR06-MOB-DT-02 (MacBook Pro M3, seeded `category_id=2`). Source review confirms the mobile detail JSX does not render the category.
-- **Evidence:** [`../screenshots/TC-FR06-MOB-DT-01.jpg`](../screenshots/TC-FR06-MOB-DT-01.jpg), [`../screenshots/TC-FR06-MOB-DT-02.jpg`](../screenshots/TC-FR06-MOB-DT-02.jpg).
-- **GitHub Issue:** Not created.
-- **Verification:** Confirmed by runtime screenshot, seed data, and UI source review.
+- **Tính năng/phiên bản:** FR-06 — chi tiết sản phẩm trong ứng dụng Expo trên iPhone.
+- **Môi trường:** iPhone, Expo Go SDK 57; ứng dụng chạy từ bản sao SDK 57 cục bộ; backend truy cập được qua LAN.
+- **Mức độ nghiêm trọng:** Low (a required product detail field is missing).
+- **Tiền điều kiện:** Mở trang chi tiết sản phẩm seed iPhone 15 Pro Max.
+- **Các bước:** Mở ứng dụng di động, chọn iPhone 15 Pro Max hoặc MacBook Pro M3, rồi kiểm tra trang chi tiết.
+- **Kết quả mong đợi (SRS FR-06):** Trang chi tiết hiển thị ảnh lớn, tên, giá, mô tả và danh mục.
+- **Kết quả thực tế:** Cả hai trang đều hiển thị ảnh, tên, giá, mô tả, số lượng và nút thêm vào giỏ; không trang nào hiển thị danh mục.
+- **Tái hiện:** Quan sát ở TC-FR06-MOB-DT-01 (iPhone 15 Pro Max, seed `category_id=1`) và tái hiện in TC-FR06-MOB-DT-02 (MacBook Pro M3, seed `category_id=2`). Rà soát mã nguồn xác nhận JSX trang chi tiết di động không hiển thị danh mục.
+- **Bằng chứng:** [`../screenshots/TC-FR06-MOB-DT-01.jpg`](../screenshots/TC-FR06-MOB-DT-01.jpg), [`../screenshots/TC-FR06-MOB-DT-02.jpg`](../screenshots/TC-FR06-MOB-DT-02.jpg).
+- **GitHub Issue:** Chưa tạo.
+- **Trạng thái xác minh:** Đã xác nhận qua ảnh chạy thực tế, dữ liệu seed và rà soát mã giao diện.
 
-## BUG-FR06-02 — Invalid quantity is accepted and reported as a successful add
+## BUG-FR06-02 — Chấp nhận số lượng không hợp lệ và báo thêm thành công
 
-- **Feature/version:** FR-06 — product detail and add-to-cart in the iPhone Expo app.
-- **Environment:** iPhone, Expo Go SDK 57; local SDK 57 app copy; backend reachable over LAN.
-- **Severity:** Medium (the app accepts an invalid quantity and reports success).
-- **Preconditions:** Open an existing product detail page; quantity field is editable.
-- **Steps:** Leave the quantity field empty, or enter `-1`, `0`, `1,5`, or `abc` and tap **Thêm vào giỏ hàng**.
-- **Expected (SRS FR-06):** Quantity must be a positive integer with a minimum of 1; negative, zero, fractional, and non-numeric values must not be accepted as successful additions.
-- **Actual:** With an empty field or `-1`, `0`, `1,5`, and `abc` visible in the field, the app displayed “Thành công — Đã thêm vào giỏ hàng”. For `-1`, the resulting cart displayed MacBook Pro M3 at quantity 1; for the empty input, it displayed AirPods Pro 2 at quantity 1. These screenshots establish the resulting states but do not provide paired baselines for exact quantity deltas. The other invalid-input cart screenshots also lack paired baselines.
-- **Reproduction:** Observed in TC-FR06-MOB-BVA-01 (zero), TC-FR06-MOB-BVA-04 (`-1`), TC-FR06-MOB-BVA-05 (`1,5`, decimal comma), and TC-FR06-MOB-BVA-06 (`abc`), and TC-FR06-MOB-BVA-07 (empty). Each invalid input produced success feedback.
-- **Evidence:** [`../screenshots/TC-FR06-MOB-BVA-01.jpg`](../screenshots/TC-FR06-MOB-BVA-01.jpg), [`../screenshots/TC-FR06-MOB-BVA-04-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-04-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-04-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-04-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-05-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-05-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-05-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-05-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-06-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-06-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-06-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-06-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-07-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-07-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-07-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-07-cart.jpg).
-- **GitHub Issue:** Not created.
-- **Verification:** Confirmed by runtime screenshot. The resulting MacBook quantity 1 after `-1` and AirPods Pro 2 quantity 1 after empty input are visible; exact before/after quantity deltas are not claimed.
+- **Tính năng/phiên bản:** FR-06 — chi tiết sản phẩm và thêm vào giỏ trong ứng dụng Expo trên iPhone.
+- **Môi trường:** iPhone, Expo Go SDK 57; bản ứng dụng SDK 57 cục bộ; backend truy cập được qua LAN.
+- **Mức độ nghiêm trọng:** Trung bình (ứng dụng chấp nhận số lượng không hợp lệ và báo thành công).
+- **Tiền điều kiện:** Mở trang chi tiết sản phẩm hiện có; trường số lượng có thể chỉnh sửa.
+- **Các bước:** Để trống trường số lượng hoặc nhập `-1`, `0`, `1,5`, hoặc `abc` rồi nhấn **Thêm vào giỏ hàng**.
+- **Kết quả mong đợi (SRS FR-06):** Số lượng phải là số nguyên dương, tối thiểu bằng 1; giá trị âm, 0, thập phân và không phải số không được chấp nhận như lần thêm thành công.
+- **Kết quả thực tế:** Khi trường hiển thị rỗng, `-1`, `0`, `1,5` hoặc `abc`, ứng dụng hiển thị “Thành công — Đã thêm vào giỏ hàng”. Với `-1`, giỏ sau thao tác có MacBook Pro M3 số lượng 1; với đầu vào rỗng, giỏ có AirPods Pro 2 số lượng 1. Ảnh xác nhận trạng thái sau thao tác nhưng không có baseline tương ứng để xác định chính xác lượng thay đổi. Ảnh giỏ của các đầu vào sai khác cũng thiếu baseline.
+- **Tái hiện:** Observed in TC-FR06-MOB-BVA-01 (0), TC-FR06-MOB-BVA-04 (`-1`), TC-FR06-MOB-BVA-05 (`1,5`, dấu phẩy thập phân), và TC-FR06-MOB-BVA-06 (`abc`), và TC-FR06-MOB-BVA-07 (rỗng). Mỗi đầu vào không hợp lệ đều tạo phản hồi thành công.
+- **Bằng chứng:** [`../screenshots/TC-FR06-MOB-BVA-01.jpg`](../screenshots/TC-FR06-MOB-BVA-01.jpg), [`../screenshots/TC-FR06-MOB-BVA-04-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-04-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-04-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-04-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-05-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-05-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-05-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-05-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-06-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-06-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-06-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-06-cart.jpg), [`../screenshots/TC-FR06-MOB-BVA-07-feedback.jpg`](../screenshots/TC-FR06-MOB-BVA-07-feedback.jpg), [`../screenshots/TC-FR06-MOB-BVA-07-cart.jpg`](../screenshots/TC-FR06-MOB-BVA-07-cart.jpg).
+- **GitHub Issue:** Chưa tạo.
+- **Trạng thái xác minh:** Đã xác nhận qua ảnh chạy thực tế. Ảnh cho thấy MacBook số lượng 1 sau `-1` và AirPods Pro 2 số lượng 1 sau đầu vào rỗng; không khẳng định mức chênh lệch số lượng trước/sau.
 
 
 ## BUG-FR02-01 — Email sai định dạng không bị HTML5 chặn
@@ -59,24 +59,24 @@ Confirmed bugs: BUG-FR02-01, BUG-FR02-02, BUG-FR02-03, BUG-FR02-04, BUG-FR06-01,
   3. Kiểm tra `login_attempts` bằng truy vấn DB chỉ đọc.
 - **Kết quả mong đợi (FR-02):** Đăng nhập bị từ chối và bộ đếm tăng từ 0 lên 1.
 - **Kết quả thực tế:** Giao diện từ chối đăng nhập bằng thông báo chung; DB ghi `login_attempts=2`. Mã `backend/server.js` tính `user.login_attempts + 2`.
-- BVA-02 confirmation: on a fresh account, two wrong-password requests moved `login_attempts` from 0 to 4; the following requests returned HTTP 403.
+- Xác nhận BVA-02: trên tài khoản mới, hai request sai mật khẩu làm `login_attempts` tăng từ 0 lên 4; các request tiếp theo trả HTTP 403.
 - **Tần suất tái hiện:** 1 lần đã quan sát; nguồn mã xác nhận phép tăng 2.
 - **Bằng chứng:** `../screenshots/TC-FR02-DT-04.png`; bộ đếm được xác nhận bằng truy vấn SQLite chỉ đọc.
 - **GitHub Issue:** Chưa tạo.
 - **Trạng thái xác minh:** Đã xác nhận qua thực thi và đối chiếu mã nguồn.
-## BUG-FR02-03 - Login API returns the password in plaintext
+## BUG-FR02-03 — API đăng nhập trả password dạng rõ
 
-- Feature/version: FR-02 Web login; local EShop SUT.
-- Environment: Windows, Chrome, frontend localhost:5173, backend localhost:3000.
-- Severity: High; credentials are included in a response that may be retained in DevTools, logs, or monitoring tools.
-- Preconditions: A test account exists and the user can log in.
-- Steps: Open DevTools Network, log in, and inspect the response of `POST /api/login`.
-- Expected: The response returns a JWT and necessary user fields, without the password.
-- Actual: The JSON response includes `user.password` in plaintext.
-- Reproduction: Observed in the TC-FR02-DT-06 response; backend returns the full user object.
-- Evidence: `../screenshots/TC-FR02-DT-06-login-response.png` (JWT and password redacted).
-- GitHub Issue: Not created.
-- Verification: Confirmed from response and source.
+- Tính năng/phiên bản: FR-02 Web login; local EShop SUT.
+- Môi trường: Windows, Chrome, frontend localhost:5173, backend localhost:3000.
+- Mức độ nghiêm trọng: Cao; thông tin xác thực nằm trong phản hồi và có thể bị lưu trong DevTools, log hoặc công cụ giám sát.
+- Tiền điều kiện: Có tài khoản thử nghiệm và có thể đăng nhập.
+- Các bước: Mở DevTools Network, đăng nhập và kiểm tra phản hồi của `POST /api/login`.
+- Kết quả mong đợi: Phản hồi trả JWT và các trường thông tin người dùng cần thiết, không chứa password.
+- Kết quả thực tế: Phản hồi JSON chứa `user.password` ở dạng rõ.
+- Tái hiện: Quan sát trong phản hồi TC-FR02-DT-06; backend trả toàn bộ đối tượng người dùng.
+- Bằng chứng: `../screenshots/TC-FR02-DT-06-login-response.png` (đã che JWT và password).
+- GitHub Issue: Chưa tạo.
+- Trạng thái xác minh: Đã xác nhận từ phản hồi và mã nguồn.
 
 
 ## BUG-FR02-04 — Thời gian khóa cấu hình 180 giây thay vì 30 giây
@@ -89,17 +89,17 @@ Confirmed bugs: BUG-FR02-01, BUG-FR02-02, BUG-FR02-03, BUG-FR02-04, BUG-FR06-01,
 - **Kết quả mong đợi:** Sau 30 giây tài khoản được mở khóa và thông tin đúng được chấp nhận (FR-02).
 - **Kết quả thực tế:** TC-FR02-BVA-05 nhận HTTP 403 ở khoảng 30 giây. Đối chiếu `backend/server.js` cho thấy `locked_until = new Date(Date.now() + 180000)`, tương ứng 180 giây.
 - **Tần suất tái hiện:** Quan sát trong TC-BVA-05; cấu hình 180000 ms xác nhận từ mã nguồn.
-- **Bằng chứng:** [`../screenshots/TC-FR02-BVA-05.png`](../screenshots/TC-FR02-BVA-05.png); source `backend/server.js`, dòng thiết lập `+ 180000`.
+- **Bằng chứng:** [`../screenshots/TC-FR02-BVA-05.png`](../screenshots/TC-FR02-BVA-05.png); mã nguồn `backend/server.js`, dòng thiết lập `+ 180000`.
 - **GitHub Issue:** Chưa tạo.
-- **Trạng thái xác minh:** Xác nhận bằng kết quả thực thi và đối chiếu source. Mốc UI được đo xấp xỉ, không phải benchmark thời gian chính xác.
-## Mẫu bug
+- **Trạng thái xác minh:** Xác nhận bằng kết quả thực thi và đối chiếu mã nguồn. Mốc UI được đo xấp xỉ, không phải phép đo thời gian chính xác.
+## Mẫu báo cáo bug
 
 ### BUG-[ID] — [Tiêu đề ngắn]
 - Tính năng/phiên bản:
 - Môi trường:
 - Mức độ nghiêm trọng:
 - Tiền điều kiện:
-- Bước tái hiện:
+- Các bước tái hiện:
   1. 
 - Kết quả mong đợi (kèm nguồn yêu cầu):
 - Kết quả thực tế:
@@ -120,50 +120,64 @@ Confirmed bugs: BUG-FR02-01, BUG-FR02-02, BUG-FR02-03, BUG-FR02-04, BUG-FR06-01,
 
 
 
-## BUG-FR08-01 - Checkout total can be edited directly
+## BUG-FR08-01 — Có thể sửa trực tiếp tổng tiền thanh toán
 
-- Feature: FR-08 Checkout (Web).
-- Severity: Medium.
-- Preconditions: Signed-in test account with cart total E=58,000,000 VND; Checkout page open.
-- Steps: Focus the displayed total field and replace its value with 57,999,970.
-- Expected: The total is calculated from cart contents and cannot be directly edited (TC-FR08-DT-03 expected behavior).
-- Actual: The field accepted the new value and the displayed payment total changed to 57,999,970 VND. No order was submitted in this test.
-- Evidence: [`../screenshots/TC-FR08-DT-03-editable-total.png`](../screenshots/TC-FR08-DT-03-editable-total.png).
-- Limitation: Direct editability is confirmed; server-side handling is separately tracked as BUG-FR08-02.
-- GitHub Issue: Not created.
+- Tính năng: FR-08 Checkout (Web).
+- Mức độ nghiêm trọng: Trung bình.
+- Tiền điều kiện: Tài khoản thử đã đăng nhập, tổng giỏ `E=58.000.000 VND`; đang mở trang thanh toán.
+- Các bước: Chọn trường tổng tiền đang hiển thị và thay giá trị bằng 57.999.970.
+- Kết quả mong đợi: Tổng tiền được tính từ nội dung giỏ và không thể sửa trực tiếp (kỳ vọng TC-FR08-DT-03).
+- Kết quả thực tế: Trường nhận giá trị mới và tổng thanh toán hiển thị đổi thành 57.999.970 VND. Test này không gửi đơn hàng.
+- Bằng chứng: [`../screenshots/TC-FR08-DT-03-editable-total.png`](../screenshots/TC-FR08-DT-03-editable-total.png).
+- Giới hạn bằng chứng: Đã xác nhận sửa được trực tiếp; xử lý phía server được theo dõi riêng ở BUG-FR08-02.
+- GitHub Issue: Chưa tạo.
 
-## BUG-FR08-02 - Backend accepts a client-supplied checkout total
+## BUG-FR08-02 — Backend chấp nhận tổng thanh toán do client gửi
 
-- Feature: FR-08 Checkout (Web).
-- Severity: High - order totals can be altered by a client before submission.
-- Preconditions: Signed-in account with cart total E=58,000,000 VND.
-- Steps: Submit checkout with total_amount=E-1 or E+1; inspect authenticated order history.
-- Expected: Backend recalculates and stores the cart total E=58,000,000 VND.
-- Actual: DT-04 and BVA-01 stored E-1=57,999,999 VND (orders #1 and #3); BVA-03 stored E+1=58,000,001 VND (order #5). The Network screenshots show HTTP 200; order history confirms persisted amounts. BVA-02 positive control stored E correctly as order #4.
-- Evidence: [`../screenshots/TC-FR08-DT-04-checkout-response.png`](../screenshots/TC-FR08-DT-04-checkout-response.png), [`../screenshots/TC-FR08-DT-04-order-history.png`](../screenshots/TC-FR08-DT-04-order-history.png), [`../screenshots/TC-FR08-BVA-01-checkout-response.png`](../screenshots/TC-FR08-BVA-01-checkout-response.png), [`../screenshots/TC-FR08-BVA-01-order-history.png`](../screenshots/TC-FR08-BVA-01-order-history.png), [`../screenshots/TC-FR08-BVA-02-order-history.png`](../screenshots/TC-FR08-BVA-02-order-history.png), [`../screenshots/TC-FR08-BVA-03-checkout-response.png`](../screenshots/TC-FR08-BVA-03-checkout-response.png), [`../screenshots/TC-FR08-BVA-03-order-history.png`](../screenshots/TC-FR08-BVA-03-order-history.png).
-- Limitation: Request payload details are not legible in supplied Network screenshots; order history verifies the persisted totals.
-- GitHub Issue: Not created.
+- Tính năng: FR-08 Checkout (Web).
+- Mức độ nghiêm trọng: Cao — client có thể thay đổi tổng đơn trước khi gửi.
+- Tiền điều kiện: Tài khoản đã đăng nhập, tổng giỏ `E=58.000.000 VND`.
+- Các bước: Gửi thanh toán với `total_amount=E-1` hoặc `E+1`; kiểm tra lịch sử đơn đã xác thực.
+- Kết quả mong đợi: Backend tính lại và lưu tổng giỏ `E=58.000.000 VND`.
+- Kết quả thực tế: DT-04 và BVA-01 lưu `E-1=57.999.999 VND` (đơn #1 và #3); BVA-03 lưu `E+1=58.000.001 VND` (đơn #5). Ảnh Network cho thấy HTTP 200; lịch sử đơn xác nhận số tiền đã lưu. Ca đối chứng BVA-02 lưu đúng `E` ở đơn #4.
+- Bằng chứng: [`../screenshots/TC-FR08-DT-04-checkout-response.png`](../screenshots/TC-FR08-DT-04-checkout-response.png), [`../screenshots/TC-FR08-DT-04-order-history.png`](../screenshots/TC-FR08-DT-04-order-history.png), [`../screenshots/TC-FR08-BVA-01-checkout-response.png`](../screenshots/TC-FR08-BVA-01-checkout-response.png), [`../screenshots/TC-FR08-BVA-01-order-history.png`](../screenshots/TC-FR08-BVA-01-order-history.png), [`../screenshots/TC-FR08-BVA-02-order-history.png`](../screenshots/TC-FR08-BVA-02-order-history.png), [`../screenshots/TC-FR08-BVA-03-checkout-response.png`](../screenshots/TC-FR08-BVA-03-checkout-response.png), [`../screenshots/TC-FR08-BVA-03-order-history.png`](../screenshots/TC-FR08-BVA-03-order-history.png).
+- Giới hạn bằng chứng: Không đọc rõ chi tiết payload trong ảnh Network; lịch sử đơn hàng xác minh tổng tiền đã lưu.
+- GitHub Issue: Chưa tạo.
 
-## BUG-FR08-03 - Cart remains populated after successful checkout
+## BUG-FR08-03 — Giỏ hàng vẫn còn sản phẩm sau khi thanh toán thành công
 
-- Feature: FR-08 Checkout (Web).
-- Severity: Medium - the unchanged cart can lead to accidental duplicate checkout.
-- Preconditions: Signed-in account with iPhone 15 Pro Max x1 and Samsung Galaxy S24 Ultra x1 in cart.
-- Steps: Complete checkout successfully, then return to and inspect the cart.
-- Expected: Cart is cleared after successful checkout (TC-FR08-DT-05 expected behavior).
-- Actual: Both items remained and the subtotal was still 58,000,000 VND after the success flow. No second order was submitted for DT-05.
-- Evidence: [`../screenshots/TC-FR08-DT-05-cart-not-cleared.png`](../screenshots/TC-FR08-DT-05-cart-not-cleared.png), [`../screenshots/TC-FR08-DT-04-checkout-response.png`](../screenshots/TC-FR08-DT-04-checkout-response.png).
-- GitHub Issue: Not created.
+- Tính năng: FR-08 Checkout (Web).
+- Mức độ nghiêm trọng: Trung bình — giỏ không được xóa có thể dẫn tới gửi đơn trùng ngoài ý muốn.
+- Tiền điều kiện: Tài khoản đã đăng nhập, giỏ có iPhone 15 Pro Max x1 và Samsung Galaxy S24 Ultra x1.
+- Các bước: Thanh toán thành công, sau đó quay lại kiểm tra giỏ.
+- Kết quả mong đợi: Giỏ được xóa sau khi thanh toán thành công (kỳ vọng TC-FR08-DT-05).
+- Kết quả thực tế: Cả hai sản phẩm vẫn còn và tạm tính vẫn là 58.000.000 VND sau khi luồng báo thành công. DT-05 không gửi đơn thứ hai.
+- Bằng chứng: [`../screenshots/TC-FR08-DT-05-cart-not-cleared.png`](../screenshots/TC-FR08-DT-05-cart-not-cleared.png), [`../screenshots/TC-FR08-DT-04-checkout-response.png`](../screenshots/TC-FR08-DT-04-checkout-response.png).
+- GitHub Issue: Chưa tạo.
 
 
-## BUG-FR14-02 - Empty category name is accepted
+## BUG-FR14-02 — Chấp nhận tên danh mục rỗng
 
-- Feature: FR-14 Category Management (Web Admin).
-- Severity: Medium.
-- Preconditions: Signed in as admin; category list contains the three seeded categories.
-- Steps: Leave the category name field empty and submit the add-category form.
-- Expected: The empty name is rejected and no category is created (FR-14: category name is required and cannot be empty).
-- Actual: The category list displayed a new category #4 with an empty name; the API list confirmed it was persisted.
-- Evidence: [`../screenshots/TC-FR14-BVA-01.png`](../screenshots/TC-FR14-BVA-01.png).
-- Cleanup: Removed only the empty test-created category #4 after evidence capture; seeded categories #1-#3 remain.
-- GitHub Issue: Not created.
+- Tính năng: FR-14 Category Management (Web Admin).
+- Mức độ nghiêm trọng: Trung bình.
+- Tiền điều kiện: Đăng nhập với vai trò admin; danh sách có ba danh mục seed.
+- Các bước: Để trống trường tên danh mục và gửi biểu mẫu thêm.
+- Kết quả mong đợi: Từ chối tên rỗng và không tạo danh mục (FR-14: tên danh mục là bắt buộc và không được để trống).
+- Kết quả thực tế: Danh sách hiển thị danh mục #4 không có tên; danh sách API xác nhận bản ghi đã được lưu.
+- Bằng chứng: [`../screenshots/TC-FR14-BVA-01.png`](../screenshots/TC-FR14-BVA-01.png).
+- Dọn dữ liệu thử: Chỉ xóa danh mục rỗng #4 do test tạo sau khi lưu bằng chứng; danh mục seed #1–#3 vẫn còn.
+- GitHub Issue: Chưa tạo.
+
+
+
+## BUG-FR14-01 — Người dùng thường có thể tạo danh mục
+
+- Tính năng: FR-14 — Quản lý danh mục (Web Admin).
+- Mức độ nghiêm trọng: Cao — người dùng không phải admin có thể thay đổi dữ liệu danh mục.
+- Tiền điều kiện: Đăng nhập bằng tài khoản người dùng thường có JWT hợp lệ.
+- Các bước: Gửi POST `/api/categories` bằng JWT của người dùng thường; kiểm tra phản hồi và danh sách danh mục.
+- Kết quả mong đợi: Thao tác thay đổi danh mục bị từ chối với vai trò không phải admin theo SEC-03.
+- Kết quả thực tế: Request trả HTTP 200 và tạo danh mục thăm dò #4 `DT05-Probe-NTHH`.
+- Bằng chứng: [`../screenshots/TC-FR14-DT-05.png`](../screenshots/TC-FR14-DT-05.png).
+- Dọn dữ liệu thử: Admin đã xóa danh mục thăm dò sau khi chụp bằng chứng; danh mục seed được giữ nguyên.
+- GitHub Issue: Chưa tạo.

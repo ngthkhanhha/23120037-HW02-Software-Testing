@@ -1,7 +1,7 @@
 # AI Audit Report
 
 ## Khai báo
-I use AI tools for the following tasks.
+Tôi sử dụng các công cụ AI cho những công việc sau.
 
 ## Nhật ký tương tác
 
@@ -52,10 +52,10 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 
 
 ### AI-INT-006 - TC-FR02-DT-06
-- Tool: ChatGPT (Codex); date: 2026-10-14 (Asia/Saigon).
+- Công cụ: ChatGPT (Codex); date: 2026-10-14 (Asia/Saigon).
 - User asked to record the two matching evidence screenshots in the related files.
-- Result: confirmed JWT in `POST /api/login` response and `Authorization: Bearer` on `GET /api/users/me`; marked TC-FR02-DT-06 Passed. Found plaintext `user.password` in login response and recorded BUG-FR02-03. Redacted token and password values in both evidence images before linking them.
-- Files updated: test case CSV, FR02 Domain report, Main Report, README, bug report, AI Audit, and two TC-FR02-DT-06 screenshots.
+- Kết quả: confirmed JWT in `POST /api/login` response and `Authorization: Bearer` on `GET /api/users/me`; marked TC-FR02-DT-06 Passed. Found plaintext `user.password` in login response and recorded BUG-FR02-03. Redacted token and password values in both evidence images before linking them.
+- Tệp đã cập nhật: test case CSV, FR02 Domain report, Main Report, README, bug report, AI Audit, and two TC-FR02-DT-06 screenshots.
 
 
 ### AI-INT-007 - TC-FR02-BVA-01 skip
@@ -108,168 +108,168 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - Tệp chịu ảnh hưởng: `reports/FR08_Domain.md`, `reports/FR08_BVA.md`, `reports/Main_Report.md`, `README.md`, `test-cases/test-cases.csv`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-014 - Record execution of TC-FR08-DT-01
-- Tool: ChatGPT (Codex).
+### AI-INT-014 - Ghi nhận thực thi TC-FR08-DT-01
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:12 (Asia/Saigon).
-- User prompt: The user supplied the checkout alert screenshot and the resulting `/login` screenshot.
-- Output: Marked TC-FR08-DT-01 Passed based on the observed authentication alert and redirect. At that point, the screenshots were referenced in chat but had not yet been copied to the repository. No Network or order-history evidence was available to independently verify that no order was created.
-- Review: The pass is limited to the visible authentication gate and redirect.
-- Files affected: `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied the checkout alert screenshot and the resulting `/login` screenshot.
+- Đầu ra AI: Marked TC-FR08-DT-01 Passed based on the observed authentication alert and redirect. At that point, the screenshots were referenced in chat but had not yet been copied to the repository. No Network or order-history evidence was available to independently verify that no order was created.
+- Rà soát: The pass is limited to the visible authentication gate and redirect.
+- Tệp bị ảnh hưởng: `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
-### AI-INT-015 - Save the two original screenshots for TC-FR08-DT-01
-- Tool: ChatGPT (Codex).
+### AI-INT-015 - Lưu hai ảnh chụp màn hình gốc for TC-FR08-DT-01
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:15 (Asia/Saigon).
-- User prompt: ?2 anh nay nhe?, with `Screenshot (1343).png` and `Screenshot (1344).png` from `C:\Users\Admin\Pictures\Screenshots`.
-- Output: Copied the two original images unchanged to `screenshots/TC-FR08-DT-01-cart-login-alert.png` and `screenshots/TC-FR08-DT-01-login-redirect.png`; updated the evidence paths in CSV and linked/updated the FR-08 Domain report, Main Report, README, and manual checklist. No new screenshots were captured.
-- Review: Confirmed both destination files exist and have non-zero size. The first shows the login alert at `/cart`; the second shows `/login`. Independent Network/order-history evidence that no order was created remains unavailable.
-- Files affected: both screenshots, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: ?2 anh nay nhe?, with `Screenshot (1343).png` and `Screenshot (1344).png` from `C:\Users\Admin\Pictures\Screenshots`.
+- Đầu ra AI: Copied the two original images unchanged to `screenshots/TC-FR08-DT-01-cart-login-alert.png` and `screenshots/TC-FR08-DT-01-login-redirect.png`; updated the evidence paths in CSV and linked/updated the FR-08 Domain report, Main Report, README, and manual checklist. No new screenshots were captured.
+- Rà soát: Confirmed both destination files exist and have non-zero size. The first shows the login alert at `/cart`; the second shows `/login`. Independent Network/order-history evidence that no order was created remains unavailable.
+- Tệp bị ảnh hưởng: both screenshots, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-016 - Record execution of TC-FR08-DT-02
-- Tool: ChatGPT (Codex).
+### AI-INT-016 - Ghi nhận thực thi TC-FR08-DT-02
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:19 (Asia/Saigon).
-- User prompt: The user supplied a screenshot of the signed-in Checkout page showing iPhone 15 Pro Max x1 at 30,000,000 VND, Samsung Galaxy S24 Ultra x1 at 28,000,000 VND, and total 58,000,000 VND.
-- Output: Marked TC-FR08-DT-02 Passed. Copied the original screenshot `C:\Users\Admin\Pictures\Screenshots\Screenshot (1345).png` to `screenshots/TC-FR08-DT-02-checkout-items-total.png`. Updated CSV, FR08 Domain, Main Report, README, manual checklist and aggregate counts. No checkout submission was made. Coupon UI was excluded as FR-09.
-- Review: The visible product list, quantities, item amounts and total are consistent with the expected cart values.
-- Files affected: `screenshots/TC-FR08-DT-02-checkout-items-total.png`, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a screenshot of the signed-in Checkout page showing iPhone 15 Pro Max x1 at 30,000,000 VND, Samsung Galaxy S24 Ultra x1 at 28,000,000 VND, and total 58,000,000 VND.
+- Đầu ra AI: Marked TC-FR08-DT-02 Passed. Copied the original screenshot `C:\Users\Admin\Pictures\Screenshots\Screenshot (1345).png` to `screenshots/TC-FR08-DT-02-checkout-items-total.png`. Updated CSV, FR08 Domain, Main Report, README, manual checklist and aggregate counts. No checkout submission was made. Coupon UI was excluded as FR-09.
+- Rà soát: The visible product list, quantities, item amounts and total are consistent with the expected cart values.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR08-DT-02-checkout-items-total.png`, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-017 - Record execution of TC-FR08-DT-03
-- Tool: ChatGPT (Codex).
+### AI-INT-017 - Ghi nhận thực thi TC-FR08-DT-03
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:21 (Asia/Saigon).
-- User prompt: The user supplied a screenshot of the Checkout amount field changed to 57999970 and displayed payment total 57,999,970 VND.
-- Output: Marked TC-FR08-DT-03 Failed because the total was directly editable and recalculated on screen. Copied the original screenshot `C:\Users\Admin\Pictures\Screenshots\Screenshot (1346).png` to `screenshots/TC-FR08-DT-03-editable-total.png`. Updated CSV, FR08 Domain, Main Report, README, manual checklist and aggregate counts. No checkout confirmation was submitted.
-- Review: The screenshot directly shows the edited input and changed displayed amount; no order was created during this case.
-- Files affected: `screenshots/TC-FR08-DT-03-editable-total.png`, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a screenshot of the Checkout amount field changed to 57999970 and displayed payment total 57,999,970 VND.
+- Đầu ra AI: Marked TC-FR08-DT-03 Failed because the total was directly editable and recalculated on screen. Copied the original screenshot `C:\Users\Admin\Pictures\Screenshots\Screenshot (1346).png` to `screenshots/TC-FR08-DT-03-editable-total.png`. Updated CSV, FR08 Domain, Main Report, README, manual checklist and aggregate counts. No checkout confirmation was submitted.
+- Rà soát: The screenshot directly shows the edited input and changed displayed amount; no order was created during this case.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR08-DT-03-editable-total.png`, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
 ### AI-INT-018 - Document BUG-FR08-01
-- Tool: ChatGPT (Codex).
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:21 (Asia/Saigon).
 - Prompt: Follow-up to the TC-FR08-DT-03 screenshot showing an edited payment total.
-- Output: Added BUG-FR08-01 to the bug report with the observed UI behavior, expected FR-08 behavior, severity, evidence link and a clear limitation that server-side acceptance is still unverified. Updated the Main Report confirmed-bug count and source-review note.
-- Review: The bug describes only the UI behavior observed in the screenshot; no claim is made about backend order totals.
-- Files affected: `bug-reports/bugs.md`, `reports/Main_Report.md`, `ai-audit/AI_Audit.md`.
+- Đầu ra AI: Added BUG-FR08-01 to the bug report with the observed UI behavior, expected FR-08 behavior, severity, evidence link and a clear limitation that server-side acceptance is still unverified. Updated the Main Report confirmed-bug count and source-review note.
+- Rà soát: The bug describes only the UI behavior observed in the screenshot; no claim is made about backend order totals.
+- Tệp bị ảnh hưởng: `bug-reports/bugs.md`, `reports/Main_Report.md`, `ai-audit/AI_Audit.md`.
 
 
 ### AI-INT-019 - Simplify TC-FR08-DT-04 execution procedure
-- Tool: ChatGPT (Codex).
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:22 (Asia/Saigon).
 - Prompt: The user requested instructions for the next test case.
-- Output: Revised TC-FR08-DT-04 to use the already-confirmed editable Checkout field to send E-1 in one checkout submission, then inspect the checkout request/response and Profile order history. This avoids the original edit-and-resend path, which could create an additional baseline order. Updated the CSV, FR08 Domain report and manual checklist.
-- Review: The revised path submits exactly one test order and tests whether the backend stores client-supplied E-1 or the expected cart total E.
-- Files affected: `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Đầu ra AI: Revised TC-FR08-DT-04 to use the already-confirmed editable Checkout field to send E-1 in one checkout submission, then inspect the checkout request/response and Profile order history. This avoids the original edit-and-resend path, which could create an additional baseline order. Updated the CSV, FR08 Domain report and manual checklist.
+- Rà soát: The revised path submits exactly one test order and tests whether the backend stores client-supplied E-1 or the expected cart total E.
+- Tệp bị ảnh hưởng: `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-020 - Record execution of TC-FR08-DT-04
-- Tool: ChatGPT (Codex).
+### AI-INT-020 - Ghi nhận thực thi TC-FR08-DT-04
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:28 (Asia/Saigon).
-- User prompt: The user supplied a Network screenshot showing Checkout HTTP 200 and a Profile screenshot showing order #1 at 57,999,999 VND.
-- Output: Marked TC-FR08-DT-04 Failed because the stored order total matched client E-1 rather than cart E. Copied the two original screenshots `Screenshot (1347).png` and `Screenshot (1348).png` to the FR-08 evidence folder. Added BUG-FR08-02 and updated CSV, FR08 Domain, Main Report, README, checklist and aggregate counts.
-- Review: The Profile screenshot confirms the persisted amount; the Network screenshot confirms HTTP 200 but does not legibly show request payload or response orderId. No bearer token was included in the recorded evidence.
-- Files affected: two DT-04 screenshots, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a Network screenshot showing Checkout HTTP 200 and a Profile screenshot showing order #1 at 57,999,999 VND.
+- Đầu ra AI: Marked TC-FR08-DT-04 Failed because the stored order total matched client E-1 rather than cart E. Copied the two original screenshots `Screenshot (1347).png` and `Screenshot (1348).png` to the FR-08 evidence folder. Added BUG-FR08-02 and updated CSV, FR08 Domain, Main Report, README, checklist and aggregate counts.
+- Rà soát: The Profile screenshot confirms the persisted amount; the Network screenshot confirms HTTP 200 but does not legibly show request payload or response orderId. No bearer token was included in the recorded evidence.
+- Tệp bị ảnh hưởng: two DT-04 screenshots, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-021 - Record execution of TC-FR08-DT-05
-- Tool: ChatGPT (Codex).
+### AI-INT-021 - Ghi nhận thực thi TC-FR08-DT-05
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:29 (Asia/Saigon).
-- User prompt: The user supplied a screenshot of the cart after the successful Checkout in DT-04; it still showed iPhone 15 Pro Max x1 and Samsung Galaxy S24 Ultra x1, subtotal 58,000,000 VND.
-- Output: Marked TC-FR08-DT-05 Failed. Copied the original screenshot `Screenshot (1349).png` to `screenshots/TC-FR08-DT-05-cart-not-cleared.png`. Added BUG-FR08-03 and updated CSV, FR08 Domain, Main Report, README, manual checklist and aggregate counts. No additional order was submitted.
-- Review: The cart screenshot after the success flow confirms both items remained.
-- Files affected: `screenshots/TC-FR08-DT-05-cart-not-cleared.png`, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a screenshot of the cart after the successful Checkout in DT-04; it still showed iPhone 15 Pro Max x1 and Samsung Galaxy S24 Ultra x1, subtotal 58,000,000 VND.
+- Đầu ra AI: Marked TC-FR08-DT-05 Failed. Copied the original screenshot `Screenshot (1349).png` to `screenshots/TC-FR08-DT-05-cart-not-cleared.png`. Added BUG-FR08-03 and updated CSV, FR08 Domain, Main Report, README, manual checklist and aggregate counts. No additional order was submitted.
+- Rà soát: The cart screenshot after the success flow confirms both items remained.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR08-DT-05-cart-not-cleared.png`, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-022 - Record execution of TC-FR08-BVA-01
-- Tool: ChatGPT (Codex).
+### AI-INT-022 - Ghi nhận thực thi TC-FR08-BVA-01
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:34 (Asia/Saigon).
-- User prompt: The user supplied a Checkout success/Network screenshot and a Profile screenshot showing new order #3 saved at 57,999,999 VND.
-- Output: Marked TC-FR08-BVA-01 Failed because E-1 (57,999,999 VND) was stored instead of E (58,000,000 VND). Copied the original screenshots `Screenshot (1350).png` and `Screenshot (1351).png` into the evidence folder; updated the CSV, BVA/domain analysis, Main Report, README, BUG-FR08-02 evidence and manual checklist.
-- Review: The Profile screenshot confirms the stored amount and order #3; the Network screenshot confirms HTTP 200. The request payload is not legible. One demo order was created.
-- Files affected: two BVA-01 screenshots, `test-cases/test-cases.csv`, `reports/FR08_BVA.md`, `reports/FR08_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a Checkout success/Network screenshot and a Profile screenshot showing new order #3 saved at 57,999,999 VND.
+- Đầu ra AI: Marked TC-FR08-BVA-01 Failed because E-1 (57,999,999 VND) was stored instead of E (58,000,000 VND). Copied the original screenshots `Screenshot (1350).png` and `Screenshot (1351).png` into the evidence folder; updated the CSV, BVA/domain analysis, Main Report, README, BUG-FR08-02 evidence and manual checklist.
+- Rà soát: The Profile screenshot confirms the stored amount and order #3; the Network screenshot confirms HTTP 200. The request payload is not legible. One demo order was created.
+- Tệp bị ảnh hưởng: two BVA-01 screenshots, `test-cases/test-cases.csv`, `reports/FR08_BVA.md`, `reports/FR08_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-023 - Record execution of TC-FR08-BVA-02
-- Tool: ChatGPT (Codex).
+### AI-INT-023 - Ghi nhận thực thi TC-FR08-BVA-02
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:37 (Asia/Saigon).
-- User prompt: The user supplied a Checkout success/Network screenshot and a Profile screenshot showing new order #4 saved at 58,000,000 VND.
-- Output: Marked TC-FR08-BVA-02 Passed because the stored order amount equaled E=58,000,000 VND. Copied the original screenshots `Screenshot (1352).png` and `Screenshot (1353).png`; updated CSV, FR-08 BVA/domain analysis, Main Report, README, manual checklist and aggregate counts.
-- Review: Profile confirms order #4 and its amount; Network confirms HTTP 200. One demo order was created.
-- Files affected: two BVA-02 screenshots, `test-cases/test-cases.csv`, `reports/FR08_BVA.md`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a Checkout success/Network screenshot and a Profile screenshot showing new order #4 saved at 58,000,000 VND.
+- Đầu ra AI: Marked TC-FR08-BVA-02 Passed because the stored order amount equaled E=58,000,000 VND. Copied the original screenshots `Screenshot (1352).png` and `Screenshot (1353).png`; updated CSV, FR-08 BVA/domain analysis, Main Report, README, manual checklist and aggregate counts.
+- Rà soát: Profile confirms order #4 and its amount; Network confirms HTTP 200. One demo order was created.
+- Tệp bị ảnh hưởng: two BVA-02 screenshots, `test-cases/test-cases.csv`, `reports/FR08_BVA.md`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-024 - Record execution of TC-FR08-BVA-03
-- Tool: ChatGPT (Codex).
+### AI-INT-024 - Ghi nhận thực thi TC-FR08-BVA-03
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:39 (Asia/Saigon).
-- User prompt: The user supplied a Checkout success/Network screenshot and a Profile screenshot showing order #5 saved at 58,000,001 VND.
-- Output: Confirmed TC-FR08-BVA-03 Failed because E+1 was stored instead of E. Copied original screenshots `Screenshot (1354).png` and `Screenshot (1355).png`; updated CSV, FR08 BVA/domain analysis, Main Report, README, BUG-FR08-02 evidence, checklist and aggregate counts. FR-08 now has all eight cases executed: three Passed and five Failed.
-- Review: Profile confirms order #5 stored E+1; Network confirms HTTP 200. One demo order was created.
-- Files affected: two BVA-03 screenshots, `test-cases/test-cases.csv`, `reports/FR08_BVA.md`, `reports/FR08_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
-### AI-INT-025 - Prepare FR-14 test design and manual run
-- Tool: ChatGPT (Codex).
+- Prompt người dùng: The user supplied a Checkout success/Network screenshot and a Profile screenshot showing order #5 saved at 58,000,001 VND.
+- Đầu ra AI: Confirmed TC-FR08-BVA-03 Failed because E+1 was stored instead of E. Copied original screenshots `Screenshot (1354).png` and `Screenshot (1355).png`; updated CSV, FR08 BVA/domain analysis, Main Report, README, BUG-FR08-02 evidence, checklist and aggregate counts. FR-08 now has all eight cases executed: three Passed and five Failed.
+- Rà soát: Profile confirms order #5 stored E+1; Network confirms HTTP 200. One demo order was created.
+- Tệp bị ảnh hưởng: two BVA-03 screenshots, `test-cases/test-cases.csv`, `reports/FR08_BVA.md`, `reports/FR08_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-025 - Chuẩn bị thiết kế test FR-14 và chạy thủ công
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 (Asia/Saigon).
-- User prompt: “tiếp tục với FR cuối FR-14”.
-- Output: Reviewed the SUT FR-14/SEC-03 requirements, category API specification, and admin UI source; prepared 5 Domain and 3 BVA cases in the CSV, all Not Executed. Updated FR14 analysis and aggregate report counts. The source review identified the SRS/API/UI update-operation discrepancy and led to no execution-based bug claims.
-- Review: Student must execute the cases manually and provide screenshots/results. Whitespace-only rejection remains an assumption; the API PUT case is labeled as API-contract coverage because the UI and SRS operation list omit update.
-- Files affected: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/FR14_BVA.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
-### AI-INT-026 - Record execution of TC-FR14-DT-01
-- Tool: ChatGPT (Codex).
+- Prompt người dùng: “tiếp tục với FR cuối FR-14”.
+- Đầu ra AI: Reviewed the SUT FR-14/SEC-03 requirements, category API specification, and admin UI source; prepared 5 Domain and 3 BVA cases in the CSV, all Not Executed. Updated FR14 analysis and aggregate report counts. The source review identified the SRS/API/UI update-operation discrepancy and led to no execution-based bug claims.
+- Rà soát: Student must execute the cases manually and provide screenshots/results. Whitespace-only rejection remains an assumption; the API PUT case is labeled as API-contract coverage because the UI and SRS operation list omit update.
+- Tệp bị ảnh hưởng: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/FR14_BVA.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-026 - Ghi nhận thực thi TC-FR14-DT-01
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 (Asia/Saigon).
-- User prompt: The user supplied a screenshot of the EShop Admin category page.
-- Output: Marked TC-FR14-DT-01 Passed because the page displayed category IDs #1 Điện thoại, #2 Laptop, and #3 Phụ kiện once each. Updated CSV, FR14 Domain, Main Report, README, checklist, and aggregate counts. The image was visible in chat and was later matched to `C:\Users\Admin\Pictures\Screenshots\Screenshot (1357).png`, then copied to `screenshots/TC-FR14-DT-01.png` at the user's request.
-- Review: The screenshot supports the expected result that the category list loads and displays each listed category once. No application data was modified. One of eight FR-14 cases is now Passed; seven remain Not Executed.
-- Files affected: `screenshots/TC-FR14-DT-01.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
-### AI-INT-027 - Record execution of TC-FR14-DT-02
-- Tool: ChatGPT (Codex).
+- Prompt người dùng: The user supplied a screenshot of the EShop Admin category page.
+- Đầu ra AI: Marked TC-FR14-DT-01 Passed because the page displayed category IDs #1 Điện thoại, #2 Laptop, and #3 Phụ kiện once each. Updated CSV, FR14 Domain, Main Report, README, checklist, and aggregate counts. The image was visible in chat and was later matched to `C:\Users\Admin\Pictures\Screenshots\Screenshot (1357).png`, then copied to `screenshots/TC-FR14-DT-01.png` at the user's request.
+- Rà soát: The screenshot supports the expected result that the category list loads and displays each listed category once. No application data was modified. One of eight FR-14 cases is now Passed; seven remain Not Executed.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR14-DT-01.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-027 - Ghi nhận thực thi TC-FR14-DT-02
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 (Asia/Saigon).
-- User prompt: The user supplied a screenshot showing the EShop Admin category list after adding `FR14-Test-NTHH-01`.
-- Output: Marked TC-FR14-DT-02 Passed because the new category appeared as ID #4 and remained present after the instructed refresh. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1358).png` to `screenshots/TC-FR14-DT-02.png`; updated the CSV, FR14 Domain, Main Report, README, checklist and aggregate counts.
-- Review: The screenshot shows the new uniquely named category alongside all three seeded categories. The disposable category is retained for TC-FR14-DT-03.
-- Files affected: `screenshots/TC-FR14-DT-02.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
-### AI-INT-028 - Record execution of TC-FR14-DT-03
-- Tool: ChatGPT (Codex).
+- Prompt người dùng: The user supplied a screenshot showing the EShop Admin category list after adding `FR14-Test-NTHH-01`.
+- Đầu ra AI: Marked TC-FR14-DT-02 Passed because the new category appeared as ID #4 and remained present after the instructed refresh. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1358).png` to `screenshots/TC-FR14-DT-02.png`; updated the CSV, FR14 Domain, Main Report, README, checklist and aggregate counts.
+- Rà soát: The screenshot shows the new uniquely named category alongside all three seeded categories. The disposable category is retained for TC-FR14-DT-03.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR14-DT-02.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-028 - Ghi nhận thực thi TC-FR14-DT-03
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 (Asia/Saigon).
-- User prompt: The user supplied a screenshot showing the EShop Admin category list after deleting `FR14-Test-NTHH-01`.
-- Output: Marked TC-FR14-DT-03 Passed because the disposable test category was absent and seeded categories #1 Điện thoại, #2 Laptop, and #3 Phụ kiện remained. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1359).png` to `screenshots/TC-FR14-DT-03.png`; updated the CSV, FR14 Domain, Main Report, README, checklist and aggregate counts.
-- Review: The screenshot confirms only the intended test category was removed. Five of eight FR-14 cases remain Not Executed.
-- Files affected: `screenshots/TC-FR14-DT-03.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a screenshot showing the EShop Admin category list after deleting `FR14-Test-NTHH-01`.
+- Đầu ra AI: Marked TC-FR14-DT-03 Passed because the disposable test category was absent and seeded categories #1 Điện thoại, #2 Laptop, and #3 Phụ kiện remained. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1359).png` to `screenshots/TC-FR14-DT-03.png`; updated the CSV, FR14 Domain, Main Report, README, checklist and aggregate counts.
+- Rà soát: The screenshot confirms only the intended test category was removed. Five of eight FR-14 cases remain Not Executed.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR14-DT-03.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 ### AI-INT-029 - Record skip decision for TC-FR14-DT-04
-- Tool: ChatGPT (Codex).
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 (Asia/Saigon).
-- User prompt: “skip TC này”.
-- Output: Recorded TC-FR14-DT-04 as skipped by user request and kept its status Not Executed. No API request was sent, no evidence was fabricated, and aggregate execution counts did not change. Updated the test case CSV, FR14 Domain, Main Report, checklist, and this audit.
-- Review: This case covers the documented category PUT API; the user elected to skip it. This is not a Pass, Fail, or bug finding.
-- Files affected: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
-### AI-INT-030 - Record execution of TC-FR14-DT-05
+- Prompt người dùng: “skip TC này”.
+- Đầu ra AI: Recorded TC-FR14-DT-04 as skipped by user request and kept its status Not Executed. No API request was sent, no evidence was fabricated, and aggregate execution counts did not change. Updated the test case CSV, FR14 Domain, Main Report, checklist, and this audit.
+- Rà soát: This case covers the documented category PUT API; the user elected to skip it. This is not a Pass, Fail, or bug finding.
+- Tệp bị ảnh hưởng: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-030 - Ghi nhận thực thi TC-FR14-DT-05
 - Tool: Antigravity (Google DeepMind).
 - Date/time: 2026-10-17 11:55 (Asia/Saigon).
-- User prompt: "đã lưu ảnh rồi, tiến hành điền các file liên quan và push commit lên repo cá nhân".
-- Output: Ran login and POST /api/categories via PowerShell on behalf of the student. Standard-user JWT (test@eshop.com) returned HTTP 200 from POST /api/categories and created category #4 DT05-Probe-NTHH, violating SEC-03. Probe category was deleted using admin credentials immediately after evidence capture. Marked TC-FR14-DT-05 Failed; recorded BUG-FR14-01. Updated CSV, FR14 Domain report, Main Report, README aggregate counts (executed: 30, Failed: 17, Not Executed: 6, Bugs: 10), MANUAL_ACTIONS checklist, and this audit entry. Evidence: `screenshots/TC-FR14-DT-05.png`.
-- Review: The PowerShell terminal screenshot confirms HTTP 200 response and category #4 appearing in the list. Token was not exposed in the screenshot. Probe removed as admin; category list restored to 3 seeded entries before closing the session.
-- Files affected: `screenshots/TC-FR14-DT-05.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: "đã lưu ảnh rồi, tiến hành điền các file liên quan và push commit lên repo cá nhân".
+- Đầu ra AI: Ran login and POST /api/categories via PowerShell on behalf of the student. Standard-user JWT (test@eshop.com) returned HTTP 200 from POST /api/categories and created category #4 DT05-Probe-NTHH, violating SEC-03. Probe category was deleted using admin credentials immediately after evidence capture. Marked TC-FR14-DT-05 Failed; recorded BUG-FR14-01. Updated CSV, FR14 Domain report, Main Report, README aggregate counts (executed: 30, Failed: 17, Not Executed: 6, Bugs: 10), MANUAL_ACTIONS checklist, and this audit entry. Evidence: `screenshots/TC-FR14-DT-05.png`.
+- Rà soát: The PowerShell terminal screenshot confirms HTTP 200 response and category #4 appearing in the list. Token was not exposed in the screenshot. Probe removed as admin; category list restored to 3 seeded entries before closing the session.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR14-DT-05.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-031 - Record execution of TC-FR14-BVA-01
-- Tool: ChatGPT (Codex).
+### AI-INT-031 - Ghi nhận thực thi TC-FR14-BVA-01
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-17 (Asia/Saigon).
-- User prompt: The user supplied a screenshot showing category #4 with an empty name after submitting the blank category form.
-- Output: Marked TC-FR14-BVA-01 Failed because the SUT persisted an empty-name category despite FR-14 requiring a non-empty name. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1368).png` to `screenshots/TC-FR14-BVA-01.png`. Queried the category API and confirmed the empty entry; deleted only test-created category #4 using admin authentication and verified seeded categories #1-#3 remained. Added BUG-FR14-02 and updated the CSV, FR14 Domain/BVA reports, Main Report, README, manual checklist, and aggregate counts (executed 31, Passed 13, Failed 18, Not Executed 5; confirmed bugs 11).
-- Review: The screenshot shows the three seeded categories and a fourth blank row. API confirmation established that the empty-name record persisted. Cleanup happened after evidence capture and affected only the test-created row.
-- Files affected: `screenshots/TC-FR14-BVA-01.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a screenshot showing category #4 with an empty name after submitting the blank category form.
+- Đầu ra AI: Marked TC-FR14-BVA-01 Failed because the SUT persisted an empty-name category despite FR-14 requiring a non-empty name. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1368).png` to `screenshots/TC-FR14-BVA-01.png`. Queried the category API and confirmed the empty entry; deleted only test-created category #4 using admin authentication and verified seeded categories #1-#3 remained. Added BUG-FR14-02 and updated the CSV, FR14 Domain/BVA reports, Main Report, README, manual checklist, and aggregate counts (executed 31, Passed 13, Failed 18, Not Executed 5; confirmed bugs 11).
+- Rà soát: The screenshot shows the three seeded categories and a fourth blank row. API confirmation established that the empty-name record persisted. Cleanup happened after evidence capture and affected only the test-created row.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR14-BVA-01.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-032 - Record execution of TC-FR14-BVA-02
-- Tool: ChatGPT (Codex).
+### AI-INT-032 - Ghi nhận thực thi TC-FR14-BVA-02
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-17 (Asia/Saigon).
-- User prompt: The user supplied a screenshot showing category #5 after submitting a name consisting of three spaces.
-- Output: Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1369).png` to `screenshots/TC-FR14-BVA-02.png`. Queried the API and confirmed category #5 stored exactly three spaces; removed only that test category with admin authentication and verified seeded categories #1-#3 remained. Recorded the case as Inconclusive because FR-14 does not define whitespace trimming; no bug was claimed. Updated CSV, FR14 BVA/Domain reports, Main Report, README, checklist, and counts (executed 32, Passed 13, Failed 18, Not Executed 4, Inconclusive 1).
-- Review: The screenshot shows a fourth visible blank row (#5); API evidence confirmed that it held exactly three spaces. Cleanup followed evidence capture and left the three seeded categories intact.
-- Files affected: `screenshots/TC-FR14-BVA-02.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a screenshot showing category #5 after submitting a name consisting of three spaces.
+- Đầu ra AI: Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1369).png` to `screenshots/TC-FR14-BVA-02.png`. Queried the API and confirmed category #5 stored exactly three spaces; removed only that test category with admin authentication and verified seeded categories #1-#3 remained. Recorded the case as Inconclusive because FR-14 does not define whitespace trimming; no bug was claimed. Updated CSV, FR14 BVA/Domain reports, Main Report, README, checklist, and counts (executed 32, Passed 13, Failed 18, Not Executed 4, Inconclusive 1).
+- Rà soát: The screenshot shows a fourth visible blank row (#5); API evidence confirmed that it held exactly three spaces. Cleanup followed evidence capture and left the three seeded categories intact.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR14-BVA-02.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 
 
-### AI-INT-033 - Record execution of TC-FR14-BVA-03
-- Tool: ChatGPT (Codex).
+### AI-INT-033 - Ghi nhận thực thi TC-FR14-BVA-03
+- Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-17 (Asia/Saigon).
-- User prompt: The user supplied a screenshot showing the one-character category name `A` created as category #6.
-- Output: Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1370).png` to `screenshots/TC-FR14-BVA-03.png`. Queried the API and confirmed category #6 stored exactly `A`; deleted only the test category with admin authentication and verified seeded categories #1-#3 remained. Marked TC-FR14-BVA-03 Passed; updated CSV, FR14 BVA/Domain reports, Main Report, README, manual checklist, and counts (executed 33, Passed 14, Failed 18, Not Executed 3, Inconclusive 1). All planned FR-14 BVA cases are executed; DT-04 remains skipped at user request.
-- Review: The screenshot shows `A` as category #6. API confirmation verified the stored value. Cleanup followed evidence capture and left the seeded categories intact.
-- Files affected: `screenshots/TC-FR14-BVA-03.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Prompt người dùng: The user supplied a screenshot showing the one-character category name `A` created as category #6.
+- Đầu ra AI: Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1370).png` to `screenshots/TC-FR14-BVA-03.png`. Queried the API and confirmed category #6 stored exactly `A`; deleted only the test category with admin authentication and verified seeded categories #1-#3 remained. Marked TC-FR14-BVA-03 Passed; updated CSV, FR14 BVA/Domain reports, Main Report, README, manual checklist, and counts (executed 33, Passed 14, Failed 18, Not Executed 3, Inconclusive 1). All planned FR-14 BVA cases are executed; DT-04 remains skipped at user request.
+- Rà soát: The screenshot shows `A` as category #6. API confirmation verified the stored value. Cleanup followed evidence capture and left the seeded categories intact.
+- Tệp bị ảnh hưởng: `screenshots/TC-FR14-BVA-03.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.

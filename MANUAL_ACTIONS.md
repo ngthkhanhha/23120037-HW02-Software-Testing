@@ -1,38 +1,41 @@
 # Các mục sinh viên cần tự hoàn tất
 
-Tệp này chỉ liệt kê việc cần tài khoản, xác nhận cá nhân/nhóm hoặc thao tác thật mà Codex không thể xác nhận thay sinh viên. Các test đã ghi trong CSV không bị sửa trong lần rà soát hồ sơ này.
+Tệp này liệt kê các việc cần tài khoản, xác nhận cá nhân/nhóm hoặc thao tác thực tế mà Codex không thể xác nhận thay sinh viên.
 
 ## Trước khi chốt FR-02 và FR-06
 
-- [ ] Xác nhận với giảng viên/nhóm cách chọn Pool D. Đề ghi FR-06 trong Pool A và Pool D là Mobile App; README hiện ghép FR-06 Mobile vào D nhưng chưa có xác nhận phân công. Cập nhật `README.md` và `reports/Main_Report.md` theo câu trả lời thực tế.
-- [ ] Create GitHub Issues for the 11 confirmed bugs in the shared group repository only; attach evidence and add each issue URL to `bug-reports/bugs.md`. Do not file unverified observations as bugs.
-- [ ] Đọc và xác nhận các phần AI Audit ghi “sinh viên cần xác nhận”; điền nội dung rà soát cá nhân, quyết định chấp nhận/chỉnh sửa, và bổ sung nguyên văn prompt còn thiếu từ lịch sử nếu cần.
+- [ ] Xác nhận với giảng viên/nhóm cách chọn Pool D. Đề ghi FR-06 trong Pool A và Pool D là Mobile App; README đang ghép FR-06 Mobile vào Pool D nhưng chưa có xác nhận phân công. Cập nhật `README.md` và `reports/Main_Report.md` theo câu trả lời thực tế.
+- [ ] Tạo GitHub Issues cho 11 bug đã xác nhận trong repo nhóm; đính kèm bằng chứng và thêm URL issue vào `bug-reports/bugs.md`. Không tạo issue cho quan sát chưa xác minh.
+- [ ] Đọc và xác nhận các mục AI Audit được đánh dấu “sinh viên cần xác nhận”; điền phần rà soát cá nhân, quyết định chấp nhận/chỉnh sửa, và bổ sung nguyên văn prompt còn thiếu từ lịch sử nếu cần.
 - [ ] Đọc và tự chỉnh AI Critique để phản ánh đánh giá/cách diễn đạt của bạn; bản hiện tại là bản nháp do AI hỗ trợ soạn (227 từ theo bộ đếm tách từ của tài liệu).
-- [ ] Bổ sung/đính chính thông tin môi trường chỉ bạn xác nhận được: tên/số nhóm, Chrome version, backend/version/URL, admin frontend nếu dùng, cách reset/seed DB và tài khoản thử nghiệm (không ghi mật khẩu thật), iOS version, ngày kiểm thử cho FR-02.
-- [ ] Quyết định có chạy lại TC-FR02-BVA-01 và BVA-06 hay giữ Not Executed. Nếu chạy, dùng trạng thái/tài khoản thử nghiệm cô lập, lưu bằng chứng mới và cập nhật CSV cùng báo cáo nhất quán.
-- [ ] Cân nhắc chạy các test ứng viên nêu trong AI gap analysis nếu nằm trong phạm vi bài; nếu không chạy, giữ rõ trạng thái là đề xuất/chưa thực thi.
+- [ ] Bổ sung/đính chính thông tin môi trường chỉ bạn mới xác nhận được: tên/số nhóm, phiên bản Chrome, phiên bản/URL backend, frontend admin nếu có dùng, cách reset/seed DB và tài khoản thử (không ghi mật khẩu thật), phiên bản iOS, ngày kiểm thử FR-02.
+- [ ] Quyết định chạy lại TC-FR02-BVA-01 và BVA-06 hay giữ trạng thái Not Executed. Nếu chạy, dùng trạng thái/tài khoản thử nghiệm cô lập, lưu bằng chứng mới và cập nhật CSV cùng báo cáo cho nhất quán.
+- [ ] Cân nhắc chạy các test ứng viên trong phân tích khoảng trống AI nếu thuộc phạm vi bài; nếu không chạy, ghi rõ là đề xuất/chưa thực thi.
 
-## FR-08 - Completed execution
-- [ ] If required by the rubric, independently verify no order was created for TC-FR08-DT-01; this evidence was not captured.
-- [x] TC-FR08-DT-01 through DT-05 and BVA-01 through BVA-03 are executed; see `reports/FR08_Domain.md` and `reports/FR08_BVA.md`.
-- [x] Demo orders #1 through #5 and their totals are documented. Do not rerun these cases without preparing a fresh baseline.
+## FR-08 — Đã hoàn tất thực thi
 
-## FR-14 - Manual execution complete (DT-04 intentionally skipped)
-- [x] TC-FR14-DT-05 executed and Failed: standard user POST /api/categories returned HTTP 200; SEC-03 not enforced. BUG-FR14-01 recorded. Probe category removed as admin. Evidence: `screenshots/TC-FR14-DT-05.png`.
-- [x] TC-FR14-BVA-01 executed and Failed: blank submission created empty category #4 (BUG-FR14-02); evidence saved and test data cleaned up.
-- [x] TC-FR14-DT-04 skip was recorded at user request; it remains Not Executed. TC-FR14-BVA-02 is Inconclusive: exactly three spaces were stored, but whitespace behavior is unspecified. TC-FR14-BVA-03 Passed with one-character name `A`; all planned FR-14 BVA cases are executed.
-- [ ] Use a unique disposable category name for create/update probes; capture before/after state and remove only categories created for testing. Do not delete seeded categories.
-- [ ] For DT-04, use the documented PUT API only if you can safely obtain/use an admin session; redact tokens from screenshots. The SRS/UI discrepancy is already documented.
-- [ ] Treat whitespace-only rejection as exploratory until its expected behavior is confirmed. Do not file it as a bug based on assumption alone.
-- [x] After each executed case, update FR14 reports, confirmed bug records, evidence links, AI Audit, and aggregate counts together.
+- [ ] Nếu rubric yêu cầu, tự xác minh rằng TC-FR08-DT-01 không tạo đơn hàng; bằng chứng này chưa được lưu.
+- [x] TC-FR08-DT-01 đến DT-05 và BVA-01 đến BVA-03 đã chạy; xem `reports/FR08_Domain.md` và `reports/FR08_BVA.md`.
+- [x] Đơn thử #1 đến #5 và tổng tiền tương ứng đã được ghi lại. Không chạy lại các ca này nếu chưa chuẩn bị baseline mới.
+
+## FR-14 — Đã thực thi thủ công (DT-04 chủ động bỏ qua)
+
+- [x] TC-FR14-DT-05 đã chạy và Failed: POST `/api/categories` từ người dùng thường trả HTTP 200; SEC-03 không được thực thi. Đã ghi BUG-FR14-01. Admin đã xóa danh mục thăm dò. Bằng chứng: `screenshots/TC-FR14-DT-05.png`.
+- [x] TC-FR14-BVA-01 đã chạy và Failed: gửi tên rỗng tạo danh mục #4 không tên (BUG-FR14-02); đã lưu bằng chứng và xóa dữ liệu thử.
+- [x] Đã ghi nhận yêu cầu bỏ qua TC-FR14-DT-04; ca vẫn là Not Executed. TC-FR14-BVA-02 là Inconclusive: ứng dụng lưu đúng ba dấu cách nhưng hành vi khoảng trắng chưa được quy định. TC-FR14-BVA-03 Passed với tên một ký tự `A`; tất cả ca BVA FR-14 đã chạy.
+- [ ] Với kiểm tra tạo/cập nhật, dùng tên danh mục thử nghiệm duy nhất; chụp trạng thái trước/sau và chỉ xóa danh mục do test tạo. Không xóa danh mục seed.
+- [ ] Với DT-04, chỉ dùng API PUT đã được tài liệu hóa nếu có thể dùng an toàn phiên admin; che token khỏi ảnh. Điểm khác biệt giữa SRS và giao diện đã được ghi nhận.
+- [ ] Xem việc từ chối tên chỉ có khoảng trắng là kiểm thử thăm dò cho đến khi xác nhận kết quả mong đợi. Không báo bug chỉ dựa trên giả định.
+- [x] Sau mỗi ca đã chạy, đã cập nhật báo cáo FR14, danh sách bug xác nhận, liên kết bằng chứng, AI Audit và tổng số liệu đồng bộ.
+
 ## Phần bài tập còn lại
 
-- [x] All FR-08 Domain and BVA cases have execution results. Only independent Network/order-history confirmation for DT-01 remains open if required.
-- [x] Commit assignment deliverables (reports, CSV, evidence, bug report and AI audit) to the personal course repository; personal repository link is now recorded in README.md and reports/Main_Report.md. Keep the shared group repository limited to GitHub Issues.
+- [x] Tất cả ca Domain và BVA FR-08 đã có kết quả thực thi. Chỉ còn việc xác minh độc lập qua Network/lịch sử đơn rằng DT-01 không tạo đơn nếu rubric yêu cầu.
+- [x] Đã commit tài liệu bài làm (báo cáo, CSV, bằng chứng, báo cáo lỗi và AI Audit) vào repo cá nhân; liên kết repo cá nhân đã ghi trong README và báo cáo chính. Repo nhóm chỉ dùng tạo GitHub Issues.
 
 ## Trước khi nộp
 
 - [ ] Điền bảng tự đánh giá và tổng điểm trong `README.md` theo đánh giá của bạn.
-- [x] Agent Skill created at `agent-skills/domain-bva-testing/SKILL.md`.
-- [ ] Record the demo video link if the rubric requires it; the Skill is included in this repository.
+- [x] Agent Skill đã được tạo tại `agent-skills/domain-bva-testing/SKILL.md`.
+- [ ] Quay video demo và bổ sung liên kết nếu rubric yêu cầu; Skill đã có trong repo.
 - [ ] Xuất PDF cho báo cáo chính, AI Audit và AI Critique sau khi nội dung được chốt.

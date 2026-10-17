@@ -1,6 +1,9 @@
-﻿Git commit log chưa được xuất.
+Git commit log hiện chưa được xuất.
 
-Sau khi tạo các commit thật cho từng bước kiểm thử của từng tính năng, xuất log bằng:
+Sau khi tạo các commit thật cho từng bước kiểm thử của từng tính năng, xuất nhật ký bằng lệnh:
+
+```bash
 git log --oneline --decorate > git-log.txt
+```
 
-Không tự điền commit giả. Lệnh này cần chạy trong repository Git chứa lịch sử bài làm.
+Không tự điền commit giả. Chạy lệnh trong repo Git chứa lịch sử bài làm.
