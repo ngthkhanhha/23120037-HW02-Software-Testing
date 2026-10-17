@@ -85,10 +85,10 @@ The per-feature analysis files are linked below. Test case details and execution
 - Boundary Value Analysis: [FR14_BVA.md](FR14_BVA.md)
 - Test case design: 8 cases prepared (5 Domain and 3 BVA), all Not Executed: TC-FR14-DT-01 through DT-05 and TC-FR14-BVA-01 through BVA-03.
 - Scope clarification: SRS FR-14 specifies add/view/delete; API specification also documents PUT, while the admin UI has no edit control. DT-04 therefore checks the documented API contract and tracks the scope discrepancy, not a UI requirement. Whitespace-only rejection is an assumption, not a confirmed requirement.
-- Execution summary: 3 of 8 cases executed and Passed (DT-01 through DT-03). TC-FR14-DT-04 was skipped at the user's request and remains Not Executed; four other cases also remain Not Executed. Evidence for the executed cases: [`../screenshots/TC-FR14-DT-01.png`](../screenshots/TC-FR14-DT-01.png), [`../screenshots/TC-FR14-DT-02.png`](../screenshots/TC-FR14-DT-02.png), [`../screenshots/TC-FR14-DT-03.png`](../screenshots/TC-FR14-DT-03.png). No FR-14 bugs have been confirmed.
+- Execution summary: 4 of 8 cases executed: DT-01, DT-02, DT-03 Passed; DT-05 Failed. TC-FR14-DT-04 was skipped at the user's request and remains Not Executed; three BVA cases also remain Not Executed. Evidence for the executed cases: [`../screenshots/TC-FR14-DT-01.png`](../screenshots/TC-FR14-DT-01.png), [`../screenshots/TC-FR14-DT-02.png`](../screenshots/TC-FR14-DT-02.png), [`../screenshots/TC-FR14-DT-03.png`](../screenshots/TC-FR14-DT-03.png), [`../screenshots/TC-FR14-DT-05.png`](../screenshots/TC-FR14-DT-05.png). BUG-FR14-01 confirmed: backend does not enforce admin role for POST /api/categories.
 - AI gap analysis: The prepared design covers SRS operations, the related SEC-03 role boundary, the documented PUT API, and specified name boundary. Duplicate-name and referenced-category deletion behavior are unspecified and remain exploratory.
-- Confirmed bugs: None from FR-14 execution to date.
-- Evidence: To be added after each manual case is run; keep JWT/token values out of screenshots.
+- Confirmed bugs: BUG-FR14-01 (standard user can create categories — SEC-03 not enforced on POST /api/categories; backend returned HTTP 200 for non-admin JWT).
+- Evidence: DT-01 through DT-03 and DT-05 evidence saved under `../screenshots/`; evidence paths listed in the test case CSV.
 
 ## 8. Feature D — Mobile FR-06: Product Detail View
 
@@ -110,13 +110,13 @@ Summary from the recorded test cases; each case has one status and the totals re
 |---|---:|
 | Features in scope | 4 |
 | Test cases designed | 36 |
-| Test cases executed | 29 |
+| Test cases executed | 30 |
 | Passed | 13 |
-| Failed | 16 |
-| Not Executed | 7 |
-| Confirmed bugs | 9 |
+| Failed | 17 |
+| Not Executed | 6 |
+| Confirmed bugs | 10 |
 
-**Reconciliation:** 36 designed = 13 Passed + 16 Failed + 7 Not Executed. The totals reconcile. FR-08 contributes 8 designed cases; all eight are executed (three Passed, five Failed). FR-14 contributes 8 designed cases; three are Passed and five remain Not Executed.
+**Reconciliation:** 36 designed = 13 Passed + 17 Failed + 6 Not Executed. The totals reconcile. FR-08 contributes 8 designed cases; all eight are executed (three Passed, five Failed). FR-14 contributes 8 designed cases; three are Passed, one is Failed (DT-05), one is Not Executed by skip (DT-04), and three BVA cases remain Not Executed.
 
 ## 10. AI Use and Supporting Deliverables
 

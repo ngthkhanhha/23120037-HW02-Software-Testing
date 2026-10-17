@@ -18,7 +18,8 @@ Tệp này chỉ liệt kê việc cần tài khoản, xác nhận cá nhân/nh�
 - [x] Demo orders #1 through #5 and their totals are documented. Do not rerun these cases without preparing a fresh baseline.
 
 ## FR-14 - Manual execution in progress
-- [ ] TC-FR14-DT-04 was skipped by user request and remains Not Executed. Run TC-FR14-DT-05 and TC-FR14-BVA-01 through BVA-03 if continuing FR-14; record actual result, status, and evidence in the CSV and per-feature reports after each case.
+- [x] TC-FR14-DT-05 executed and Failed: standard user POST /api/categories returned HTTP 200; SEC-03 not enforced. BUG-FR14-01 recorded. Probe category removed as admin. Evidence: `screenshots/TC-FR14-DT-05.png`.
+- [ ] TC-FR14-DT-04 was skipped by user request and remains Not Executed. Run TC-FR14-BVA-01 through BVA-03 if continuing FR-14; record actual result, status, and evidence in the CSV and per-feature reports after each case.
 - [ ] Use a unique disposable category name for create/update probes; capture before/after state and remove only categories created for testing. Do not delete seeded categories.
 - [ ] For DT-04, use the documented PUT API only if you can safely obtain/use an admin session; redact tokens from screenshots. The SRS/UI discrepancy is already documented.
 - [ ] Treat whitespace-only rejection as exploratory until its expected behavior is confirmed. Do not file it as a bug based on assumption alone.

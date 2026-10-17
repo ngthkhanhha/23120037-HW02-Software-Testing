@@ -1,4 +1,4 @@
-﻿# AI Audit Report
+# AI Audit Report
 
 ## Khai báo
 I use AI tools for the following tasks.
@@ -238,4 +238,11 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - User prompt: “skip TC này”.
 - Output: Recorded TC-FR14-DT-04 as skipped by user request and kept its status Not Executed. No API request was sent, no evidence was fabricated, and aggregate execution counts did not change. Updated the test case CSV, FR14 Domain, Main Report, checklist, and this audit.
 - Review: This case covers the documented category PUT API; the user elected to skip it. This is not a Pass, Fail, or bug finding.
-- Files affected: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+- Files affected: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+### AI-INT-030 - Record execution of TC-FR14-DT-05
+- Tool: Antigravity (Google DeepMind).
+- Date/time: 2026-10-17 11:55 (Asia/Saigon).
+- User prompt: "đã lưu ảnh rồi, tiến hành điền các file liên quan và push commit lên repo cá nhân".
+- Output: Ran login and POST /api/categories via PowerShell on behalf of the student. Standard-user JWT (test@eshop.com) returned HTTP 200 from POST /api/categories and created category #4 DT05-Probe-NTHH, violating SEC-03. Probe category was deleted using admin credentials immediately after evidence capture. Marked TC-FR14-DT-05 Failed; recorded BUG-FR14-01. Updated CSV, FR14 Domain report, Main Report, README aggregate counts (executed: 30, Failed: 17, Not Executed: 6, Bugs: 10), MANUAL_ACTIONS checklist, and this audit entry. Evidence: `screenshots/TC-FR14-DT-05.png`.
+- Review: The PowerShell terminal screenshot confirms HTTP 200 response and category #4 appearing in the list. Token was not exposed in the screenshot. Probe removed as admin; category list restored to 3 seeded entries before closing the session.
+- Files affected: `screenshots/TC-FR14-DT-05.png`, `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
