@@ -5,7 +5,7 @@ Tệp này chỉ liệt kê việc cần tài khoản, xác nhận cá nhân/nh�
 ## Trước khi chốt FR-02 và FR-06
 
 - [ ] Xác nhận với giảng viên/nhóm cách chọn Pool D. Đề ghi FR-06 trong Pool A và Pool D là Mobile App; README hiện ghép FR-06 Mobile vào D nhưng chưa có xác nhận phân công. Cập nhật `README.md` và `reports/Main_Report.md` theo câu trả lời thực tế.
-- [ ] Create GitHub Issues for the 9 confirmed bugs in the shared group repository only; attach evidence and add each issue URL to `bug-reports/bugs.md`. Do not file unverified observations as bugs.
+- [ ] Create GitHub Issues for the 11 confirmed bugs in the shared group repository only; attach evidence and add each issue URL to `bug-reports/bugs.md`. Do not file unverified observations as bugs.
 - [ ] Đọc và xác nhận các phần AI Audit ghi “sinh viên cần xác nhận”; điền nội dung rà soát cá nhân, quyết định chấp nhận/chỉnh sửa, và bổ sung nguyên văn prompt còn thiếu từ lịch sử nếu cần.
 - [ ] Đọc và tự chỉnh AI Critique để phản ánh đánh giá/cách diễn đạt của bạn; bản hiện tại là bản nháp do AI hỗ trợ soạn (227 từ theo bộ đếm tách từ của tài liệu).
 - [ ] Bổ sung/đính chính thông tin môi trường chỉ bạn xác nhận được: tên/số nhóm, Chrome version, backend/version/URL, admin frontend nếu dùng, cách reset/seed DB và tài khoản thử nghiệm (không ghi mật khẩu thật), iOS version, ngày kiểm thử cho FR-02.
@@ -17,10 +17,10 @@ Tệp này chỉ liệt kê việc cần tài khoản, xác nhận cá nhân/nh�
 - [x] TC-FR08-DT-01 through DT-05 and BVA-01 through BVA-03 are executed; see `reports/FR08_Domain.md` and `reports/FR08_BVA.md`.
 - [x] Demo orders #1 through #5 and their totals are documented. Do not rerun these cases without preparing a fresh baseline.
 
-## FR-14 - Manual execution in progress
+## FR-14 - Manual execution complete (DT-04 intentionally skipped)
 - [x] TC-FR14-DT-05 executed and Failed: standard user POST /api/categories returned HTTP 200; SEC-03 not enforced. BUG-FR14-01 recorded. Probe category removed as admin. Evidence: `screenshots/TC-FR14-DT-05.png`.
 - [x] TC-FR14-BVA-01 executed and Failed: blank submission created empty category #4 (BUG-FR14-02); evidence saved and test data cleaned up.
-- [ ] TC-FR14-DT-04 was skipped by user request and remains Not Executed. TC-FR14-BVA-02 is Inconclusive: exactly three spaces were stored, but whitespace behavior is unspecified. TC-FR14-BVA-03 Passed with one-character name `A`; all planned FR-14 BVA cases are executed.
+- [x] TC-FR14-DT-04 skip was recorded at user request; it remains Not Executed. TC-FR14-BVA-02 is Inconclusive: exactly three spaces were stored, but whitespace behavior is unspecified. TC-FR14-BVA-03 Passed with one-character name `A`; all planned FR-14 BVA cases are executed.
 - [ ] Use a unique disposable category name for create/update probes; capture before/after state and remove only categories created for testing. Do not delete seeded categories.
 - [ ] For DT-04, use the documented PUT API only if you can safely obtain/use an admin session; redact tokens from screenshots. The SRS/UI discrepancy is already documented.
 - [ ] Treat whitespace-only rejection as exploratory until its expected behavior is confirmed. Do not file it as a bug based on assumption alone.
@@ -28,7 +28,7 @@ Tệp này chỉ liệt kê việc cần tài khoản, xác nhận cá nhân/nh�
 ## Phần bài tập còn lại
 
 - [x] All FR-08 Domain and BVA cases have execution results. Only independent Network/order-history confirmation for DT-01 remains open if required.
-- [ ] Commit the assignment deliverables (reports, CSV, evidence, bug report and AI audit) to your personal course repository; add that repository URL to README.md and reports/Main_Report.md. Keep the shared group repository limited to GitHub Issues.
+- [x] Commit assignment deliverables (reports, CSV, evidence, bug report and AI audit) to the personal course repository; personal repository link is now recorded in README.md and reports/Main_Report.md. Keep the shared group repository limited to GitHub Issues.
 
 ## Trước khi nộp
 

@@ -6,7 +6,7 @@
 - MSSV: 23120037
 - Nhóm: [Tên/số nhóm]
 - SUT: [EShop SUT](https://github.com/ttbhanh/eshop-sut)
-- Personal assignment repository: [Add your personal repo URL here]
+- Personal assignment repository: [https://github.com/ngthkhanhha/23120037-HW02-Software-Testing](https://github.com/ngthkhanhha/23120037-HW02-Software-Testing)
 - Shared group repository (GitHub Issues only): [Add the group repo URL here]
 - Thời gian kiểm thử: 2026-10-14 (ngày hiển thị trên các ảnh chạy FR-06)
 
@@ -40,11 +40,12 @@
 |---|---:|
 | Tính năng trong phạm vi | 4 |
 | Test case đã thiết kế | 36 |
-| Test case đã thực thi | 30 |
-| Passed | 13 |
-| Failed | 17 |
-| Not Executed | 6 |
-| Bug đã xác nhận | 10 |
+| Test case đã thực thi | 33 |
+| Passed | 14 |
+| Failed | 18 |
+| Not Executed | 3 |
+| Inconclusive | 1 |
+| Bug đã xác nhận | 11 |
 | Video demo | [Sinh viên bổ sung liên kết hoặc ghi rõ không có] |
 
 ## Tự đánh giá
@@ -58,7 +59,7 @@
 | 5 | Agent Skills | 11 | [ ] |
 | | **Tổng** | **100** | **[ ]** |
 
-> Counts reconcile with the CSV: 20 FR-02/FR-06 cases designed; 8 FR-08 cases designed, with all 8 executed (3 Passed, 5 Failed); 8 FR-14 cases designed, with DT-01 through DT-03 Passed, DT-05 and BVA-01 Failed; BVA-02 Inconclusive; BVA-03 Passed; DT-04 skipped. Overall: 36 designed, 33 executed, 14 Passed, 18 Failed, 3 Not Executed, 1 Inconclusive. Evidence for FR-08 DT-01 through DT-05, BVA-01 through BVA-03, and FR14-DT-01 through DT-03, DT-05, and BVA-01 through BVA-03 is saved under `screenshots/`. BUG-FR14-01: standard user POST /api/categories returned HTTP 200 — SEC-03 not enforced. BUG-FR14-02: blank category submission created an empty-name category. BVA-02 accepted three spaces; no bug is claimed because trimming is unspecified. Before packaging, complete remaining FR-14 BVA cases, confirm pool allocation, fill in group details and self-assessment, add video if required, export the main report/AI Audit/AI Critique as PDFs, and create the required ZIP.
+> Counts reconcile with the CSV: 20 FR-02/FR-06 cases designed; 8 FR-08 cases designed, with all 8 executed (3 Passed, 5 Failed); 8 FR-14 cases designed, with DT-01 through DT-03 Passed, DT-05 and BVA-01 Failed; BVA-02 Inconclusive; BVA-03 Passed; DT-04 skipped. Overall: 36 designed, 33 executed, 14 Passed, 18 Failed, 3 Not Executed, 1 Inconclusive. Evidence for FR-08 DT-01 through DT-05, BVA-01 through BVA-03, and FR14-DT-01 through DT-03, DT-05, and BVA-01 through BVA-03 is saved under `screenshots/`. BUG-FR14-01: standard user POST /api/categories returned HTTP 200 — SEC-03 not enforced. BUG-FR14-02: blank category submission created an empty-name category. BVA-02 accepted three spaces; no bug is claimed because trimming is unspecified. Remaining Not Executed cases: TC-FR02-BVA-01, TC-FR02-BVA-06, and intentionally skipped TC-FR14-DT-04. Decide whether to run or retain each skip with a clear rationale. Before packaging, confirm pool allocation, add the shared group repo URL, create 11 GitHub Issues for confirmed bugs and link them in the bug report, review the AI Audit and edit the AI Critique, complete environment/group details and self-assessment, include the required Agent Skill and YouTube demo, export the required PDFs and final Git commit log, then create the ZIP.
 
 
 

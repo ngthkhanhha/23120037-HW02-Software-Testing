@@ -8,7 +8,7 @@
 - **Student Name:** Nguyễn Thanh Khánh Hà
 - **System Under Test (SUT):** EShop
 - **SUT source repository:** [ttbhanh/eshop-sut](https://github.com/ttbhanh/eshop-sut)
-- **Personal assignment repository:** [Add your personal repo URL here]
+- **Personal assignment repository:** [https://github.com/ngthkhanhha/23120037-HW02-Software-Testing](https://github.com/ngthkhanhha/23120037-HW02-Software-Testing)
 - **Shared group repository (GitHub Issues only):** [Add the group repo URL here]
 - **Local SUT copy used:** `C:\KTPM\HW02-EShop` (copied to avoid the `#` character in the original path)
 - **Testing period:** 2026-10-14 (date shown in the supplied execution screenshots)
