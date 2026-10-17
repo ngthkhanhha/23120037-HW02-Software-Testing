@@ -6,7 +6,7 @@ FR-14 says a category name is required and cannot be empty. It provides no maxim
 
 | ID | Boundary/input | Expected result | Status
 |---|---|---|---|
-| TC-FR14-BVA-01 | Empty string (0 characters) | Reject; no category is created. | Not Executed |
+| TC-FR14-BVA-01 | Empty string (0 characters) | Reject; no category is created. | **Failed** - submitting the blank form created empty category #4; it was removed after evidence capture. Evidence: [`TC-FR14-BVA-01.png`](../screenshots/TC-FR14-BVA-01.png). |
 | TC-FR14-BVA-02 | Three spaces, no visible characters | Assumption: reject as blank; confirm requirement interpretation. | Not Executed |
 | TC-FR14-BVA-03 | One non-whitespace character (`A`) | Accept; clean up the disposable category after capture. | Not Executed |
 

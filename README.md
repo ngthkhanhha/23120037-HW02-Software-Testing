@@ -58,7 +58,7 @@
 | 5 | Agent Skills | 11 | [ ] |
 | | **Tổng** | **100** | **[ ]** |
 
-> Counts reconcile with the CSV: 20 FR-02/FR-06 cases designed; 8 FR-08 cases designed, with all 8 executed (3 Passed, 5 Failed); 8 FR-14 cases designed, with DT-01 through DT-03 Passed, DT-05 Failed, DT-04 skipped (Not Executed), and 3 BVA cases Not Executed. Overall: 36 designed, 30 executed, 13 Passed, 17 Failed, 6 Not Executed. Evidence for FR-08 DT-01 through DT-05, BVA-01 through BVA-03, and FR14-DT-01 through DT-03 and DT-05 is saved under `screenshots/`. BUG-FR14-01: standard user POST /api/categories returned HTTP 200 — SEC-03 not enforced. Before packaging, complete remaining FR-14 BVA cases, confirm pool allocation, fill in group details and self-assessment, add video if required, export the main report/AI Audit/AI Critique as PDFs, and create the required ZIP.
+> Counts reconcile with the CSV: 20 FR-02/FR-06 cases designed; 8 FR-08 cases designed, with all 8 executed (3 Passed, 5 Failed); 8 FR-14 cases designed, with DT-01 through DT-03 Passed, DT-05 and BVA-01 Failed, DT-04 skipped (Not Executed), and BVA-02/BVA-03 Not Executed. Overall: 36 designed, 31 executed, 13 Passed, 18 Failed, 5 Not Executed. Evidence for FR-08 DT-01 through DT-05, BVA-01 through BVA-03, and FR14-DT-01 through DT-03, DT-05, and BVA-01 is saved under `screenshots/`. BUG-FR14-01: standard user POST /api/categories returned HTTP 200 — SEC-03 not enforced. Before packaging, complete remaining FR-14 BVA cases, confirm pool allocation, fill in group details and self-assessment, add video if required, export the main report/AI Audit/AI Critique as PDFs, and create the required ZIP.
 
 
 

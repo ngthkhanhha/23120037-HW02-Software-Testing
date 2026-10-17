@@ -154,3 +154,16 @@ Confirmed bugs: BUG-FR02-01, BUG-FR02-02, BUG-FR02-03, BUG-FR02-04, BUG-FR06-01,
 - Actual: Both items remained and the subtotal was still 58,000,000 VND after the success flow. No second order was submitted for DT-05.
 - Evidence: [`../screenshots/TC-FR08-DT-05-cart-not-cleared.png`](../screenshots/TC-FR08-DT-05-cart-not-cleared.png), [`../screenshots/TC-FR08-DT-04-checkout-response.png`](../screenshots/TC-FR08-DT-04-checkout-response.png).
 - GitHub Issue: Not created.
+
+
+## BUG-FR14-02 - Empty category name is accepted
+
+- Feature: FR-14 Category Management (Web Admin).
+- Severity: Medium.
+- Preconditions: Signed in as admin; category list contains the three seeded categories.
+- Steps: Leave the category name field empty and submit the add-category form.
+- Expected: The empty name is rejected and no category is created (FR-14: category name is required and cannot be empty).
+- Actual: The category list displayed a new category #4 with an empty name; the API list confirmed it was persisted.
+- Evidence: [`../screenshots/TC-FR14-BVA-01.png`](../screenshots/TC-FR14-BVA-01.png).
+- Cleanup: Removed only the empty test-created category #4 after evidence capture; seeded categories #1-#3 remain.
+- GitHub Issue: Not created.
