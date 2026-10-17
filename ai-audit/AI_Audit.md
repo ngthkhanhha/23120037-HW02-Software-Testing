@@ -264,3 +264,12 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - Output: Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1369).png` to `screenshots/TC-FR14-BVA-02.png`. Queried the API and confirmed category #5 stored exactly three spaces; removed only that test category with admin authentication and verified seeded categories #1-#3 remained. Recorded the case as Inconclusive because FR-14 does not define whitespace trimming; no bug was claimed. Updated CSV, FR14 BVA/Domain reports, Main Report, README, checklist, and counts (executed 32, Passed 13, Failed 18, Not Executed 4, Inconclusive 1).
 - Review: The screenshot shows a fourth visible blank row (#5); API evidence confirmed that it held exactly three spaces. Cleanup followed evidence capture and left the three seeded categories intact.
 - Files affected: `screenshots/TC-FR14-BVA-02.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+
+
+### AI-INT-033 - Record execution of TC-FR14-BVA-03
+- Tool: ChatGPT (Codex).
+- Date/time: 2026-10-17 (Asia/Saigon).
+- User prompt: The user supplied a screenshot showing the one-character category name `A` created as category #6.
+- Output: Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1370).png` to `screenshots/TC-FR14-BVA-03.png`. Queried the API and confirmed category #6 stored exactly `A`; deleted only the test category with admin authentication and verified seeded categories #1-#3 remained. Marked TC-FR14-BVA-03 Passed; updated CSV, FR14 BVA/Domain reports, Main Report, README, manual checklist, and counts (executed 33, Passed 14, Failed 18, Not Executed 3, Inconclusive 1). All planned FR-14 BVA cases are executed; DT-04 remains skipped at user request.
+- Review: The screenshot shows `A` as category #6. API confirmation verified the stored value. Cleanup followed evidence capture and left the seeded categories intact.
+- Files affected: `screenshots/TC-FR14-BVA-03.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
