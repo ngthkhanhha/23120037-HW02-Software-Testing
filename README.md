@@ -1,14 +1,14 @@
-# HW02 — Kiểm thử miền bằng AI
+﻿# HW02 — Kiểm thử miền bằng AI
 
 ## Thông tin bài làm
 
 - Sinh viên: Nguyễn Thanh Khánh Hà
 - MSSV: 23120037
-- Nhóm: [Tên/số nhóm]
+- Nhóm: [Nhóm 06]
 - SUT: [EShop SUT](https://github.com/ttbhanh/eshop-sut)
 - Repo cá nhân nộp bài: [23120037-HW02-Software-Testing](https://github.com/ngthkhanhha/23120037-HW02-Software-Testing)
-- Repo nhóm (chỉ dùng tạo GitHub Issues): [Bổ sung liên kết repo nhóm]
-- Thời gian kiểm thử: 2026-10-14 (ngày hiển thị trên ảnh thực thi FR-06)
+- Repo nhóm (chỉ dùng tạo GitHub Issues): https://github.com/TNhanTis/eshop-sut-Group06.git
+- Thời gian kiểm thử: 2026-10-14 
 
 ## Tính năng đã chọn
 
@@ -56,7 +56,7 @@
 | 2 | Tính năng B (Domain + Boundary) | 25 | [ ] |
 | 3 | Tính năng C (Domain + Boundary) | 25 | [ ] |
 | 4 | Tính năng D Mobile (Domain + Boundary) | 15 | [ ] |
-| 5 | Agent Skill | 11 | [ ] |
+| 5 | Agent Skill | 10 | [ ] |
 | | **Tổng** | **100** | **[ ]** |
 
 > Số liệu khớp với CSV: FR-02/FR-06 có tổng 20 ca; FR-08 có 8 ca, cả 8 đã chạy (3 Passed, 5 Failed); FR-14 có 8 ca, trong đó DT-01 đến DT-03 Passed, DT-05 và BVA-01 Failed, BVA-02 Inconclusive, BVA-03 Passed, DT-04 được bỏ qua. Tổng cộng: 36 ca thiết kế, 33 đã chạy, 14 Passed, 18 Failed, 3 Not Executed, 1 Inconclusive. Bằng chứng cho FR-08 DT-01 đến DT-05, BVA-01 đến BVA-03 và FR-14 DT-01 đến DT-03, DT-05, BVA-01 đến BVA-03 nằm trong `screenshots/`. BUG-FR14-01: POST `/api/categories` từ người dùng thường trả HTTP 200 — SEC-03 không được thực thi. BUG-FR14-02: gửi tên danh mục rỗng tạo danh mục không tên. BVA-02 chấp nhận ba dấu cách; không kết luận bug vì yêu cầu chưa quy định việc cắt khoảng trắng. Các ca Not Executed còn lại: TC-FR02-BVA-01, TC-FR02-BVA-06 và TC-FR14-DT-04 đã được chủ động bỏ qua. Trước khi đóng gói, xác nhận phân pool, bổ sung liên kết repo nhóm, tạo 11 GitHub Issues cho bug đã xác nhận và thêm liên kết issue vào báo cáo lỗi; rà soát AI Audit, chỉnh AI Critique, điền thông tin môi trường/nhóm và tự đánh giá, đưa Agent Skill cùng video demo theo yêu cầu, xuất PDF cần thiết và nhật ký commit Git cuối, sau đó tạo ZIP.
