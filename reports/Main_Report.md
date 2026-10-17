@@ -28,14 +28,14 @@
 
 | Hạng mục | Giá trị |
 |---|---|
-| Hệ điều hành | Windows 11 (xác minh phiên bản/build nếu đề yêu cầu) |
-| Trình duyệt và phiên bản | Google Chrome — [ghi phiên bản] |
-| Thiết bị/giả lập di động và hệ điều hành | iPhone, Expo Go SDK 57; ảnh hiện có không ghi phiên bản iOS |
-| Backend/API | [phiên bản/commit; URL và cổng] |
+| Hệ điều hành | Windows 11; phiên bản/build không ghi nhận |
+| Trình duyệt và phiên bản | Google Chrome; phiên bản không ghi nhận |
+| Thiết bị/giả lập di động và hệ điều hành | iPhone, Expo Go SDK 57; phiên bản iOS không ghi nhận |
+| Backend/API | `http://localhost:3000`; phiên bản/commit không ghi nhận |
 | Frontend Web | Vite — `http://localhost:5173/` |
-| Frontend Admin | [URL/phiên bản nếu có dùng] |
+| Frontend Admin | `http://localhost:5174/`; phiên bản không ghi nhận |
 | Ứng dụng di động | Expo Go SDK 57 trên iPhone; máy chủ phát triển/API được truy cập qua LAN |
-| Cơ sở dữ liệu và dữ liệu seed | [ghi cách reset/seed và tài khoản thử; không ghi mật khẩu thật vào báo cáo nộp] |
+| Cơ sở dữ liệu và dữ liệu seed | Cách reset/seed và thông tin tài khoản thử không ghi nhận |
 | Ngày kiểm thử | 2026-10-14 đối với bằng chứng thực thi FR-06 được cung cấp |
 
 Ghi thông tin môi trường trước khi chạy test. Nếu thiết lập thay đổi, ghi lại thay đổi đó và các test bị ảnh hưởng.
