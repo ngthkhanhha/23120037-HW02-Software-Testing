@@ -7,7 +7,7 @@ Tệp này liệt kê các việc cần tài khoản, xác nhận cá nhân/nhó
 - [ ] Xác nhận với giảng viên/nhóm cách chọn Pool D. Đề ghi FR-06 trong Pool A và Pool D là Mobile App; README đang ghép FR-06 Mobile vào Pool D nhưng chưa có xác nhận phân công. Cập nhật `README.md` và `reports/Main_Report.md` theo câu trả lời thực tế.
 - [ ] Tạo GitHub Issues cho 11 bug đã xác nhận trong repo nhóm; đính kèm bằng chứng và thêm URL issue vào `bug-reports/bugs.md`. Không tạo issue cho quan sát chưa xác minh.
 - [ ] Đọc và xác nhận các mục AI Audit được đánh dấu “sinh viên cần xác nhận”; điền phần rà soát cá nhân, quyết định chấp nhận/chỉnh sửa, và bổ sung nguyên văn prompt còn thiếu từ lịch sử nếu cần.
-- [ ] Đọc và tự chỉnh AI Critique để phản ánh đánh giá/cách diễn đạt của bạn; bản hiện tại là bản nháp do AI hỗ trợ soạn (227 từ theo bộ đếm tách từ của tài liệu).
+- [ ] Đọc và tự chỉnh AI Critique để phản ánh đánh giá/cách diễn đạt của bạn; bản hiện tại là bản nháp do AI hỗ trợ soạn (255 từ theo bộ đếm tách từ của tài liệu).
 - [ ] Bổ sung/đính chính thông tin môi trường chỉ bạn mới xác nhận được: tên/số nhóm, phiên bản Chrome, phiên bản/URL backend, frontend admin nếu có dùng, cách reset/seed DB và tài khoản thử (không ghi mật khẩu thật), phiên bản iOS, ngày kiểm thử FR-02.
 - [ ] Quyết định chạy lại TC-FR02-BVA-01 và BVA-06 hay giữ trạng thái Not Executed. Nếu chạy, dùng trạng thái/tài khoản thử nghiệm cô lập, lưu bằng chứng mới và cập nhật CSV cùng báo cáo cho nhất quán.
 - [ ] Cân nhắc chạy các test ứng viên trong phân tích khoảng trống AI nếu thuộc phạm vi bài; nếu không chạy, ghi rõ là đề xuất/chưa thực thi.
