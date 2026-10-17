@@ -9,7 +9,7 @@
 - **Hệ thống được kiểm thử (SUT):** EShop
 - **Repo mã nguồn SUT:** [ttbhanh/eshop-sut](https://github.com/ttbhanh/eshop-sut)
 - **Repo cá nhân nộp bài:** [23120037-HW02-Software-Testing](https://github.com/ngthkhanhha/23120037-HW02-Software-Testing)
-- **Repo nhóm (chỉ dùng tạo GitHub Issues):** [Bổ sung liên kết repo nhóm]
+- **Repo nhóm (chỉ dùng tạo GitHub Issues):** [TNhanTis/eshop-sut-Group06](https://github.com/TNhanTis/eshop-sut-Group06)
 - **Bản SUT cục bộ đã dùng:** `C:\KTPM\HW02-EShop` (sao chép để tránh ký tự `#` trong đường dẫn ban đầu)
 - **Thời gian kiểm thử:** 2026-10-14 (ngày hiển thị trên ảnh thực thi được cung cấp)
 
@@ -20,7 +20,7 @@
 | A | FR-02 | Đăng nhập và khóa tài khoản | Web | Đã chọn |
 | B | FR-08 | Thanh toán | Web | Đã chọn |
 | C | FR-14 | Quản lý danh mục | Web Admin | Đã chọn |
-| D (dự kiến ghép) | FR-06 | Xem chi tiết sản phẩm | Mobile (React Native / Expo) | **Cần xác nhận thủ công:** đề liệt kê FR-06 trong Pool A và mô tả Pool D là Mobile App; cần xác nhận với giảng viên/nhóm trước khi khẳng định mỗi pool có một tính năng |
+| D (Mobile) | FR-06 | Xem chi tiết sản phẩm | Mobile (React Native / Expo) | Đã được giảng viên cho phép phân vào phần Mobile của bài (theo xác nhận của sinh viên) |
 
 > **Ghi chú phạm vi FR-14:** SRS hiện nêu admin có thể thêm, xem và xóa danh mục; tên danh mục là bắt buộc và không được để trống. Yêu cầu chưa mô tả rõ thao tác cập nhật. Đối chiếu giao diện/API và chỉ báo cáo thao tác có căn cứ trong yêu cầu hoặc hành vi ứng dụng đã quan sát. Không mặc định tính năng có đầy đủ CRUD chỉ dựa vào tên gọi.
 
@@ -130,6 +130,4 @@ Tổng hợp từ kết quả đã ghi; mỗi ca có một trạng thái và t�
 
 ## 11. Tài liệu tham khảo
 
-- [Repo EShop SUT](https://github.com/ttbhanh/eshop-sut), đặc biệt là Đặc tả yêu cầu hệ thống và hướng dẫn cài đặt.
-- Bài giảng môn Kiểm thử miền và Phân tích giá trị biên: [ghi tên/tài liệu và ngày/phiên bản].
-- Nguồn khác đã thực sự sử dụng: [ghi nguồn và ngày truy cập].
+- Không sử dụng tài liệu tham khảo bên ngoài. Căn cứ trực tiếp của bài là đề HW02 và tài liệu yêu cầu/API của [repo EShop SUT](https://github.com/ttbhanh/eshop-sut), đã liên kết ở phần thông tin chung.
