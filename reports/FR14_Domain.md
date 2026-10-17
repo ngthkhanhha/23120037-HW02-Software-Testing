@@ -6,7 +6,7 @@
 - SRS source: `eshop-sut-main/README.md`, FR-14.
 - Related security source: the same README, SEC-03 (admin mutations require an admin-role token).
 - API contract source: `eshop-sut-main/api_specification.md`, section 3.4.
-- Execution status: 5 Domain cases and 3 BVA cases designed; TC-FR14-DT-01 through DT-03 Passed, TC-FR14-DT-04 intentionally skipped by the user, TC-FR14-DT-05 and TC-FR14-BVA-01 Failed; TC-FR14-DT-04 remains intentionally skipped; BVA-02 and BVA-03 are Not Executed.
+- Execution status: 5 Domain cases and 3 BVA cases designed; TC-FR14-DT-01 through DT-03 Passed, TC-FR14-DT-04 intentionally skipped by the user, TC-FR14-DT-05 and TC-FR14-BVA-01 Failed; TC-FR14-DT-04 remains intentionally skipped; BVA-02 is Inconclusive and BVA-03 is Not Executed.
 - Core SRS scope: add, view, and delete categories; category name is required and cannot be empty.
 
 ## Requirement and scope notes
@@ -33,7 +33,11 @@ Detailed preconditions, steps, expected results, execution status, and evidence 
 
 
 
-TC-FR14-BVA-01 Failed: submitting the empty category form created category #4 with an empty name, confirmed in the category list/API. The test-created category was removed after evidence capture; seeded categories #1-#3 remained. Evidence: [`../screenshots/TC-FR14-BVA-01.png`](../screenshots/TC-FR14-BVA-01.png). BUG-FR14-02 recorded. Current FR-14 execution: 5 of 8 cases executed (3 Passed, 2 Failed); DT-04 is skipped and BVA-02/BVA-03 are Not Executed.
+TC-FR14-BVA-01 Failed: submitting the empty category form created category #4 with an empty name, confirmed in the category list/API. The test-created category was removed after evidence capture; seeded categories #1-#3 remained. Evidence: [`../screenshots/TC-FR14-BVA-01.png`](../screenshots/TC-FR14-BVA-01.png). BUG-FR14-02 recorded. Current FR-14 execution: 5 of 8 cases executed (3 Passed, 2 Failed); DT-04 is skipped, BVA-02 is Inconclusive, and BVA-03 is Not Executed.
+
+
+
+TC-FR14-BVA-02 was executed with exactly three spaces. The app accepted the input and stored three spaces (category #5); the disposable category was removed after evidence capture, leaving seeded categories #1-#3. Because FR-14 does not define whitespace trimming, the result is Inconclusive and is not recorded as a requirement violation. Evidence: [`../screenshots/TC-FR14-BVA-02.png`](../screenshots/TC-FR14-BVA-02.png). Current FR-14 execution: 6 of 8 executed (3 Passed, 2 Failed, 1 Inconclusive); DT-04 is skipped and BVA-03 remains Not Executed.
 
 ## Open questions
 

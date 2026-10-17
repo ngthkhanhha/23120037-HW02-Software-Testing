@@ -85,10 +85,10 @@ The per-feature analysis files are linked below. Test case details and execution
 - Boundary Value Analysis: [FR14_BVA.md](FR14_BVA.md)
 - Test case design: 8 cases prepared (5 Domain and 3 BVA). Execution is in progress; see status below.
 - Scope clarification: SRS FR-14 specifies add/view/delete; API specification also documents PUT, while the admin UI has no edit control. DT-04 therefore checks the documented API contract and tracks the scope discrepancy, not a UI requirement. Whitespace-only rejection is an assumption, not a confirmed requirement.
-- Execution summary: 5 of 8 cases executed: DT-01, DT-02, DT-03 Passed; DT-05 and BVA-01 Failed. DT-04 was skipped at the user's request; BVA-02 and BVA-03 remain Not Executed. Evidence for the executed cases is saved under `../screenshots/` and linked in the CSV and feature reports. BUG-FR14-01 confirms non-admin category creation; BUG-FR14-02 confirms an empty category name is accepted.
+- Execution summary: 6 of 8 cases executed: DT-01, DT-02, DT-03 Passed; DT-05 and BVA-01 Failed; BVA-02 is Inconclusive because FR-14 does not define whitespace-only input. DT-04 was skipped at the user's request; BVA-03 remains Not Executed. Evidence for executed cases is saved under `../screenshots/` and linked in the CSV and feature reports. BUG-FR14-01 and BUG-FR14-02 are confirmed.
 - AI gap analysis: The prepared design covers SRS operations, the related SEC-03 role boundary, the documented PUT API, and specified name boundary. Duplicate-name and referenced-category deletion behavior are unspecified and remain exploratory.
 - Confirmed bugs: BUG-FR14-01 (standard user can create categories because SEC-03 is not enforced on POST /api/categories) and BUG-FR14-02 (blank category submission creates a persisted empty-name category).
-- Evidence: DT-01 through DT-03, DT-05, and BVA-01 evidence is saved under `../screenshots/`; paths are listed in the test case CSV.
+- Evidence: DT-01 through DT-03, DT-05, and BVA-01/BVA-02 evidence is saved under `../screenshots/`; paths are listed in the test case CSV.
 
 ## 8. Feature D — Mobile FR-06: Product Detail View
 
@@ -110,13 +110,14 @@ Summary from the recorded test cases; each case has one status and the totals re
 |---|---:|
 | Features in scope | 4 |
 | Test cases designed | 36 |
-| Test cases executed | 31 |
+| Test cases executed | 32 |
 | Passed | 13 |
 | Failed | 18 |
-| Not Executed | 5 |
+| Not Executed | 4 |
+| Inconclusive | 1 |
 | Confirmed bugs | 11 |
 
-**Reconciliation:** 36 designed = 13 Passed + 18 Failed + 5 Not Executed. The totals reconcile. FR-08 contributes 8 designed cases; all eight are executed (three Passed, five Failed). FR-14 contributes 8 designed cases; three are Passed, two are Failed (DT-05 and BVA-01), DT-04 is Not Executed by user skip, and BVA-02/BVA-03 remain Not Executed.
+**Reconciliation:** 36 designed = 13 Passed + 18 Failed + 4 Not Executed + 1 Inconclusive. The totals reconcile. FR-14 contributes 8 designed cases; three are Passed, two Failed (DT-05 and BVA-01), BVA-02 is Inconclusive because whitespace-only behavior is unspecified, DT-04 is Not Executed by user skip, and BVA-03 remains Not Executed.
 
 ## 10. AI Use and Supporting Deliverables
 

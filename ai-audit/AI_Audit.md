@@ -255,3 +255,12 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - Output: Marked TC-FR14-BVA-01 Failed because the SUT persisted an empty-name category despite FR-14 requiring a non-empty name. Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1368).png` to `screenshots/TC-FR14-BVA-01.png`. Queried the category API and confirmed the empty entry; deleted only test-created category #4 using admin authentication and verified seeded categories #1-#3 remained. Added BUG-FR14-02 and updated the CSV, FR14 Domain/BVA reports, Main Report, README, manual checklist, and aggregate counts (executed 31, Passed 13, Failed 18, Not Executed 5; confirmed bugs 11).
 - Review: The screenshot shows the three seeded categories and a fourth blank row. API confirmation established that the empty-name record persisted. Cleanup happened after evidence capture and affected only the test-created row.
 - Files affected: `screenshots/TC-FR14-BVA-01.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `bug-reports/bugs.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
+
+
+### AI-INT-032 - Record execution of TC-FR14-BVA-02
+- Tool: ChatGPT (Codex).
+- Date/time: 2026-10-17 (Asia/Saigon).
+- User prompt: The user supplied a screenshot showing category #5 after submitting a name consisting of three spaces.
+- Output: Copied `C:\Users\Admin\Pictures\Screenshots\Screenshot (1369).png` to `screenshots/TC-FR14-BVA-02.png`. Queried the API and confirmed category #5 stored exactly three spaces; removed only that test category with admin authentication and verified seeded categories #1-#3 remained. Recorded the case as Inconclusive because FR-14 does not define whitespace trimming; no bug was claimed. Updated CSV, FR14 BVA/Domain reports, Main Report, README, checklist, and counts (executed 32, Passed 13, Failed 18, Not Executed 4, Inconclusive 1).
+- Review: The screenshot shows a fourth visible blank row (#5); API evidence confirmed that it held exactly three spaces. Cleanup followed evidence capture and left the three seeded categories intact.
+- Files affected: `screenshots/TC-FR14-BVA-02.png`, `test-cases/test-cases.csv`, `reports/FR14_BVA.md`, `reports/FR14_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
