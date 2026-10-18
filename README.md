@@ -19,7 +19,6 @@
 | C | FR-14 | Quản lý danh mục | Web Admin |
 | D (Mobile) | FR-06 | Xem chi tiết sản phẩm | Mobile |
 
-> Phân công FR-06 vào phần Mobile của Pool D đã được giảng viên cho phép.
 
 ## Báo cáo chính và báo cáo kỹ thuật
 
@@ -52,11 +51,11 @@
 
 | STT | Tiêu chí | Điểm tối đa | Tự đánh giá |
 |---|---|---:|---:|
-| 1 | Tính năng A (Domain + Boundary) | 25 | Ổn |
-| 2 | Tính năng B (Domain + Boundary) | 25 | Ổn |
+| 1 | Tính năng A (Domain + Boundary) | 20 | Quên Commit |
+| 2 | Tính năng B (Domain + Boundary) | 20 | Quên Commit |
 | 3 | Tính năng C (Domain + Boundary) | 25 | Ổn |
-| 4 | Tính năng D Mobile (Domain + Boundary) | 15 | Ổn |
+| 4 | Tính năng D Mobile (Domain + Boundary) | 10 | Quên Commit |
 | 5 | Agent Skill | 10 | Ổn |
-| | **Tổng** | **100** | **Ổn** |
+| | **Tổng** | **85** | **Quên Commit từng bước các Pool A,D,B** |
 
-> Số liệu khớp với CSV: FR-02/FR-06 có tổng 20 ca; FR-08 có 8 ca (3 Passed, 5 Failed); FR-14 có 8 ca (4 Passed, 2 Failed, 1 Inconclusive, 1 Not Executed). Tổng cộng: 36 ca thiết kế, 33 đã chạy, 14 Passed, 18 Failed, 3 Not Executed, 1 Inconclusive. Đã tạo 11 GitHub Issues cho bug đã xác nhận và liên kết trong `bug-reports/bugs.md`. Trước khi nộp, hoàn tất tự đánh giá, xuất PDF, tạo `git-log.txt` sau commit cuối và đóng gói ZIP.
+
