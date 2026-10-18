@@ -40,7 +40,7 @@ Các test case chi tiết được ghi trong [`../test-cases/test-cases.csv`](..
 - Kết quả mong đợi và nguồn yêu cầu
 - Kết quả thực tế, trạng thái và bằng chứng — chỉ điền sau khi chạy test
 
-## Rà soát và câu hỏi cần xác minh
+## Trạng thái rà soát yêu cầu
 
 - Yêu cầu FR-02 đã đối chiếu với README SUT: [x] Có / [ ] Chưa
 - Mã nguồn/UI đã xem: [x] Có / [ ] Chưa

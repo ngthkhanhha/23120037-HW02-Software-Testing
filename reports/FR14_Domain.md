@@ -36,9 +36,3 @@ TC-FR14-BVA-01 Failed: gửi biểu mẫu tên danh mục rỗng đã tạo danh
 TC-FR14-BVA-02 được chạy với đúng ba dấu cách. Ứng dụng chấp nhận đầu vào và lưu ba dấu cách (danh mục #5); mục thử nghiệm được xóa sau khi chụp bằng chứng, chỉ còn các mục seed #1–#3. Do FR-14 không quy định việc cắt khoảng trắng, kết quả là Inconclusive và không được ghi nhận là vi phạm yêu cầu. Bằng chứng: [`../screenshots/TC-FR14-BVA-02.png`](../screenshots/TC-FR14-BVA-02.png). Trạng thái thực thi FR-14 hiện tại: 7/8 ca đã chạy (4 Passed, 2 Failed, 1 Inconclusive); DT-04 được bỏ qua và vẫn là Not Executed.
 
 TC-FR14-BVA-03 Passed: tên một ký tự `A` được chấp nhận và lưu thành danh mục #6. Mục thử nghiệm được xóa sau khi chụp bằng chứng; danh mục seed #1–#3 vẫn còn. Bằng chứng: [`../screenshots/TC-FR14-BVA-03.png`](../screenshots/TC-FR14-BVA-03.png). Như vậy đã hoàn tất các ca BVA FR-14 theo kế hoạch.
-
-## Câu hỏi còn mở
-
-- Giảng viên có yêu cầu thao tác Cập nhật thuộc FR-14 dù danh sách thao tác trong SRS không nêu không?
-- Tên chỉ có khoảng trắng có được xem là rỗng không?
-- Hệ thống nên xử lý thế nào với tên trùng hoặc xóa danh mục đang được sản phẩm tham chiếu? Không gọi kết quả là bug cho đến khi xác nhận quy tắc mong đợi.

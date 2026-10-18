@@ -9,10 +9,11 @@
 
 ## Còn cần sinh viên rà soát/thực hiện
 
-- [ ] Đọc AI Audit, xác nhận các phần được đánh dấu cần sinh viên rà soát và bổ sung nội dung cá nhân nếu cần.
+- [ ] Rà soát AI Audit và điền nhận xét cá nhân tại các mục được đánh dấu dành cho sinh viên.
 - [ ] Đọc AI Critique (255 từ) và chỉnh cách diễn đạt để phản ánh đánh giá của chính bạn.
 - [ ] Điền điểm số tự đánh giá bằng điểm cụ thể và tổng điểm trong README; hiện nội dung “Ổn” chưa phải điểm số.
-- [ ] Xác nhận giữ TC-FR02-BVA-01 và BVA-06 ở trạng thái Not Executed hay chạy lại; nếu giữ, bảo đảm báo cáo nêu rõ chúng chưa thực thi.
+- [ ] Giữ TC-FR02-BVA-01 và BVA-06 ở trạng thái Not Executed như hồ sơ hiện tại, hoặc chạy lại và cập nhật kết quả nếu muốn hoàn tất hai ca này.
+- [ ] Bổ sung thời điểm bắt đầu/kết thúc khóa FR-02 nếu có thể xác minh; hiện báo cáo ghi rõ mục này chưa được xác minh.
 - [ ] Chỉ xác minh TC-FR08-DT-01 có tạo đơn hay không nếu rubric yêu cầu bằng chứng độc lập.
 - [ ] Xuất PDF cho Main Report, AI Audit và AI Critique sau khi chốt nội dung.
 - [ ] Sau commit cuối, xuất lịch sử commit thực tế vào `git-log.txt` (hoặc tên tệp log mà đề yêu cầu) và kiểm tra nội dung.

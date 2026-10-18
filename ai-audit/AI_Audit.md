@@ -119,7 +119,7 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 ### AI-INT-015 - Lưu hai ảnh chụp màn hình gốc for TC-FR08-DT-01
 - Công cụ: ChatGPT (Codex).
 - Date/time: 2026-10-16 14:15 (Asia/Saigon).
-- Prompt người dùng: ?2 anh nay nhe?, with `Screenshot (1343).png` and `Screenshot (1344).png` from `C:\Users\Admin\Pictures\Screenshots`.
+- Prompt người dùng: “2 ảnh này nhé”, with `Screenshot (1343).png` and `Screenshot (1344).png` from `C:\Users\Admin\Pictures\Screenshots`.
 - Đầu ra AI: Copied the two original images unchanged to `screenshots/TC-FR08-DT-01-cart-login-alert.png` and `screenshots/TC-FR08-DT-01-login-redirect.png`; updated the evidence paths in CSV and linked/updated the FR-08 Domain report, Main Report, README, and manual checklist. No new screenshots were captured.
 - Rà soát: Confirmed both destination files exist and have non-zero size. The first shows the login alert at `/cart`; the second shows `/login`. Independent Network/order-history evidence that no order was created remains unavailable.
 - Tệp bị ảnh hưởng: both screenshots, `test-cases/test-cases.csv`, `reports/FR08_Domain.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
@@ -209,7 +209,7 @@ Các phiên AI được dùng để ghi nhận test đã được liệt kê bê
 - Date/time: 2026-10-16 (Asia/Saigon).
 - Prompt người dùng: “tiếp tục với FR cuối FR-14”.
 - Đầu ra AI: Reviewed the SUT FR-14/SEC-03 requirements, category API specification, and admin UI source; prepared 5 Domain and 3 BVA cases in the CSV, all Not Executed. Updated FR14 analysis and aggregate report counts. The source review identified the SRS/API/UI update-operation discrepancy and led to no execution-based bug claims.
-- Rà soát: Student must execute the cases manually and provide screenshots/results. Whitespace-only rejection remains an assumption; the API PUT case is labeled as API-contract coverage because the UI and SRS operation list omit update.
+- Rà soát: At the time of this entry, manual execution was pending. Subsequent execution and evidence are recorded in AI-INT-026–033. Whitespace-only rejection remains an assumption; the API PUT case is labeled as API-contract coverage because the UI and SRS operation list omit update.
 - Tệp bị ảnh hưởng: `test-cases/test-cases.csv`, `reports/FR14_Domain.md`, `reports/FR14_BVA.md`, `reports/Main_Report.md`, `README.md`, `MANUAL_ACTIONS.md`, `ai-audit/AI_Audit.md`.
 ### AI-INT-026 - Ghi nhận thực thi TC-FR14-DT-01
 - Công cụ: ChatGPT (Codex).
