@@ -126,7 +126,8 @@ Tổng hợp từ kết quả đã ghi; mỗi ca có một trạng thái và t�
 - **Nhận xét AI:** [`../ai-audit/AI_Critique.md`](../ai-audit/AI_Critique.md) — bản cuối cần 200–300 từ và gắn với quá trình kiểm thử này.
 - **Báo cáo lỗi và bằng chứng:** [`../bug-reports/bugs.md`](../bug-reports/bugs.md); ảnh nằm trong [`../screenshots/`](../screenshots/).
 - **Nhật ký commit Git:** [`../git-log.txt`](../git-log.txt) — xuất từ commit thật của repo cá nhân; không tạo lịch sử giả.
-- **Agent Skill:** [`domain-bva-testing/SKILL.md`](../agent-skills/domain-bva-testing/SKILL.md). Liên kết video demo YouTube: cần quay và bổ sung nếu rubric yêu cầu.
+- **Agent Skill:** [`domain-bva-testing/SKILL.md`](../agent-skills/domain-bva-testing/SKILL.md).
+- **Video demo:** [Demo Agent Skill: FR-14 bằng Domain Testing và BVA](https://youtu.be/SBlovoWtv_A).
 
 ## 11. Tài liệu tham khảo
 

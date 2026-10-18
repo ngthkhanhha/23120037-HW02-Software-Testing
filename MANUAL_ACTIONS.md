@@ -1,41 +1,25 @@
-# Các mục sinh viên cần tự hoàn tất
+# Các mục cần hoàn tất trước khi nộp
 
-Tệp này liệt kê các việc cần tài khoản, xác nhận cá nhân/nhóm hoặc thao tác thực tế mà Codex không thể xác nhận thay sinh viên.
+## Đã hoàn tất
 
-## Trước khi chốt FR-02 và FR-06
+- [x] Giảng viên đã cho phép phân FR-06 vào phần Mobile của Pool D; README và Main Report đã ghi nhận.
+- [x] Đã tạo 11 GitHub Issues cho các bug xác nhận trong repo nhóm và liên kết chúng trong `bug-reports/bugs.md`.
+- [x] Đã bổ sung phiên bản Chrome và thiết bị/iOS theo thông tin sinh viên cung cấp.
+- [x] Đã tạo Agent Skill và quay video demo; liên kết YouTube được ghi trong README và Main Report.
 
-- [ ] Xác nhận với giảng viên/nhóm cách chọn Pool D. Đề ghi FR-06 trong Pool A và Pool D là Mobile App; README đang ghép FR-06 Mobile vào Pool D nhưng chưa có xác nhận phân công. Cập nhật `README.md` và `reports/Main_Report.md` theo câu trả lời thực tế.
-- [ ] Tạo GitHub Issues cho 11 bug đã xác nhận trong repo nhóm; đính kèm bằng chứng và thêm URL issue vào `bug-reports/bugs.md`. Không tạo issue cho quan sát chưa xác minh.
-- [ ] Đọc và xác nhận các mục AI Audit được đánh dấu “sinh viên cần xác nhận”; điền phần rà soát cá nhân, quyết định chấp nhận/chỉnh sửa, và bổ sung nguyên văn prompt còn thiếu từ lịch sử nếu cần.
-- [ ] Đọc và tự chỉnh AI Critique để phản ánh đánh giá/cách diễn đạt của bạn; bản hiện tại là bản nháp do AI hỗ trợ soạn (255 từ theo bộ đếm tách từ của tài liệu).
-- [ ] Bổ sung/đính chính thông tin môi trường chỉ bạn mới xác nhận được: tên/số nhóm, phiên bản Chrome, phiên bản/URL backend, frontend admin nếu có dùng, cách reset/seed DB và tài khoản thử (không ghi mật khẩu thật), phiên bản iOS, ngày kiểm thử FR-02.
-- [ ] Quyết định chạy lại TC-FR02-BVA-01 và BVA-06 hay giữ trạng thái Not Executed. Nếu chạy, dùng trạng thái/tài khoản thử nghiệm cô lập, lưu bằng chứng mới và cập nhật CSV cùng báo cáo cho nhất quán.
-- [ ] Cân nhắc chạy các test ứng viên trong phân tích khoảng trống AI nếu thuộc phạm vi bài; nếu không chạy, ghi rõ là đề xuất/chưa thực thi.
+## Còn cần sinh viên rà soát/thực hiện
 
-## FR-08 — Đã hoàn tất thực thi
+- [ ] Đọc AI Audit, xác nhận các phần được đánh dấu cần sinh viên rà soát và bổ sung nội dung cá nhân nếu cần.
+- [ ] Đọc AI Critique (255 từ) và chỉnh cách diễn đạt để phản ánh đánh giá của chính bạn.
+- [ ] Điền điểm số tự đánh giá bằng điểm cụ thể và tổng điểm trong README; hiện nội dung “Ổn” chưa phải điểm số.
+- [ ] Xác nhận giữ TC-FR02-BVA-01 và BVA-06 ở trạng thái Not Executed hay chạy lại; nếu giữ, bảo đảm báo cáo nêu rõ chúng chưa thực thi.
+- [ ] Chỉ xác minh TC-FR08-DT-01 có tạo đơn hay không nếu rubric yêu cầu bằng chứng độc lập.
+- [ ] Xuất PDF cho Main Report, AI Audit và AI Critique sau khi chốt nội dung.
+- [ ] Sau commit cuối, xuất lịch sử commit thực tế vào `git-log.txt` (hoặc tên tệp log mà đề yêu cầu) và kiểm tra nội dung.
+- [ ] Tạo ZIP nộp bài với mã số sinh viên trong tên thư mục/tệp theo đúng quy cách của đề; mở thử ZIP để xác nhận các tệp và PDF cần thiết có mặt.
 
-- [ ] Nếu rubric yêu cầu, tự xác minh rằng TC-FR08-DT-01 không tạo đơn hàng; bằng chứng này chưa được lưu.
-- [x] TC-FR08-DT-01 đến DT-05 và BVA-01 đến BVA-03 đã chạy; xem `reports/FR08_Domain.md` và `reports/FR08_BVA.md`.
-- [x] Đơn thử #1 đến #5 và tổng tiền tương ứng đã được ghi lại. Không chạy lại các ca này nếu chưa chuẩn bị baseline mới.
+## Ghi chú trạng thái kiểm thử
 
-## FR-14 — Đã thực thi thủ công (DT-04 chủ động bỏ qua)
-
-- [x] TC-FR14-DT-05 đã chạy và Failed: POST `/api/categories` từ người dùng thường trả HTTP 200; SEC-03 không được thực thi. Đã ghi BUG-FR14-01. Admin đã xóa danh mục thăm dò. Bằng chứng: `screenshots/TC-FR14-DT-05.png`.
-- [x] TC-FR14-BVA-01 đã chạy và Failed: gửi tên rỗng tạo danh mục #4 không tên (BUG-FR14-02); đã lưu bằng chứng và xóa dữ liệu thử.
-- [x] Đã ghi nhận yêu cầu bỏ qua TC-FR14-DT-04; ca vẫn là Not Executed. TC-FR14-BVA-02 là Inconclusive: ứng dụng lưu đúng ba dấu cách nhưng hành vi khoảng trắng chưa được quy định. TC-FR14-BVA-03 Passed với tên một ký tự `A`; tất cả ca BVA FR-14 đã chạy.
-- [ ] Với kiểm tra tạo/cập nhật, dùng tên danh mục thử nghiệm duy nhất; chụp trạng thái trước/sau và chỉ xóa danh mục do test tạo. Không xóa danh mục seed.
-- [ ] Với DT-04, chỉ dùng API PUT đã được tài liệu hóa nếu có thể dùng an toàn phiên admin; che token khỏi ảnh. Điểm khác biệt giữa SRS và giao diện đã được ghi nhận.
-- [ ] Xem việc từ chối tên chỉ có khoảng trắng là kiểm thử thăm dò cho đến khi xác nhận kết quả mong đợi. Không báo bug chỉ dựa trên giả định.
-- [x] Sau mỗi ca đã chạy, đã cập nhật báo cáo FR14, danh sách bug xác nhận, liên kết bằng chứng, AI Audit và tổng số liệu đồng bộ.
-
-## Phần bài tập còn lại
-
-- [x] Tất cả ca Domain và BVA FR-08 đã có kết quả thực thi. Chỉ còn việc xác minh độc lập qua Network/lịch sử đơn rằng DT-01 không tạo đơn nếu rubric yêu cầu.
-- [x] Đã commit tài liệu bài làm (báo cáo, CSV, bằng chứng, báo cáo lỗi và AI Audit) vào repo cá nhân; liên kết repo cá nhân đã ghi trong README và báo cáo chính. Repo nhóm chỉ dùng tạo GitHub Issues.
-
-## Trước khi nộp
-
-- [ ] Điền bảng tự đánh giá và tổng điểm trong `README.md` theo đánh giá của bạn.
-- [x] Agent Skill đã được tạo tại `agent-skills/domain-bva-testing/SKILL.md`.
-- [ ] Quay video demo và bổ sung liên kết nếu rubric yêu cầu; Skill đã có trong repo.
-- [ ] Xuất PDF cho báo cáo chính, AI Audit và AI Critique sau khi nội dung được chốt.
+- FR-14 DT-04 được chủ động bỏ qua và giữ **Not Executed**.
+- FR-14 BVA-02 chấp nhận ba dấu cách nhưng là **Inconclusive**, vì yêu cầu chưa định nghĩa cách xử lý khoảng trắng.
+- Video demo hiện không có cảnh bug; sinh viên đã quyết định giữ bản quay hiện tại.
